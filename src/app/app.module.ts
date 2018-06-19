@@ -20,17 +20,28 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
 
 
 import { MarkdownParserService } from './markdown-parser.service';
+import { CodelabsComponent } from './codelabs/codelabs.component';
 
 const routes: Routes = [
   {
+    path: "",
+    component: CodelabsComponent
+  },
+  {
+    path: "codelabs",
+    component: CodelabsComponent
+  },
+  {
     path: "codelab/:id",
     component: CodelabComponent
-  }];
+  }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
-    CodelabComponent
+    CodelabComponent,
+    CodelabsComponent
   ],
   imports: [
     BrowserModule,

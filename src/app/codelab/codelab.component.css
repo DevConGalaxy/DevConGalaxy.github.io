@@ -23,10 +23,20 @@ mat-sidenav-content {
   /* padding-bottom: 20px; */
 }
 
+.title-toolbar {
+  position: fixed;
+  top: 0;
+  left: 256px;
+  right: 0;
+  z-index: 1;
+}
+
 .codelab-step {
   width: 800px;
   max-width: 100%;
-  margin: 20px 0;
+  margin: 20px 0 80px 0;
+  position: absolute;
+  top: 64px;
 }
 
 mat-card {
@@ -157,4 +167,12 @@ mat-card-content * {
 
 .controls button {
   color: #fff !important;
+}
+
+.step-card {
+  display:none !important;
+}
+
+.step-card.selected {
+  display: block !important;
 }

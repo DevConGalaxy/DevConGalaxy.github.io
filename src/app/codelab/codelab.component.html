@@ -10,9 +10,9 @@
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar color="primary" class="title-toolbar">
       <mat-toolbar-row>
-        <span>{{tutorialDetails?.title}}</span>
+        <span routerLink="/"><</span><span>{{tutorialDetails?.title}}</span>
       </mat-toolbar-row>
     </mat-toolbar>
     <div class="codelab-step">
@@ -23,8 +23,8 @@
         <!-- <mat-card-content markdown [data]="tutorialMd" (error)="onError($event)"></mat-card-content> -->
       <!-- </mat-card> -->
       
-      <mat-card *ngFor="let step of tutorialSteps; index as idx" id="step-{{idx + 1}}">
-          <mat-card-content markdown [data]="step" (error)="onError($event)"></mat-card-content>
+      <mat-card *ngFor="let step of tutorialSteps; index as idx" id="step-{{idx + 1}}" class="step-card" [class.selected]="idx + 1 == currentStep">
+        <mat-card-content markdown [data]="step" (error)="onError($event)"></mat-card-content>
       </mat-card>
       <div class="controls">
         <button mat-fab (click)="prev()" color="primary"><</button>

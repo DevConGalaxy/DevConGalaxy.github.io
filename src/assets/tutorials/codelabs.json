@@ -1,0 +1,34 @@
+{
+  "codelabs": [
+    {
+      "id": "getting-started",
+      "title": "Getting started",
+      "duration": 50
+    },
+    {
+      "id": "meteo-bot",
+      "title": "Weather Forecast bot",
+      "duration": 27
+    },
+    {
+      "id": "deploy-heroku",
+      "title": "Deploying on Heroku",
+      "duration": 27
+    },
+    {
+      "id": "connect-messenger",
+      "title": "Connecting to Messenger",
+      "duration": 27
+    },
+    {
+      "id": "qna-bot",
+      "title": "Create a Q7A bot",
+      "duration": 27
+    },
+    {
+      "id": "integration-testing",
+      "title": "Integration testing",
+      "duration": 27
+    }
+  ]
+}

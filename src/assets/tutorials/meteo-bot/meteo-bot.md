@@ -9,11 +9,6 @@ The goal of this tutorial is to create a bot that is reponding to weather foreca
 
 ![Final result](/assets/tutorials/meteo-bot/images/demo.png "Final result")
 
-```javascript
-module.exports = {
-   locale: 'fr',
-};
-````
 
 ## What you will learn
 * How to create a bot on the Botfuel platform

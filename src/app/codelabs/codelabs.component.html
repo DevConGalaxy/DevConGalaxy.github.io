@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span>Botfuel tutorials</span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<div class="container">
+  <div class="card" *ngFor="let codelab of codelabs">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <span>{{codelab.duration}}</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div class="content">
+        {{codelab.title}}
+    </div>
+    <div class="footer">
+      <button mat-button routerLink="/codelab/{{codelab.id}}">START</button>
+    </div>
+  </div>
+
+  <!-- <mat-card *ngFor="let codelab of codelabs">
+    <mat-card-title class="no-padding">
+      <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <span>{{codelab.duration}}</span>
+        </mat-toolbar-row>
+      </mat-toolbar>
+    </mat-card-title>
+    <mat-card-content>
+      {{codelab.title}}
+    </mat-card-content>
+    <mat-card-footer class="no-padding">
+        <button mat-button>START</button>
+    </mat-card-footer>
+  </mat-card> -->
+</div>

@@ -7,12 +7,21 @@ import { MarkdownService } from 'ngx-markdown';
 import { MatStepper } from '@angular/material';
 
 const SMALL_WIDTH_BREAKPOINT = 720;
+import {trigger,state,style,animate,transition,keyframes} from '@angular/animations';
 
 @Component({
   selector: 'app-codelab',
   templateUrl: './codelab.component.html',
   styleUrls: ['./codelab.component.css'],
   encapsulation: ViewEncapsulation.None,
+  // animations: [
+  //   trigger('toggleState', [
+  //     state('true' , style({ transform: 'translateX(0)' })),
+  //     state('false', style({ maxHeight: 0, padding: 0, transform: 'translateX(-100%)' })),
+  //     // transition
+  //     transition('* => *', animate(3000)),
+  //   ])
+  // ]
 })
 export class CodelabComponent implements OnInit {
   private mediaMatcher: MediaQueryList = matchMedia(`(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`);
