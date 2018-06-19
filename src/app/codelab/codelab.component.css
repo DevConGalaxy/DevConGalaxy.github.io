@@ -31,6 +31,14 @@ mat-sidenav-content {
   z-index: 1;
 }
 
+.title-toolbar a {
+  margin-right: 1em;
+  text-decoration: none;
+  color: #fff;
+}
+
+
+
 .codelab-step {
   width: 800px;
   max-width: 100%;
@@ -113,7 +121,7 @@ mat-card-content * {
 
 .step i:before {
   margin-top: -44px;
-  margin-left: 12px;
+  margin-left: 10px;
   content: '';
   display: block;
   border-left: 1px solid #2bb673;
@@ -124,7 +132,7 @@ mat-card-content * {
 }
 
 .step i:after {
-  margin-left: 12px;
+  margin-left: 10px;
   content: '';
   display: block;
   border-left: 1px solid #2bb673;
@@ -133,7 +141,7 @@ mat-card-content * {
   width: 0;
   height: 44px;
   z-index: 1;
-  margin-top: 1px;
+  margin-top: -2px;
 }
 
 .step:first-of-type i:before, .step:last-of-type i:after {

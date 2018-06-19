@@ -9,6 +9,30 @@
   max-width: 1024px;
 }
 
+.header mat-toolbar-row {
+  display: flex;
+  flex-direction: row;
+  max-width: 1024px;
+  align-self: center;
+  padding: 0;
+}
+
+.header .title {
+  margin-right: 1em;
+}
+
+.header .searchbox {
+  padding: 5px;
+  background-color: #90d0b1;
+  outline: none;
+  box-shadow: none;
+  border: none;
+  color: #444;
+  font-size: 16px;
+  height: 35px;
+  flex: 1;
+}
+
 .card {
   display: flex;
   position: relative;

@@ -12,11 +12,11 @@
   <mat-sidenav-content>
     <mat-toolbar color="primary" class="title-toolbar">
       <mat-toolbar-row>
-        <span routerLink="/"><</span><span>{{tutorialDetails?.title}}</span>
+        <a routerLink="/"><i class="fas fa-chevron-left"></i></a>
+        <div>{{tutorialDetails?.title}}</div>
       </mat-toolbar-row>
     </mat-toolbar>
     <div class="codelab-step">
-
 
       <!-- <mat-card> -->
         <!-- <mat-card-content markdown [src]="getTutorialMdUrl()" (error)="onError($event)"></mat-card-content> -->
@@ -27,8 +27,8 @@
         <mat-card-content markdown [data]="step" (error)="onError($event)"></mat-card-content>
       </mat-card>
       <div class="controls">
-        <button mat-fab (click)="prev()" color="primary"><</button>
-        <button mat-fab (click)="next()" color="primary">></button>
+        <button *ngIf="currentStep > 1" mat-fab (click)="prev()" color="primary"><</button>
+        <button *ngIf="currentStep < tutorialDetails?.steps?.length" mat-fab (click)="next()" color="primary">></button>
       </div>
 
       <!-- <mat-horizontal-stepper [linear]="isLinear" #stepper>

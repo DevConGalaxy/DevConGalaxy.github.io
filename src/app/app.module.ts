@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { Routes, RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
+import { FormsModule }   from '@angular/forms';
 
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 
@@ -21,6 +22,7 @@ import { CdkStepperModule } from '@angular/cdk/stepper';
 
 import { MarkdownParserService } from './markdown-parser.service';
 import { CodelabsComponent } from './codelabs/codelabs.component';
+import { FilterPipe } from './filter.pipe';
 
 const routes: Routes = [
   {
@@ -41,7 +43,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     CodelabComponent,
-    CodelabsComponent
+    CodelabsComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -61,6 +64,7 @@ const routes: Routes = [
         },
       },
     }),
+    FormsModule,
     HttpClientModule,
     MatSidenavModule,
     MatCardModule,

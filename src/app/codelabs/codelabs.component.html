@@ -1,10 +1,11 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="primary" class="header">
   <mat-toolbar-row>
-    <span>Botfuel tutorials</span>
+    <div class="title">Botfuel tutorials</div>
+    <input class="searchbox" type="text" placeholder="Search..." [(ngModel)]="searchText"/>
   </mat-toolbar-row>
 </mat-toolbar>
 <div class="container">
-  <div class="card" *ngFor="let codelab of codelabs">
+  <div class="card" *ngFor="let codelab of codelabs  | filter : searchText">
     <mat-toolbar color="primary">
       <mat-toolbar-row>
         <span>{{codelab.duration}}</span>
