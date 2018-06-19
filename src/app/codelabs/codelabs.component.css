@@ -17,6 +17,11 @@
   padding: 0;
 }
 
+.header img {
+  max-height: 40px;
+  margin-right: 1em;
+}
+
 .header .title {
   margin-right: 1em;
 }
@@ -29,7 +34,7 @@
   border: none;
   color: #444;
   font-size: 16px;
-  height: 35px;
+  height: 40px;
   flex: 1;
 }
 
@@ -68,7 +73,8 @@
 }
 
 .card .footer {
-  padding: 24px;
+  padding: 12px 0;
+  border-top: solid 1px #DADCE0;
 }
 
 mat-card {

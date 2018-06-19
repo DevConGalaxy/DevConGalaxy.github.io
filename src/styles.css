@@ -28,3 +28,7 @@ app-codelab {
 mat-toolbar-row {
   color: #fff;
 }
+
+[hidden] { 
+  visibility: hidden !important;
+}

@@ -17,27 +17,13 @@
       </mat-toolbar-row>
     </mat-toolbar>
     <div class="codelab-step">
-
-      <!-- <mat-card> -->
-        <!-- <mat-card-content markdown [src]="getTutorialMdUrl()" (error)="onError($event)"></mat-card-content> -->
-        <!-- <mat-card-content markdown [data]="tutorialMd" (error)="onError($event)"></mat-card-content> -->
-      <!-- </mat-card> -->
-      
       <mat-card *ngFor="let step of tutorialSteps; index as idx" id="step-{{idx + 1}}" class="step-card" [class.selected]="idx + 1 == currentStep">
         <mat-card-content markdown [data]="step" (error)="onError($event)"></mat-card-content>
       </mat-card>
       <div class="controls">
-        <button *ngIf="currentStep > 1" mat-fab (click)="prev()" color="primary"><</button>
-        <button *ngIf="currentStep < tutorialDetails?.steps?.length" mat-fab (click)="next()" color="primary">></button>
+        <button [hidden]="currentStep <= 1" mat-fab (click)="prev()" color="primary"><</button>
+        <button [hidden]="currentStep >= tutorialDetails?.steps?.length" mat-fab (click)="next()" color="primary">></button>
       </div>
-
-      <!-- <mat-horizontal-stepper [linear]="isLinear" #stepper>
-          <mat-step *ngFor="let step of tutorialSteps; index as idx" id="step-{{idx + 1}}">
-            <div markdown [data]="step" (error)="onError($event)"></div>
-          </mat-step>
-        </mat-horizontal-stepper>
-        <button (click)="prev(stepper)">Prev</button>
-        <button (click)="next(stepper)">Next</button> -->
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>
