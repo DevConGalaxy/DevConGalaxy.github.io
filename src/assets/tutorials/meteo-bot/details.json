@@ -1,0 +1,40 @@
+{
+  "title": "Build a meteo bot",
+  "author": "Olivier Leplus",
+  "last_updated": "",
+  "tags": [],
+  "steps": [
+    {
+      "title": "Introduction",
+      "duration": "3"
+    },
+    {
+      "title": "Create a Botfuel App",
+      "duration": "5"
+    },
+    {
+      "title": "Configure your bot",
+      "duration": "2"
+    },
+    {
+      "title": "Webchat",
+      "duration": "3"
+    },
+    {
+      "title": "Implementation",
+      "duration": "2"
+    },
+    {
+      "title": "Call the API",
+      "duration": "10"
+    },
+    {
+      "title": "Quick replies",
+      "duration": "2"
+    },
+    {
+      "title": "Add images",
+      "duration": "2"
+    }
+  ]
+}

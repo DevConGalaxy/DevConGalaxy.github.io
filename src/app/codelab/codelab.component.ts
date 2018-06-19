@@ -4,6 +4,7 @@ import { MarkdownParserService } from '../markdown-parser.service';
 import { TutorialService } from '../tutorial.service';
 
 import { MarkdownService } from 'ngx-markdown';
+import { MatStepper } from '@angular/material';
 
 const SMALL_WIDTH_BREAKPOINT = 720;
 
@@ -19,6 +20,7 @@ export class CodelabComponent implements OnInit {
   private tutorialId: string;
   private tutorialDetails: any;
   private tutorialMd: any;
+  private tutorialSteps: Array<string>;
 
   constructor(private router: Router,
               private route: ActivatedRoute,
@@ -54,6 +56,8 @@ export class CodelabComponent implements OnInit {
     this.ts.getTutorialMd(this.tutorialId).subscribe(response => {
       // this.tutorialMd = this.md.convert(response.toString());
       // this.tutorialMd = this.markdownService.compile(response.toString());
+      this.tutorialMd = response;
+      this.tutorialSteps = response.split("---section---")
     });
   }
 
@@ -61,23 +65,26 @@ export class CodelabComponent implements OnInit {
     return this.mediaMatcher.matches;
   }
 
-  goToStep(step: number) {
+  goToStep(step: number, stepper: MatStepper) {
     this.currentStep = step;
     this.updateStepUrl();
+    // stepper.selectedIndex = step - 1;
   }
 
-  next() {
+  next(stepper: MatStepper) {
     this.currentStep++;
     this.updateStepUrl();
+    // stepper.next();
     // const convertedText = this.md.convert("## This is a super text");
     // console.log(convertedText);
     // debugger;
   }
 
-  prev() {
+  prev(stepper: MatStepper) {
     if (this.currentStep > 1) {
       this.currentStep--;
       this.updateStepUrl();
+      // stepper.previous();
     }
   }
 

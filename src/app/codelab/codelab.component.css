@@ -55,10 +55,13 @@ mat-card-content * {
   -webkit-font-smoothing: antialiased;
   position: relative;
   min-height: 48px;
+
+  transition: background-color .3s ease-in-out,
+              font-weight 1s ease-in-out;
 }
 
 .step.complete i {
-  background: #2bb673;
+  background-color: #2bb673;
   color: #fff;
 }
 
@@ -84,11 +87,18 @@ mat-card-content * {
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   border: solid 2px #2bb673;
+
+  transition: background-color .3s ease-in-out,
+              color .3s ease-in-out;
 }
 
 .step.active {
   background-color: #bdf0d7;
-  font-weight: bold;
+  /* font-weight: bold; */
+}
+
+.step.active span {
+  font-size: 1.1em;
 }
 
 .step i:before {
@@ -126,8 +136,25 @@ mat-card-content * {
   color: #80868B;
   line-height: 20px;
   -webkit-font-smoothing: antialiased;
+
+  transition: font-size .5s ease-in-out;
 }
 
 :not(pre) > code[class*="language-"], pre[class*="language-"] {
   font-size: 14px;
+}
+
+.controls {
+  position: fixed;
+  right: 0;
+  bottom: 16px;
+  padding: 0 16px;
+  width: calc(100% - 256px);
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls button {
+  color: #fff !important;
 }
