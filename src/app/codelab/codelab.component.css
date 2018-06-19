@@ -1,0 +1,133 @@
+mat-sidenav-container {
+  flex: 1;
+}
+
+mat-sidenav-container li {
+   padding: 10px 5px;
+}
+
+mat-sidenav {
+  /* padding: 16px; */
+  border-right: 1px solid #DADCE0;
+  background: #f5f5f5;
+  width: 256px;
+}
+
+mat-sidenav-content {
+  background: #e0e0e0;
+  display: flex !important;
+  /* justify-content: center; */
+  align-items: center;
+
+  flex-direction: column;
+  /* padding-bottom: 20px; */
+}
+
+.codelab-step {
+  width: 800px;
+  max-width: 100%;
+  margin: 20px 0;
+}
+
+mat-card {
+  background-color: #fff;
+}
+
+mat-card-content * {
+  max-width: 100%;
+}
+
+.steps {
+  padding: 16px 0;
+}
+
+.step {
+  font-size: 14px;
+  color: #80868B;
+  overflow: hidden;
+  padding: 6px 16px;
+  box-sizing: content-box;
+  line-height: 20px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  min-height: 48px;
+}
+
+.step.complete i {
+  background: #2bb673;
+  color: #fff;
+}
+
+.step.complete i:before, .step.complete i:after {
+  border-color: #2bb673;
+}
+
+.step i {
+  /* color: #FFFFFF; */
+  background: #80868B;
+  display: inline-block;
+  font-style: normal;
+  width: 26px;
+  min-width: 26px;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  height: 26px;
+  vertical-align: middle;
+  line-height: 26px;
+  margin-right: 8px;
+  font-size: 14px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  border: solid 2px #2bb673;
+}
+
+.step.active {
+  background-color: #bdf0d7;
+  font-weight: bold;
+}
+
+.step i:before {
+  margin-top: -44px;
+  margin-left: 12px;
+  content: '';
+  display: block;
+  border-left: 1px solid #2bb673;
+  border-right: 1px solid #2bb673;
+  width: 0;
+  height: 44px;
+  z-index: 1;
+}
+
+.step i:after {
+  margin-left: 12px;
+  content: '';
+  display: block;
+  border-left: 1px solid #2bb673;
+  border-right: 1px solid #2bb673;
+  /* border-right: 1px solid #80868B; */
+  width: 0;
+  height: 44px;
+  z-index: 1;
+  margin-top: 1px;
+}
+
+.step:first-of-type i:before, .step:last-of-type i:after {
+  display: none;
+}
+
+
+.step span {
+  font-size: 14px;
+  color: #80868B;
+  line-height: 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+:not(pre) > code[class*="language-"], pre[class*="language-"] {
+  font-size: 14px;
+}

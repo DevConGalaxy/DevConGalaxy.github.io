@@ -1,0 +1,26 @@
+<mat-sidenav-container>
+  <mat-sidenav #sidenav [mode]="isScreenSmall() ? 'over' : 'side'" [opened]="!isScreenSmall()" [mode]="isScreenSmall() ? 'over' : 'side'"
+    [fixedInViewport]="isScreenSmall()">
+    <div class="steps">
+      <div *ngFor="let step of tutorialDetails?.steps; index as idx" (click)="goToStep(idx + 1)" class="step" [class.complete]="idx + 1 <= currentStep"
+        [class.active]="currentStep === idx + 1">
+        <i>{{idx + 1}}</i>
+        <span>{{step.title}}</span>
+      </div>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <span>{{tutorialDetails?.title}}</span>
+      </mat-toolbar-row>
+    </mat-toolbar>
+    <div class="codelab-step">
+      <mat-card>
+        <mat-card-content markdown [src]="getTutorialMdUrl()" (error)="onError($event)"></mat-card-content>
+      </mat-card>
+      <button (click)="prev()">Prev</button>
+      <button (click)="next()">Next</button>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
