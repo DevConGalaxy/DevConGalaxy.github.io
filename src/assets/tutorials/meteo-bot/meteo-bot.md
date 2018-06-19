@@ -7,7 +7,11 @@ By the end of this tutorial, you will have a simple bot that is able to respond 
 
 The goal of this tutorial is to create a bot that is reponding to weather forecast requests using the Qorkd Weather Online API.
 
-![Final result](/assets/tutorials/meteo-bot/images/demo.png "Final result")
+<center>
+<img src="/assets/tutorials/meteo-bot/images/demo.png" title="Final result" alt="Final result" targer="_blank" />
+</center>
+
+You can view a demo of the bot [here](https://botfuel-webchat-demo.herokuapp.com/weather)
 
 
 ## What you will learn
@@ -39,3 +43,46 @@ You can find more information on how to configure your bot [here](https://docs.b
 ```bash
 BOTFUEL_APP_ID=<...> BOTFUEL_APP_KEY=<...> BOTFUEL_APP_TOKEN=<...> npm start config 
 ```
+
+
+---section---
+
+
+Pour ce bot, il vous faudra implémenter des dialogs, intents, extractors, et views. Vous pouvez trouver des tutoriels et la documentation de référence sur https://docs.botfuel.io/, et vous inspirer de botfuel-sample-starter (https://github.com/Botfuel/botfuel-sample-starter).
+
+Il vous faudra sans doute utiliser un PromptDialog (voir https://docs.botfuel.io/dialog/reference/dialogs/prompting-user-for-information) pour poser les questions à l’utilisateur.
+
+
+---section---
+
+---section---
+
+---section---
+
+```javascript
+
+const options = {
+       uri: 'http://api.worldweatheronline.com/premium/v1/weather.ashx',
+       qs: {
+         key: '556a3f21bf184a0c808150832182304', 
+         q: location,
+         format: 'json',
+         date: formattedDate,
+         lang: 'fr',
+       },
+       headers: {},
+       json: true, // Automatically parses the JSON string in the response
+};
+
+const requestResult = await request(options);
+```
+
+---section---
+
+Vous pouvez ajouter des Quick Replies à votre bot pour indiquer plus rapidement certaines dates (aujourd’hui, demain, …).
+Voir https://docs.botfuel.io/dialog/reference/messages#quickrepliesmessage pour plus de détails sur les Quick Replies.
+
+---section---
+
+Vous pouvez ajouter des images à afficher selon la météo (voir https://docs.botfuel.io/dialog/reference/images-in-bot-messages). 
+Des images sont disponibles ici: https://drive.google.com/drive/folders/11GxjsG3upQCuVMnl2uYJrVXPSy3Qsubp
