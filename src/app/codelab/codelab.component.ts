@@ -41,17 +41,22 @@ export class CodelabComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.route.queryParamMap.subscribe(params => {
-      if (!params.has("step")) {
-        this.currentStep = 1;
-        this.updateStepUrl(true);
-      } else {
-        this.currentStep = Number(params.get("step"));
-      }
-    });
     this.route.paramMap.subscribe(params => {
       this.tutorialId = params.get("id");
       this.getTutorial();
+      this.route.queryParamMap.subscribe(params => {
+        if (!params.has("step")) {
+          const lsStep = JSON.parse(localStorage.getItem(this.tutorialId));
+          if (lsStep) {
+            this.currentStep = lsStep.step;
+          } else {
+            this.currentStep = 1;
+          }
+          this.updateStepUrl(true);
+        } else {
+          this.currentStep = Number(params.get("step"));
+        }
+      });
     });
   }
 
@@ -127,7 +132,9 @@ export class CodelabComponent implements OnInit {
 
   updateStepUrl(replaceUrl = false) {
     this.calculateRemainingDuration();
+    if (this.tutorialId) {
+      localStorage.setItem(this.tutorialId, `{"step":${this.currentStep}}`);;
+    }
     this.router.navigate([], { queryParams: { step: this.currentStep }, replaceUrl: replaceUrl });
   }
-
 }
