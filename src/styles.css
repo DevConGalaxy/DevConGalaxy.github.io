@@ -9,6 +9,7 @@ html, body {
   margin: 0;
   color: #5F6368;
   font-family: 'Roboto', sans-serif;
+  background: #e0e0e0;
 }
 
 /* code[class*="language-"] {
@@ -32,4 +33,13 @@ mat-toolbar-row {
 
 [hidden] { 
   visibility: hidden !important;
+}
+
+mat-card {
+  background-color: #fff;
+}
+
+mat-card-content * {
+  max-width: 100%;
+  line-height: 1.5em;
 }

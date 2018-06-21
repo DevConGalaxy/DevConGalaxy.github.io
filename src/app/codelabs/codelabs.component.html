@@ -5,6 +5,11 @@
     <input class="searchbox" type="text" placeholder="Search..." [(ngModel)]="searchText"/>
   </mat-toolbar-row>
 </mat-toolbar>
+<header class="banner" >
+  <div>
+    <div class="headline">Welcome to Botfuel Tutorials Platform</div>
+  </div>
+</header>
 <div class="container">
   <div class="card" *ngFor="let codelab of codelabs  | filter : searchText">
     <mat-toolbar color="primary" class="header">

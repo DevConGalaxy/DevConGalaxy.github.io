@@ -56,14 +56,6 @@ mat-sidenav-content {
   top: 64px;
 }
 
-mat-card {
-  background-color: #fff;
-}
-
-mat-card-content * {
-  max-width: 100%;
-  line-height: 1.5em;
-}
 
 .steps {
   padding: 16px 0;
