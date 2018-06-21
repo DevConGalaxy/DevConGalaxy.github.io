@@ -29,6 +29,15 @@ mat-sidenav-content {
   left: 256px;
   right: 0;
   z-index: 1;
+  width: auto !important;
+}
+
+.title-toolbar .title {
+  flex: 1;
+}
+
+.title-toolbar i {
+  margin-right: 5px;
 }
 
 .title-toolbar a {
@@ -53,6 +62,7 @@ mat-card {
 
 mat-card-content * {
   max-width: 100%;
+  line-height: 1.5em;
 }
 
 .steps {
@@ -120,7 +130,7 @@ mat-card-content * {
 }
 
 .step i:before {
-  margin-top: -44px;
+  margin-top: -46px;
   margin-left: 10px;
   content: '';
   display: block;
@@ -183,4 +193,56 @@ mat-card-content * {
 
 .step-card.selected {
   display: block !important;
+}
+
+
+aside {
+  padding: 1.25rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #eee;
+  border-left-width: .25rem;
+  border-radius: .25rem;
+}
+
+aside.infos {
+  border-left-color: #2bb673;
+  background-color: #E6F4EA;
+  color: #155724;
+}
+
+aside.warning {
+  border-left-color: #f0ad4e;
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+aside.error {
+  border-left-color: #d9534f;
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.btn-info {
+  color: #fff;
+  background-color: #28a745;
+  border-color: rgb(43, 182, 115);
+  display: inline-block;
+  font-weight: 400;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  user-select: none;
+  border: 1px solid transparent;
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: .25rem;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+  text-decoration: none;
+}
+
+code {
+  background-color: #E8EAEd;
+  padding: 0.1em 0.3em;
 }

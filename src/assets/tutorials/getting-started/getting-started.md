@@ -1,15 +1,28 @@
 ---
-title: "Getting started"
-lesson: 1
-date: "01/01/2017"
-type: "lesson"
+title: Getting Started
+duration: 30
 ---
+
+--sep--
+---
+title: Introduction
+duration: 3
+---
+
+# Introduction
 
 By the end of this tutorial, you will have a simple bot that is able to respond to a greeting and say back your name. You will also learn how to add new functionality that will allow the bot to understand a travel intent.
 
+
+--sep--
+---
+title: Create a Botfuel App
+duration: 5
+---
+
 # Create a Botfuel App
 
-We will create a Botfuel App and use [Botfuel Trainer](/trainer/overview) to train our bot on sample user messages. The [Labs plan](https://www.botfuel.io/en/pricing) is free up to 5000 user messages per month.
+We will create a Botfuel App and use [Botfuel Trainer](/trainer/overview) to train our bot on sample user messages. The [Labs plan](https://www.botfuel.io/en/pricing) is free up to 5000 user messages per month. This should be way enough to do all our tutorials.
 
 ## Create a Botfuel developer account
 
@@ -23,35 +36,63 @@ Once you have created an account and are logged in, create an app by clicking on
 
 ![Creating an app](/assets/tutorials/getting-started/images/getting_started-create_app.png "Creating an app")
 
-Now name your app, provide an optional description, and select a language.
+Give your app a namem, an optional description, and select a language.
 
-The app’s language determines what language your bot will understand. Under the hood, our NLP APIs behave differently based on the language you choose. You won’t be able to change it later, so choose carefully!
+The language determines what language your bot will understand. Under the hood, our NLP APIs behave differently based on the language you choose. You won’t be able to change it later, so choose carefully!
 
 ![Creating an app 2](/assets/tutorials/getting-started/images/getting_started-create_app2.png "Creating an app")
 
-# Train the app
 
-On the `Trainer/Intents` page, click on the `Add intent` button to create an intent labelled `greetings` with the description “User greets the bot”. Leave the `User prompt` field empty. In `Training phrases`, fill in the phrase “Hello bot.” and then press `enter`. Click the button `Save`.
+--sep--
+---
+title: Train your app
+duration: 5
+---
+
+# Train your app
+
+On the `Trainer/Intents` page, click on the `Add intent` button to create an intent labelled `greetings` with the description “User greets the bot”. Leave the `User prompt` field empty.
+
+<aside class="warning">The label can only contains lowercase letters, numbers, hyphens without spaces. It also cannot start or end with a hyphen.</aside>
+
+The `Training phrases` lists all the phrases used to train your bot. Enter here what you believe your user may ask the bot.
+Here, fill in the phrase “Hello bot.” and then press `enter`. Click the button `Save`.
 
 ![Adding an intent](/assets/tutorials/getting-started/images/getting_started-create_intent.png "Adding an intent")
 
-Repeat the same steps for the `name` intent:
+Repeat the same steps and create an intent labeled `name`:
 
 ![Adding an intent 2](/assets/tutorials/getting-started/images/getting_started-create_intent2.png "Adding an intent 2")
 
-You can check that the app is properly trained by using the test panel and typing a sentence that is close to one of your training phrases:
+Note here, when you put `My name is Bob.`, our trainer detects Bob as a forename, one of 31 built-in entities recognised by Botfuel.
+
+<aside class="infos">Every time you click on the save button, your app is trained with the new training phrases.</aside>
+
+You can check that the app is properly trained by using the test panel on the right of your screen and typing a sentence that is close to one of your training phrases:
 
 ![Test panel](/assets/tutorials/getting-started/images/getting_started-testpanel.png "Test panel")
+
+--sep--
+---
+title: Install the starter bot
+duration: 5
+---
 
 # Install the starter bot
 
 For our tutorial, we will make a copy of an existing sample bot that is able to respond to a greeting and say back your name.
 
-You need `nodejs 8` to install the starter bot. Open a terminal and clone the sample starter bot:
+You need `nodejs 8` to install the starter bot. 
+
+There are two ways to get the code. You can clone the repository from GitHub:
 
 ```bash
 git clone https://github.com/Botfuel/botfuel-sample-starter.git
 ```
+
+Or alternatively, click the following link to download the code for this codelab:
+
+<a class="btn-info" href="https://github.com/Botfuel/botfuel-sample-starter/archive/master.zip" target="_blank"><i class="fas fa-download"></i> Download source code</a>
 
 Install dependencies:
 
@@ -62,7 +103,7 @@ npm install
 
 Notice that the bot ships with two dialogs named `greetings` and `name`. It's important that the names match the intents defined in Botfuel Trainer.
 
-# Bot components
+## Bot components
 
 A bot has four basic building components (for more details, see our [concepts](/platform/concepts)):
 
@@ -71,7 +112,7 @@ A bot has four basic building components (for more details, see our [concepts](/
 * Views: generate the bot messages.
 * Intents: An intent is a class (in the sense of classification) of user messages that is defined in Botfuel Trainer by sample sentences. An intent triggers a Dialog.
 
-Let’s illustrate this using the `Name` functionality:
+If we take our `Name` intent, here is what we have :
 
 | Component | What it does                                                             | Definition                             |
 | --------- | ------------------------------------------------------------------------ | -------------------------------------- |
@@ -80,23 +121,31 @@ Let’s illustrate this using the `Name` functionality:
 | Dialog    | Specifies it needs a `forename` entity named `name`                      | `src/dialogs/name-dialog.js`           |
 | View      | Replies with the recognized name                                         | `src/views/name-view.js`               |
 
-# Get the app credentials
+--sep--
+---
+title: Test your bot
+duration: 5
+---
+
+# Test your bot
+
+## Get the app credentials
 
 Locate the `Credentials` section in the `App settings` page and take note of the credentials. We will use the `BOTFUEL_APP_TOKEN`, `BOTFUEL_APP_ID` and `BOTFUEL_APP_KEY` values to run the bot.
 
 ![Credentials](/assets/tutorials/getting-started/images/getting_started-credentials.png "Credentials")
 
-# Run the bot
+## Run the bot
 
 Start the bot with the `BOTFUEL_APP_ID`, `BOTFUEL_APP_KEY` and `BOTFUEL_APP_TOKEN` environment variables using your app’s credentials:
 
-```shell
+```bash
 BOTFUEL_APP_TOKEN=<the BOTFUEL_APP_TOKEN> BOTFUEL_APP_ID=<the BOTFUEL_APP_ID> BOTFUEL_APP_KEY=<the BOTFUEL_APP_KEY> npm start
 ```
 
 If you set your app credentials right, you should see:
 
-```shell
+```bash
 2017-12-07T16:12:09.131Z - info: [Config] You didn't specify any config file, using default config.
 2017-12-07T16:12:09.131Z - info: [Environment] BOTFUEL_APP_TOKEN=<the BOTFUEL_APP_TOKEN>
 2017-12-07T16:12:09.133Z - info: [Environment] BOTFUEL_APP_ID=<the BOTFUEL_APP_ID>
@@ -109,6 +158,12 @@ Your bot can respond in two ways:
 
 * Greetings: if you say `hello`, it will simply reply with `Hello human!`
 * Name: if you say `My name is Bob` it will reply with `Nice to meet you Bob!`
+
+--sep--
+---
+title: Add new functionality
+duration: 5
+---
 
 # Add new functionality
 
@@ -200,11 +255,17 @@ module.exports = TravelView;
 
 Here we return different messages based on the value of the `destination` extracted. If no value was successfully extracted, we reply with `Where do you want to go?`.
 
+--sep--
+---
+title: Try it out
+duration: 5
+---
+
 ## Try it out
 
 Run your bot with:
 
-```shell
+```bash
 BOTFUEL_APP_TOKEN=<the BOTFUEL_APP_TOKEN> BOTFUEL_APP_ID=<the BOTFUEL_APP_ID> BOTFUEL_APP_KEY=<the BOTFUEL_APP_KEY> npm start
 ```
 

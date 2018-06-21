@@ -3,7 +3,7 @@
     [fixedInViewport]="isScreenSmall()"
     class="mat-elevation-z1">
     <div class="steps">
-      <div *ngFor="let step of tutorialDetails?.steps; index as idx" (click)="goToStep(idx + 1)" class="step" [class.complete]="idx + 1 <= currentStep"
+      <div *ngFor="let step of steps; index as idx" (click)="goToStep(idx + 1)" class="step" [class.complete]="idx + 1 <= currentStep"
         [class.active]="currentStep === idx + 1">
         <i>{{idx + 1}}</i>
         <span>{{step.title}}</span>
@@ -14,7 +14,8 @@
     <mat-toolbar color="primary" class="title-toolbar mat-elevation-z1">
       <mat-toolbar-row>
         <a routerLink="/"><i class="fas fa-chevron-left"></i></a>
-        <div>{{tutorialDetails?.title}}</div>
+        <div class="title">{{tutorialDetails?.title}}</div>
+        <div><div class="duration"><i class="far fa-clock"></i><span>{{remainDuration}} min</span></div></div>
       </mat-toolbar-row>
     </mat-toolbar>
     <div class="codelab-step">
@@ -22,8 +23,12 @@
         <mat-card-content markdown [data]="step" (error)="onError($event)"></mat-card-content>
       </mat-card>
       <div class="controls">
-        <button [hidden]="currentStep <= 1" mat-fab (click)="prev()" color="primary"><</button>
-        <button [hidden]="currentStep >= tutorialDetails?.steps?.length" mat-fab (click)="next()" color="primary">></button>
+        <button [hidden]="currentStep <= 1" mat-fab (click)="prev()" color="primary">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button [hidden]="currentStep >= steps.length" mat-fab (click)="next()" color="primary">
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
     </div>
   </mat-sidenav-content>

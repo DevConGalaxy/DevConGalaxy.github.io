@@ -31,6 +31,12 @@ You can view a demo of the bot [here](https://botfuel-webchat-demo.herokuapp.com
 
 Go create an account on [https://app.botfuel.io/apps](https://app.botfuel.io/apps)
 
+Then create an app on [https://app.botfuel.io/apps/create](https://app.botfuel.io/apps/create)
+
+Download the starter demo bot [here](https://github.com/Botfuel/botfuel-sample-starter/archive/master.zip)
+
+At the root of your projectm create a config.js file with :
+
 ```javascript
 module.exports = {
    locale: 'fr',
@@ -39,6 +45,7 @@ module.exports = {
 
 You can find more information on how to configure your bot [here](https://docs.botfuel.io/dialog/reference/configuration)
 
+In a terminal, run a `npm install`
 
 ```bash
 BOTFUEL_APP_ID=<...> BOTFUEL_APP_KEY=<...> BOTFUEL_APP_TOKEN=<...> npm start config 

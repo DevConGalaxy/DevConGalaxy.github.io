@@ -4,10 +4,9 @@ import { MarkdownParserService } from '../markdown-parser.service';
 import { TutorialService } from '../tutorial.service';
 
 import { MarkdownService } from 'ngx-markdown';
-import { MatStepper } from '@angular/material';
 
 const SMALL_WIDTH_BREAKPOINT = 720;
-import {trigger,state,style,animate,transition,keyframes} from '@angular/animations';
+import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
 
 @Component({
   selector: 'app-codelab',
@@ -28,24 +27,27 @@ export class CodelabComponent implements OnInit {
   private currentStep: number = 0;
   private tutorialId: string;
   private tutorialDetails: any;
+  private steps: Array<any> = new Array<any>();
   private tutorialMd: any;
-  private tutorialSteps: Array<string>;
+  private tutorialSteps: Array<string> = new Array<string>();
+  private totalDuration: number = 0;
+  private remainDuration: number = 0;
 
   constructor(private router: Router,
-              private route: ActivatedRoute,
-              private ts: TutorialService,
-              private md: MarkdownParserService,
-              private markdownService: MarkdownService) {
-     }
+    private route: ActivatedRoute,
+    private ts: TutorialService,
+    private md: MarkdownParserService,
+    private markdownService: MarkdownService) {
+  }
 
   ngOnInit() {
     this.route.queryParamMap.subscribe(params => {
       if (!params.has("step")) {
         this.currentStep = 1;
+        this.updateStepUrl(true);
       } else {
         this.currentStep = Number(params.get("step"));
       }
-      this.updateStepUrl();
     });
     this.route.paramMap.subscribe(params => {
       this.tutorialId = params.get("id");
@@ -59,14 +61,36 @@ export class CodelabComponent implements OnInit {
 
   getTutorial() {
     console.log(`tutorial : ${this.tutorialId}`);
-    this.ts.getConfig(this.tutorialId).subscribe(response => {
-      this.tutorialDetails = response;
-    });
+    // this.ts.getConfig(this.tutorialId).subscribe(response => {
+    //   this.tutorialDetails = response;
+    // });
+    let i = 0;
     this.ts.getTutorialMd(this.tutorialId).subscribe(response => {
-      // this.tutorialMd = this.md.convert(response.toString());
-      // this.tutorialMd = this.markdownService.compile(response.toString());
+
       this.tutorialMd = response;
-      this.tutorialSteps = response.split("---section---")
+
+      response.split('--sep--').map(str => {
+
+        let [, title, duration, , ...txt] = str.trim().split('\n');
+        title = title.split(':').pop();
+        duration = duration.split(':').pop();
+        console.log(`title : ${title} duration: ${duration}`);
+        if (i === 0) {
+          this.tutorialDetails = {
+            title: title.trim()
+          };
+        } else {
+          this.steps.push({
+            title: title.trim(),
+            duration: Number(duration.trim())
+          });
+          this.totalDuration += Number(duration);
+          this.tutorialSteps.push(txt.join("\n"));
+        }
+        i++;
+      });
+
+      this.calculateRemainingDuration();
     });
   }
 
@@ -74,31 +98,36 @@ export class CodelabComponent implements OnInit {
     return this.mediaMatcher.matches;
   }
 
-  goToStep(step: number, stepper: MatStepper) {
+  goToStep(step: number) {
     this.currentStep = step;
     this.updateStepUrl();
-    // stepper.selectedIndex = step - 1;
   }
 
-  next(stepper: MatStepper) {
+
+  next() {
     this.currentStep++;
     this.updateStepUrl();
-    // stepper.next();
-    // const convertedText = this.md.convert("## This is a super text");
-    // console.log(convertedText);
-    // debugger;
   }
 
-  prev(stepper: MatStepper) {
+  prev() {
     if (this.currentStep > 1) {
       this.currentStep--;
       this.updateStepUrl();
-      // stepper.previous();
     }
   }
 
-  updateStepUrl() {
-    this.router.navigate([], { queryParams: { step: this.currentStep }});
+  calculateRemainingDuration() {
+    this.remainDuration = this.totalDuration;
+    for (let i = 0; i < this.steps.length; i++) {
+      if (i < this.currentStep) {
+        this.remainDuration -= this.steps[i].duration;
+      }
+    }
+  }
+
+  updateStepUrl(replaceUrl = false) {
+    this.calculateRemainingDuration();
+    this.router.navigate([], { queryParams: { step: this.currentStep }, replaceUrl: replaceUrl });
   }
 
 }
