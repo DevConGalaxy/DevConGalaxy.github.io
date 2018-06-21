@@ -13,12 +13,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-
-
-
-import { MatStepperModule } from '@angular/material/stepper';
-import { CdkStepperModule } from '@angular/cdk/stepper';
-
+import { MatSelectModule } from '@angular/material/select';
 
 import { MarkdownParserService } from './markdown-parser.service';
 import { CodelabsComponent } from './codelabs/codelabs.component';
@@ -70,9 +65,7 @@ const routes: Routes = [
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,
-
-    MatStepperModule,
-    CdkStepperModule
+    MatSelectModule
   ],
   providers: [MarkdownParserService],
   bootstrap: [AppComponent]

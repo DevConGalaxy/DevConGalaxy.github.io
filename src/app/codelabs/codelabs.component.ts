@@ -9,11 +9,21 @@ import { TutorialService } from '../tutorial.service';
 export class CodelabsComponent implements OnInit {
 
   private codelabs: Array<any> = [];
+  
+  private sortingOptions: Array<any> = [
+    {value: 'alphabetical', viewValue: 'Alphabetical'},
+    {value: 'duration', viewValue: 'Duration'},
+    {value: 'recent', viewValue: 'Recent'}
+  ];
 
   constructor(private ts: TutorialService) {
     this.ts.getCodelabs().subscribe((response:any) => {
       this.codelabs = response.codelabs;
     });
+  }
+
+  filter(event) {
+    console.log(event);
   }
 
   ngOnInit() {

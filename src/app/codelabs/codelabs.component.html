@@ -1,27 +1,46 @@
 <mat-toolbar color="primary" class="header">
   <mat-toolbar-row>
-    <img src="/assets/images/botfuel-logo.png"/>
+    <img src="/assets/images/botfuel-logo.png" />
     <div class="title">Botfuel tutorials</div>
-    <input class="searchbox" type="text" placeholder="Search..." [(ngModel)]="searchText"/>
+    <input class="searchbox" type="text" placeholder="Search..." [(ngModel)]="searchText" />
   </mat-toolbar-row>
 </mat-toolbar>
-<header class="banner" >
+<header class="banner">
   <div>
     <div class="headline">Welcome to Botfuel Tutorials Platform</div>
+    <div>
+      Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat
+      vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae
+      est. Mauris placerat eleifend leo.
+    </div>
   </div>
 </header>
 <div class="container">
-  <div class="card" *ngFor="let codelab of codelabs  | filter : searchText">
-    <mat-toolbar color="primary" class="header">
-      <mat-toolbar-row>
-        <div class="duration"><i class="far fa-clock"></i><span>{{codelab.duration}} min</span></div>
-      </mat-toolbar-row>
-    </mat-toolbar>
-    <div class="content">
+  <div class="menu">
+    <mat-form-field>
+      <mat-select placeholder="Sort by" (selectionChange)="filter($event)" [value]="'alphabetical'">
+        <mat-option *ngFor="let sorting of sortingOptions" [value]="sorting.value">
+          {{ sorting.viewValue }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="cards">
+    <div class="card" *ngFor="let codelab of codelabs  | filter : searchText">
+      <mat-toolbar color="primary" class="header">
+        <mat-toolbar-row>
+          <div class="duration">
+            <i class="far fa-clock"></i>
+            <span>{{codelab.duration}} min</span>
+          </div>
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <div class="content">
         {{codelab.title}}
-    </div>
-    <div class="footer">
-      <button mat-button routerLink="/codelab/{{codelab.id}}">START</button>
+      </div>
+      <div class="footer">
+        <button mat-button routerLink="/codelab/{{codelab.id}}">START</button>
+      </div>
     </div>
   </div>
 </div>
