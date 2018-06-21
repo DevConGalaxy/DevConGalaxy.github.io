@@ -1,9 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MarkdownParserService } from '../markdown-parser.service';
 import { TutorialService } from '../tutorial.service';
 
 import { MarkdownService } from 'ngx-markdown';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 const SMALL_WIDTH_BREAKPOINT = 720;
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
@@ -37,7 +38,8 @@ export class CodelabComponent implements OnInit {
     private route: ActivatedRoute,
     private ts: TutorialService,
     private md: MarkdownParserService,
-    private markdownService: MarkdownService) {
+    private markdownService: MarkdownService,
+    public dialog: MatDialog) {
   }
 
   ngOnInit() {
@@ -53,10 +55,29 @@ export class CodelabComponent implements OnInit {
             this.currentStep = 1;
           }
           this.updateStepUrl(true);
+
+          if (this.currentStep > 1) {
+            this.openResumeDialog();
+          }
         } else {
           this.currentStep = Number(params.get("step"));
         }
       });
+    });
+  }
+
+  openResumeDialog(): void {
+    let dialogRef = this.dialog.open(ResumeDialog, {
+      width: '250px'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result === 'restart') {
+        this.currentStep = 1;
+        this.updateStepUrl();
+      }
+      console.log('The dialog was closed');
+      console.log(`result ": ${result}`);
     });
   }
 
@@ -136,5 +157,31 @@ export class CodelabComponent implements OnInit {
       localStorage.setItem(this.tutorialId, `{"step":${this.currentStep}}`);;
     }
     this.router.navigate([], { queryParams: { step: this.currentStep }, replaceUrl: replaceUrl });
+  }
+}
+
+
+@Component({
+  selector: 'resume-dialog',
+  template: `
+    <h2 mat-dialog-title>Resume Tutorial?</h2>
+    <mat-dialog-actions>
+      <button mat-raised-button (click)="close('restart')">Restart</button>
+      <button mat-raised-button color="primary" (click)="close('resume')">Continue</button>
+    </mat-dialog-actions>
+  `,
+})
+export class ResumeDialog {
+
+  constructor(
+    public dialogRef: MatDialogRef<ResumeDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: any) { }
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
+
+  close(val: string) {
+    this.dialogRef.close(val);
   }
 }

@@ -8,12 +8,13 @@ import { FormsModule }   from '@angular/forms';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 
 import { AppComponent } from './app.component';
-import { CodelabComponent } from './codelab/codelab.component';
+import { CodelabComponent, ResumeDialog } from './codelab/codelab.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { MarkdownParserService } from './markdown-parser.service';
 import { CodelabsComponent } from './codelabs/codelabs.component';
@@ -39,6 +40,7 @@ const routes: Routes = [
     AppComponent,
     CodelabComponent,
     CodelabsComponent,
+    ResumeDialog,
     FilterPipe
   ],
   imports: [
@@ -65,9 +67,11 @@ const routes: Routes = [
     MatCardModule,
     MatToolbarModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ],
   providers: [MarkdownParserService],
+  entryComponents: [ResumeDialog],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
