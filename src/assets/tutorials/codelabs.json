@@ -3,32 +3,44 @@
     {
       "id": "getting-started",
       "title": "Getting started",
-      "duration": 50
+      "duration": 50,
+      "language": "en"
     },
     {
-      "id": "meteo-bot",
-      "title": "Weather Forecast bot",
-      "duration": 27
+      "id": "weather-bot",
+      "title": "Faire un bot de météo",
+      "duration": 27,
+      "language": "fr"
+    },
+    {
+      "id": "calling-api",
+      "title": "Calling an API",
+      "duration": 27,
+      "language": "en"
     },
     {
       "id": "deploy-heroku",
       "title": "Deploying on Heroku",
-      "duration": 27
+      "duration": 27,
+      "language": "en"
     },
     {
       "id": "connect-messenger",
       "title": "Connecting to Messenger",
-      "duration": 27
+      "duration": 27,
+      "language": "en"
     },
     {
       "id": "qna-bot",
       "title": "Create a Q&A bot",
-      "duration": 27
+      "duration": 27,
+      "language": "en"
     },
     {
       "id": "integration-testing",
       "title": "Integration testing",
-      "duration": 27
+      "duration": 27,
+      "language": "en"
     }
   ]
 }

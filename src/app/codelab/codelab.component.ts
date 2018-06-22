@@ -68,7 +68,7 @@ export class CodelabComponent implements OnInit {
 
   openResumeDialog(): void {
     let dialogRef = this.dialog.open(ResumeDialog, {
-      width: '250px'
+      width: '350px'
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -164,7 +164,8 @@ export class CodelabComponent implements OnInit {
 @Component({
   selector: 'resume-dialog',
   template: `
-    <h2 mat-dialog-title>Resume Tutorial?</h2>
+    <h2 mat-dialog-title>Resume Tutorial</h2>
+    <mat-dialog-content>We noticed you have already started this tutorial. Do you want to continue it?</mat-dialog-content>
     <mat-dialog-actions>
       <button mat-raised-button (click)="close('restart')">Restart</button>
       <button mat-raised-button color="primary" (click)="close('resume')">Continue</button>

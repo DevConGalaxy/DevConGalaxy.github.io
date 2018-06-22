@@ -102,8 +102,17 @@
 }
 
 .card .footer {
-  padding: 12px 0;
+  padding: 12px;
   border-top: solid 1px #DADCE0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.card .footer .language {
+  display: flex;
+  align-items: center;
+  color: #adadad;
 }
 
 mat-card {

@@ -1,3 +1,14 @@
+---
+title: Weather Forecast bot
+duration: 30
+---
+
+--sep--
+---
+title: Introduction
+duration: 3
+---
+
 # Introduction
 
 This tutorial will be using the [botfuel-sample-starter](https://github.com/Botfuel/botfuel-sample-starter).
@@ -11,7 +22,7 @@ The goal of this tutorial is to create a bot that is reponding to weather foreca
 <img src="/assets/tutorials/meteo-bot/images/demo.png" title="Final result" alt="Final result" targer="_blank" />
 </center>
 
-You can view a demo of the bot [here](https://botfuel-webchat-demo.herokuapp.com/weather)
+You can view a demo of the bot <a href="https://botfuel-webchat-demo.herokuapp.com/weather" target="_blank">here</a>
 
 
 ## What you will learn
@@ -22,12 +33,17 @@ You can view a demo of the bot [here](https://botfuel-webchat-demo.herokuapp.com
 * How to test your bot in the webchat
 
 ## what you will need
-* A computer with a text editor installed ([like vscode](https://code.visualstudio.com/))
+* A computer with a text editor installed like 
+You can view a demo of the bot <a href="https://code.visualstudio.com/" target="_blank">vscode</a>
 * A recent version of a web browser
 * Basic knowledge javascript and nodejs
 
 
----section---
+--sep--
+---
+title: Create a Botfuel App
+duration: 5
+---
 
 Go create an account on [https://app.botfuel.io/apps](https://app.botfuel.io/apps)
 
@@ -52,7 +68,11 @@ BOTFUEL_APP_ID=<...> BOTFUEL_APP_KEY=<...> BOTFUEL_APP_TOKEN=<...> npm start con
 ```
 
 
----section---
+--sep--
+---
+title: Configure your bot
+duration: 5
+---
 
 
 Pour ce bot, il vous faudra implémenter des dialogs, intents, extractors, et views. Vous pouvez trouver des tutoriels et la documentation de référence sur https://docs.botfuel.io/, et vous inspirer de botfuel-sample-starter (https://github.com/Botfuel/botfuel-sample-starter).
@@ -60,11 +80,23 @@ Pour ce bot, il vous faudra implémenter des dialogs, intents, extractors, et vi
 Il vous faudra sans doute utiliser un PromptDialog (voir https://docs.botfuel.io/dialog/reference/dialogs/prompting-user-for-information) pour poser les questions à l’utilisateur.
 
 
----section---
+--sep--
+---
+title: Webchat
+duration: 5
+---
 
----section---
+--sep--
+---
+title: Implementation
+duration: 5
+---
 
----section---
+--sep--
+---
+title: Call the API
+duration: 5
+---
 
 ```javascript
 
@@ -84,12 +116,20 @@ const options = {
 const requestResult = await request(options);
 ```
 
----section---
+--sep--
+---
+title: Quick replies
+duration: 5
+---
 
 Vous pouvez ajouter des Quick Replies à votre bot pour indiquer plus rapidement certaines dates (aujourd’hui, demain, …).
 Voir https://docs.botfuel.io/dialog/reference/messages#quickrepliesmessage pour plus de détails sur les Quick Replies.
 
----section---
+--sep--
+---
+title: Add some images
+duration: 5
+---
 
 Vous pouvez ajouter des images à afficher selon la météo (voir https://docs.botfuel.io/dialog/reference/images-in-bot-messages). 
 Des images sont disponibles ici: https://drive.google.com/drive/folders/11GxjsG3upQCuVMnl2uYJrVXPSy3Qsubp

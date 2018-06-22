@@ -6,9 +6,11 @@ mat-sidenav-container li {
    padding: 10px 5px;
 }
 
+a, a:visited, a:hover {
+  color: #2bb673;
+  /* text-decoration: none; */
+}
 mat-sidenav {
-  /* padding: 16px; */
-  /* border-right: 1px solid #DADCE0; */
   background: #f5f5f5;
   width: 256px;
 }
@@ -16,11 +18,9 @@ mat-sidenav {
 mat-sidenav-content {
   background: #e0e0e0;
   display: flex !important;
-  /* justify-content: center; */
   align-items: center;
 
   flex-direction: column;
-  /* padding-bottom: 20px; */
 }
 
 .title-toolbar {
