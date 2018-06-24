@@ -30,7 +30,7 @@ duration: 3
 
 The architecture we will set up is standard for a chatbot, and consists of three main parts, as shown below:
 
-![Summary diagram](/assets/tutorials/qna-bot/images/howto_qna-summary_diagram.png "Summary diagram")
+![Summary diagram](./assets/tutorials/qna-bot/images/howto_qna-summary_diagram.png "Summary diagram")
 
 It is important to note that each part can be replaced without affecting the other parts:
 * <a href="https://docs.botfuel.io/dialog/reference/dialogs/overview" target="_blank">Botfuel Dialog</a>
@@ -54,25 +54,25 @@ In the `Trainer` section of the developer portal, navigate to the `QnAs` tab.
 
 Here you can fill in the questions and the corresponding answers for your bot.
 
-![QnA portal](/assets/tutorials/qna-bot/images/howto_qna-qnas.png "QnA portal")
+![QnA portal](./assets/tutorials/qna-bot/images/howto_qna-qnas.png "QnA portal")
 
 Click on the `Add Q&A` button on the upper right corner.
 Add a title to identify your Q&A, the answer you want to provide and a list of question related to the answer.
 Repeat the process for all your Q&As.
 
-![QnA portal](/assets/tutorials/qna-bot/images/howto_qna-qna1.png "QnA portal")
+![QnA portal](./assets/tutorials/qna-bot/images/howto_qna-qna1.png "QnA portal")
 
-![QnA portal](/assets/tutorials/qna-bot/images/howto_qna-qna2.png "QnA portal")
+![QnA portal](./assets/tutorials/qna-bot/images/howto_qna-qna2.png "QnA portal")
 
-![QnA portal](/assets/tutorials/qna-bot/images/howto_qna-qna3.png "QnA portal")
+![QnA portal](./assets/tutorials/qna-bot/images/howto_qna-qna3.png "QnA portal")
 
-![QnA portal](/assets/tutorials/qna-bot/images/howto_qna-qna4.png "QnA portal")
+![QnA portal](./assets/tutorials/qna-bot/images/howto_qna-qna4.png "QnA portal")
 
-![QnA portal](/assets/tutorials/qna-bot/images/howto_qna-qna5.png "QnA portal")
+![QnA portal](./assets/tutorials/qna-bot/images/howto_qna-qna5.png "QnA portal")
 
 You can test your bot at any moment on the right panel of the trainer.
 
-![Chat panel](/assets/tutorials/qna-bot/images/howto_qna-test_panel.png "Chat panel")
+![Chat panel](./assets/tutorials/qna-bot/images/howto_qna-test_panel.png "Chat panel")
 
 --sep--
 ---
@@ -144,7 +144,7 @@ Now that the bot is running, we will embed it in a web page using Botfuel Webcha
 
 From your app's page, access the `Connect` tab in the `Channels/Webchat` page to provide the URL of your server. By default, the bot listens to HTTP on port 5000.
 
-![Webchat configuration](/assets/tutorials/qna-bot/images/howto_qna-webchat_config.png "Webchat configuration")
+![Webchat configuration](./assets/tutorials/qna-bot/images/howto_qna-webchat_config.png "Webchat configuration")
 If you want to test the bot on your personal computer, make sure that it is reachable from the outside. If needed, you can use reverse port forwarding, ngrok or a similar service.  
 
 For more assistance on configuring Botfuel Webchat, see [Connecting to Webchat](./connecting-to-webchat).
@@ -180,6 +180,6 @@ Create a sample client web page containing your `BOTFUEL_APP_TOKEN`:
 
 Then open that page in your browser and start talking to your bot! The bot should answer, using your content in the Botfuel Trainer.
 
-![Demo on Botfuel Webchat](/assets/tutorials/qna-bot/images/howto_qna-demo_webchat.png "Demo on Botfuel Webchat")
+![Demo on Botfuel Webchat](./assets/tutorials/qna-bot/images/howto_qna-demo_webchat.png "Demo on Botfuel Webchat")
 
 When you have finished your bot, you can also add tests and configure other adapters, if needed. For more guidance, check out our [sample Q&A bot](https://github.com/Botfuel/botfuel-sample-customerservice)!

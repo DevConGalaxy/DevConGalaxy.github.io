@@ -19,7 +19,7 @@ By the end of this tutorial, you will have a simple bot that is able to respond 
 The goal of this tutorial is to create a bot that is reponding to weather forecast requests using the Qorkd Weather Online API.
 
 <center>
-<img src="/assets/tutorials/meteo-bot/images/demo.png" title="Final result" alt="Final result" targer="_blank" />
+<img src="./assets/tutorials/meteo-bot/images/demo.png" title="Final result" alt="Final result" targer="_blank" />
 </center>
 
 You can view a demo of the bot <a href="https://botfuel-webchat-demo.herokuapp.com/weather" target="_blank">here</a>

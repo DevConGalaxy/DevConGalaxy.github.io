@@ -21,7 +21,7 @@ For this tutorial, we’ll start from the <a href="https://github.com/Botfuel/bo
 
 For instance, the starter sample bot has the following behavior:
 
-<img src="/assets/tutorials/integration-testing/images/testing-sample.png" alt="Testing sample"/>
+<img src="./assets/tutorials/integration-testing/images/testing-sample.png" alt="Testing sample"/>
 
 Let’s write a test that ensures this simple functionality works.
 
@@ -69,7 +69,7 @@ In our case, they are simple `UserTextMessage`s.
 
 For example, to simulate this conversation:
 
-<img src="/assets/tutorials/integration-testing/images/testing-sample.png" alt="Testing sample"/>
+<img src="./assets/tutorials/integration-testing/images/testing-sample.png" alt="Testing sample"/>
 
 We’ll write:
 
@@ -138,7 +138,7 @@ Your app’s credentials are needed because your chatbot calls NLP APIs.
 
 You will see the following results:
 
-<img src="/assets/tutorials/integration-testing/images/testing-sample-2.png" alt="Testing output"/>
+<img src="./assets/tutorials/integration-testing/images/testing-sample-2.png" alt="Testing output"/>
 
 Congratulations, you have successfully automated a test case of your chatbot!
 

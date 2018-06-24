@@ -81,7 +81,7 @@ export class CodelabComponent implements OnInit {
   }
 
   getTutorialMdUrl() {
-    return `/assets/tutorials/${this.tutorialId}/${this.tutorialId}.md`;
+    return `./assets/tutorials/${this.tutorialId}/${this.tutorialId}.md`;
   }
 
   getTutorial() {
