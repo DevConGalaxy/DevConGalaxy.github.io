@@ -46,7 +46,7 @@ export class CodelabComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.tutorialId = params.get("id");
       this.getTutorial();
-      this.route.queryParamMap.subscribe (params => {
+      this.route.queryParamMap.subscribe(params => {
         if (!params.has("step")) {
           const localStorageStep = JSON.parse(localStorage.getItem(this.tutorialId));
           if (localStorageStep) {
@@ -68,16 +68,18 @@ export class CodelabComponent implements OnInit {
   }
 
   openResumeDialog(): void {
-    let dialogRef = this.dialog.open(ResumeDialog, {
-      width: '350px'
-    });
+    setTimeout(() => {
+      let dialogRef = this.dialog.open(ResumeDialog, {
+        width: '350px'
+      });
 
-    dialogRef.afterClosed().subscribe(result => {
-      if (result === 'restart') {
-        this.currentStep = 1;
-        this.updateStepUrl();
-      }
-    });
+      dialogRef.afterClosed().subscribe(result => {
+        if (result === 'restart') {
+          this.currentStep = 1;
+          this.updateStepUrl();
+        }
+      });
+    }, 0);
   }
 
   getTutorialMdUrl() {

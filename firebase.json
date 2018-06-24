@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/codelabs-platform",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
