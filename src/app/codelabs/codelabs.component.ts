@@ -7,10 +7,10 @@ import { TutorialService } from '../tutorial.service';
   styleUrls: ['./codelabs.component.css']
 })
 export class CodelabsComponent implements OnInit {
+  public searchText: string;
+  public codelabs: Array<any> = [];
 
-  private codelabs: Array<any> = [];
-
-  private sortingOptions: Array<any> = [
+  public sortingOptions: Array<any> = [
     { value: 'alphabetical', viewValue: 'Alphabetical' },
     { value: 'duration', viewValue: 'Duration' },
     { value: 'recent', viewValue: 'Recent' }

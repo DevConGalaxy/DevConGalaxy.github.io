@@ -25,14 +25,14 @@ import { trigger, state, style, animate, transition, keyframes } from '@angular/
 })
 export class CodelabComponent implements OnInit {
   private mediaMatcher: MediaQueryList = matchMedia(`(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`);
-  private currentStep: number = 0;
+  public currentStep: number = 0;
   private tutorialId: string;
-  private tutorialDetails: any;
-  private steps: Array<any> = new Array<any>();
+  public tutorialDetails: any;
+  public steps: Array<any> = new Array<any>();
   private tutorialMd: any;
-  private tutorialSteps: Array<string> = new Array<string>();
+  public tutorialSteps: Array<string> = new Array<string>();
   private totalDuration: number = 0;
-  private remainDuration: number = 0;
+  public remainDuration: number = 0;
 
   constructor(private router: Router,
     private route: ActivatedRoute,
