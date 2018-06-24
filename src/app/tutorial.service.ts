@@ -9,14 +9,14 @@ export class TutorialService {
   constructor(private http: HttpClient) { }
 
   getCodelabs() {
-    return this.http.get(`/assets/tutorials/codelabs.json`);
+    return this.http.get(`./assets/tutorials/codelabs.json`);
   }
 
   getConfig(tutorialId: string) {
-    return this.http.get(`/assets/tutorials/${tutorialId}/details.json`);
+    return this.http.get(`./assets/tutorials/${tutorialId}/details.json`);
   }
 
   getTutorialMd(tutorialId: string) {
-    return this.http.get(`/assets/tutorials/${tutorialId}/${tutorialId}.md`, {responseType: 'text'});
+    return this.http.get(`./assets/tutorials/${tutorialId}/${tutorialId}.md`, {responseType: 'text'});
   }
 }
