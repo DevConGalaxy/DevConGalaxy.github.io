@@ -46,18 +46,19 @@ export class CodelabComponent implements OnInit {
     this.route.paramMap.subscribe(params => {
       this.tutorialId = params.get("id");
       this.getTutorial();
-      this.route.queryParamMap.subscribe(params => {
+      this.route.queryParamMap.subscribe (params => {
         if (!params.has("step")) {
-          const lsStep = JSON.parse(localStorage.getItem(this.tutorialId));
-          if (lsStep) {
-            this.currentStep = lsStep.step;
+          const localStorageStep = JSON.parse(localStorage.getItem(this.tutorialId));
+          if (localStorageStep) {
+            this.currentStep = localStorageStep.step;
           } else {
             this.currentStep = 1;
           }
-          this.updateStepUrl(true);
 
           if (this.currentStep > 1) {
             this.openResumeDialog();
+          } else {
+            this.updateStepUrl(true);
           }
         } else {
           this.currentStep = Number(params.get("step"));
@@ -76,8 +77,6 @@ export class CodelabComponent implements OnInit {
         this.currentStep = 1;
         this.updateStepUrl();
       }
-      console.log('The dialog was closed');
-      console.log(`result ": ${result}`);
     });
   }
 

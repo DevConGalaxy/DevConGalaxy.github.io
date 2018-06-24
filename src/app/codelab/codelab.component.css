@@ -32,6 +32,11 @@ mat-sidenav-content {
   width: auto !important;
 }
 
+@media screen and (max-width: 720px) {
+  .title-toolbar {
+    left: 0px;
+  }
+}
 .title-toolbar .title {
   flex: 1;
 }

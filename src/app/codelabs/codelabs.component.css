@@ -64,6 +64,23 @@
   font-weight: 300;
 }
 
+.banner .content {
+  display: flex;
+  flex-direction: row;
+}
+
+.banner .logo {
+  font-size: 3em;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #2bb673;
+}
+
+.banner .logo .bracket {
+  margin: 0 2px;
+}
 .card {
   display: flex;
   position: relative;

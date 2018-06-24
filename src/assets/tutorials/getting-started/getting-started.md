@@ -11,7 +11,20 @@ duration: 3
 
 # Introduction
 
+This tutorial will be using the [botfuel-sample-starter](https://github.com/Botfuel/botfuel-sample-starter).
+
+
 By the end of this tutorial, you will have a simple bot that is able to respond to a greeting and say back your name. You will also learn how to add new functionality that will allow the bot to understand a travel intent.
+
+## What you will learn
+* How to create a bot on the Botfuel platform
+* How to train your bot
+* How add a new intent to your bot
+
+## what you will need
+* A computer with a text editor installed like 
+You can view a demo of the bot <a href="https://code.visualstudio.com/" target="_blank">vscode</a>
+* Basic knowledge javascript and nodejs
 
 
 --sep--
