@@ -83,6 +83,7 @@ mat-sidenav-content {
 
   transition: background-color .3s ease-in-out,
               font-weight 1s ease-in-out;
+  cursor: pointer;
 }
 
 .step.complete i {
