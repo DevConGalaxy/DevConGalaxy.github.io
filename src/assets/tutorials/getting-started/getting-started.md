@@ -22,8 +22,7 @@ By the end of this tutorial, you will have a simple bot that is able to respond 
 * How add a new intent to your bot
 
 ## what you will need
-* A computer with a text editor installed like 
-You can view a demo of the bot <a href="https://code.visualstudio.com/" target="_blank">vscode</a>
+* A computer with a text editor installed like <a href="https://code.visualstudio.com/" target="_blank">vscode</a>
 * Basic knowledge javascript and nodejs
 
 

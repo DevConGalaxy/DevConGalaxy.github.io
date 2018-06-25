@@ -9,17 +9,30 @@ title: Introduction
 duration: 3
 ---
 
-Because a chatbot built with Botfuel Dialog is a simple webserver, deploying to Heroku is dead simple!
+# Introduction
 
-In this tutorial, you'll learn how to deploy to Heroku a chatbot that uses Botfuel Webchat. If you’re not familiar with Heroku, it‘s a Platform as a Service (PaaS) that automates the configuration, deployment and ongoing management of applications in the cloud.
+A Chatbot built with Botfuel Dialog is a simple webserver, therefore, deploying to Heroku is very simple!
 
-Make sure you completed the <a href="./getting-started#get-api-credentials">Get API credentials</a> part of the <a href="./getting-started">Getting Started</a> tutorial and that you have your app’s credentials (App Token, App Id and App Key) on hand. You’ll also need a Heroku and a GitHub accounts.
+In this tutorial, you'll learn how to deploy your chatbot using Botfuel Webchat to Heroku.
+Heroku is a Platform as a Service (PaaS) that automates the configuration, deployment and ongoing management of applications in the cloud.
+
+## what you will need
+* Have completed the <a href="/#/codelab/getting-started) tutorial" target="_blank">Getting Started</a>
+* A working chatbot built with Botfuel dialog hosted on github
+* An <a href="https://www.heroku.com/" target="_blank">Heroku account</a>
+
 
 We’ll proceed in three steps:
 
 * Add Heroku and Botfuel Webchat configurations to your chatbot
 * Deploy it to Heroku
 * Try it in the Botfuel Webchat Playground
+
+--sep--
+---
+title: Configuration
+duration: 3
+---
 
 # Configuration
 
@@ -53,6 +66,12 @@ Make sure you have a `start` script in your `package.json` file:
 
 Once your bot is configured as shown above, push your code to a repository on GitHub.
 We’ll now connect your repository to Heroku.
+
+--sep--
+---
+title: Deployment
+duration: 3
+---
 
 # Deployment
 
@@ -89,6 +108,12 @@ Add the App Token, App Id and App Key of your app:
 <br>
 
 Done! Your bot should be up and running on `https://heroku-tutorial-bot.herokuapp.com` (replace `heroku-tutorial-bot` with the name of your app).
+
+--sep--
+---
+title: See it in action
+duration: 3
+---
 
 # See it in action
 
