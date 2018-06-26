@@ -29,7 +29,7 @@ By the end of this tutorial, you will have a simple bot that is able to respond 
 --sep--
 ---
 title: Create a Botfuel App
-duration: 5
+duration: 3
 ---
 
 # Create a Botfuel App
@@ -58,7 +58,7 @@ The language determines what language your bot will understand. Under the hood, 
 --sep--
 ---
 title: Train your app
-duration: 5
+duration: 3
 ---
 
 # Train your app
@@ -87,7 +87,7 @@ You can check that the app is properly trained by using the test panel on the ri
 --sep--
 ---
 title: Install the starter bot
-duration: 5
+duration: 6
 ---
 
 # Install the starter bot
@@ -136,7 +136,7 @@ If we take our `Name` intent, here is what we have :
 --sep--
 ---
 title: Test your bot
-duration: 5
+duration: 6
 ---
 
 # Test your bot
@@ -174,7 +174,7 @@ Your bot can respond in two ways:
 --sep--
 ---
 title: Add new functionality
-duration: 5
+duration: 6
 ---
 
 # Add new functionality
@@ -270,7 +270,7 @@ Here we return different messages based on the value of the `destination` extrac
 --sep--
 ---
 title: Try it out
-duration: 5
+duration: 2
 ---
 
 ## Try it out
