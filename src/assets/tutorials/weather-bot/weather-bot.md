@@ -47,16 +47,16 @@ title: Create a Botfuel App
 duration: 5
 ---
 
-# Setting up
+# Mise en place
 
-1. Go create an account on <a href="https://app.botfuel.io/apps" target="_blank">https://app.botfuel.io/apps</a>
-2. Then create an app on <a href="https://app.botfuel.io/apps/create" target="_blank">https://app.botfuel.io/apps/create</a>
+1. Allez créer un compte sur <a href="https://app.botfuel.io/apps" target="_blank">https://app.botfuel.io/apps</a>
+2. Puis créez une app sur <a href="https://app.botfuel.io/apps/create" target="_blank">https://app.botfuel.io/apps/create</a>
 
 Vous pourrez trouvez un guide pour créer une App <a href="http://localhost:4200/#/codelab/getting-started?step=2">ici</a>
-<aside class="infos">La langue que vous choisissez lors de la création du Bot ne peut être changée par la suite. Elle sera utilisée par le trainer pour comprendre les "Training Phrases".</aside>
+<aside class="infos"><b>Note:</b> La langue que vous choisissez lors de la création du Bot ne peut être changée par la suite. Elle sera utilisée par le trainer pour comprendre les "Training Phrases".</aside>
 
 
-## Install the starter bot
+## Installation du starter
 
 Pour commencer ce tutorial, nous allons utiliser un bot existant qui répond quand on lui dit bonjour et vous répond votre nom lorsque vous vous présentez.
 
@@ -68,7 +68,7 @@ git clone https://github.com/Botfuel/botfuel-sample-starter.git
 
 Ou, vous pouvez cliquer sur le lien suivant pour télécharger le code :
 
-<a class="btn-info" href="https://github.com/Botfuel/botfuel-sample-starter/archive/master.zip" target="_blank"><i class="fas fa-download"></i> Download source code</a>
+<a class="btn-info" href="https://github.com/Botfuel/botfuel-sample-starter/archive/master.zip" target="_blank"><i class="fas fa-download"></i> Télécharger le code source</a>
 
 A la racine de votre projet, créez un fichier config.js contenant:
 
@@ -97,7 +97,7 @@ duration: 3
 
 On the `Trainer/Intents` page, click on the `Add intent` button to create an intent labelled `greetings` with the description “User greets the bot”. Leave the `User prompt` field empty.
 
-<aside class="warning">The label can only contains lowercase letters, numbers, hyphens without spaces. It also cannot start or end with a hyphen.</aside>
+<aside class="warning"><b>Attention:</b> The label can only contains lowercase letters, numbers, hyphens without spaces. It also cannot start or end with a hyphen.</aside>
 
 The `Training phrases` lists all the phrases used to train your bot. Enter here what you believe your user may ask the bot.
 Here, fill in the phrase “Hello bot.” and then press `enter`. Click the button `Save`.
@@ -110,7 +110,7 @@ Repeat the same steps and create an intent labeled `name`:
 
 Note here, when you put `My name is Bob.`, our trainer detects Bob as a forename, one of 31 built-in entities recognised by Botfuel.
 
-<aside class="infos">Every time you click on the save button, your app is trained with the new training phrases.</aside>
+<aside class="infos"><b>Note:</b> Every time you click on the save button, your app is trained with the new training phrases.</aside>
 
 You can check that the app is properly trained by using the test panel on the right of your screen and typing a sentence that is close to one of your training phrases:
 
@@ -125,7 +125,7 @@ duration: 10
 
 ## Configuration du bot
 
-Nous devons dire à notre bot que nous allons le déployer en utilisant l'adapter webchat
+Pour l'instant, notre chatbot fonctionne avec l'adapter `shell` par défaut. Nous devons lui dire que nous allons le déployer en utilisant l'adapter webchat.
 
 Modifiez votre fichier `config.js`et ajoutez-y l'adapter du webchat:
 
@@ -166,7 +166,7 @@ Vous pouvez voir deux champs sur la partie droite de votre écran:
 Le champ `Bot endpoint` défini l'url sur laquelle le webchat envera les messages entrés par l'utilisateur. Dans notre cas, notre chatbot écoute sur `http://localhost:5000`
 
 <aside class="warning">
-Nous avons ici un petit problème. En effet, vous aurez compris que `localhost` n'est pas accessible depuis le webchat. Nous devons disposer d'une url pouvant être accessible depuis internet.
+<b>Attention:</b> Nous avons ici un petit problème. En effet, vous aurez compris que `localhost` n'est pas accessible depuis le webchat. Nous devons disposer d'une url pouvant être accessible depuis internet.
 Pour cela, nous recommandons d'utiliser un utilitaire comme ngrok.<br />
 Suivez les <a href="https://ngrok.com/download">instructions</a> pour votre système d'exploitation puis lancez la commnde :
 
@@ -228,7 +228,7 @@ En allant dans l'onglet `Code` du portail, vous trouverez un bout de code a olle
 
 Vous pouvez retrouver toutes les options afin de configurer et personaliser le webchat <a href="https://docs.botfuel.io/api#webchat" target="_blank">ici</a>.
 
-Voici un exemple de page web intégrand un Webchat
+Voici un exemple de page web intégrant le Webchat. 
 
 ```html
 <!DOCTYPE html>
@@ -270,6 +270,11 @@ Voici un exemple de page web intégrand un Webchat
 </html>
 ```
 
+Il ne vous reste plus qu'à lancer votre page html en double cliquand dessus.
+Vous devriez avoir une page web avec le bouton  pour lancer le chatbot en bas à droite.
+<center>
+<img src="./assets/tutorials/weather-bot/images/webchat0.png" target="_blank" />
+</center>
 --sep--
 ---
 title: Ajouter la fonctionalité météo
@@ -278,10 +283,16 @@ duration: 20
 
 # Ajouter la fonctionalité météo
 
-## Créer l'intent Meteo
+## Créez l'intent Meteo
+
+Nous allons devoir rajouter un nouvel `intent` dans le trainer. Pour cela, répétez ce que vous avez fait à l'étape 3 pour créer l'intent meteo
+
+<center>
+<img src="./assets/tutorials/weather-bot/images/create-intent-meteo.png" target="_blank" />
+</center>
 
 
-## Créer l'extracteur d'entités Meteo
+## Créez l'extracteur d'entités Meteo
 
 Créer un nouveau fichier `meteo-extractor.js` dans le dossier `src/extractors` afin d'indiquer au bot que nous cherchons à extraire des noms de ville et des dates.
 
@@ -298,13 +309,13 @@ module.exports = MeteoExtractor;
 ```
 
 
-## Créer le Dialog Meteo
+## Créez le Dialog Meteo
 
 Créez un fichier `meteo-dialog.js` dans le dossier `src/dialogs`. 
 
 Comme notre bot à besoin de la ville et de la date afin de pouvoir répondre à l'utilisateur, le weather dialog est donc un `PromptDialog``
 
-Nous devons indiquer à notre bot que nous allons extraire une entité de type `city` ainsi qu'une entité de type `time`. Les clés `location` et `date` nous permettrons d'accéder aux valeures extraites.
+Nous devons indiquer à notre bot que nous allons extraire une entité de type (dimension) `city` ainsi qu'une entité de type `time`. Les clés `location` et `date` nous permettrons d'accéder aux valeures extraites.
 
 ```javascript
 const { PromptDialog } = require('botfuel-dialog');
@@ -317,7 +328,6 @@ MeteoDialog.params = {
   entities: {
     location: {
       dim: 'city',
-      priority: 10,
     },
     date: {
       dim: 'time',
@@ -331,7 +341,17 @@ module.exports = MeteoDialog;
 ## Créer la view Meteo
 
 Créez un fichier `meteo-view.js` dans le dossier `src/views`. 
+La vue va vous permettre de générer un message basés sur les données traitées dans le dialog. Botfuel peut générer plusieurs types de messages :
+* Messages texte et quick replies
+* Images
+* Liens
+* Bouttons avec gestion des clicks
+* Carousels
 
+Nous allons dans un premier temps utiliser `BotTextMessage` qui permet de renvoyer un simple texte l'utilisateur.
+Les vues doivent implementer la méthods `render()` qui prend en paramètre le `userMessage` et un objet de données envoyées par le dialog correspondant à la vue. On renvoi ensuite un tableau de <a href="https://docs.botfuel.io/dialog/reference/messages">messages</a>
+
+Pour plus d'information sur le fonctionnement des vues, n'hésitez pas à aller consulter la <a href="https://docs.botfuel.io/dialog/reference/views" target="_blank">documentation</a>
 ```javascript
 const { PromptView, BotTextMessage } = require('botfuel-dialog');
 
@@ -361,6 +381,8 @@ duration: 5
 # Appeler l'API de météo
 
 Pour l'instant, notre bot ne renvoi pas la météo
+
+
 ## Installer node-fetch
 
 Commencez par installer le package nodejs `node-fetch` afin de pouvoir faire des appels REST à l'API de météo
@@ -369,7 +391,20 @@ Commencez par installer le package nodejs `node-fetch` afin de pouvoir faire des
 npm install node-fetch --save
 ```
 
-<aside class="infos">node-fetch est une bibliothèque qui apporte window.fetch dans Nodejs</aside>
+<aside class="infos"><b>Note:</b> node-fetch est une bibliothèque qui apporte window.fetch dans Nodejs</aside>
+
+
+## Appeler l'API
+
+Vous allez devoir appeler l'<a href="https://developer.worldweatheronline.com/api/docs/" target="_blank">API worldweatheronline</a> afin de récupérer les infos météorologiques.
+
+```javascript
+const response = await fetch(`http://api.worldweatheronline.com/premium/v1/weather.ashx?key=8c021b4e600b4cd8b24194452182606&q=${location}&format=json&date=${formattedDate}&lang=fr`);      
+      const data = await response.json();
+      const weatherData = data.data;
+```
+
+Commencez par récupérer les entités extraites dans `meteo-dialog.js` et pensez à vérifier que l'utilisateur à bien rentré toutes les informations nécessaires pour faire l'appel à l'API.
 
 Dans le fichier meteo-dialog.js
 ```javascript
@@ -392,29 +427,32 @@ class MeteoDialog extends PromptDialog {
 }
 ```
 
-Dans le fichier meteo-view.js
+## Afficher le résultat
+
+Dans le fichier `meteo-view.js`, créez un nouveau `BotTestMessage` qui renverra la météo en indiquant la description ainsi que les températures minimales et maximales.
+
 ```javascript
 ...
 if (missingEntities.size === 0) {
-  if (date - Date.now() > 15 * 86400000) {
-    messages.push(new BotTextMessage("Desolé, On n'a pas les données pour cette date"));
-  } else {
-    messages.push(
-      new BotTextMessage(
-        `Voila la météo pour ${location} le ${date.getDate()}-${date.getMonth() +
-          1}-${date.getFullYear()}.`,
-      ),
-    );
+  messages.push(
+    new BotTextMessage(
+      `Voila la météo pour ${location} le ${date.getDate()}-${date.getMonth() +
+        1}-${date.getFullYear()}.`,
+    ),
+  );
 
-    const maxTemp = weatherData.weather[0].maxtempC;
-    const minTemp = weatherData.weather[0].mintempC;
-    const description = weatherData.weather[0].hourly[0].lang_fr['0'].value;
+  const maxTemp = weatherData.weather[0].maxtempC;
+  const minTemp = weatherData.weather[0].mintempC;
+  const description = weatherData.weather[0].hourly[0].lang_fr['0'].value;
 
-    messages.push(new BotTextMessage(`${description}, ${minTemp} - ${maxTemp} degrés Celsius`));
-  }
+  messages.push(new BotTextMessage(`${description}, ${minTemp} - ${maxTemp} degrés Celsius`));
 }
 ...
 ```
+<br />
+<hr />
+
+L'API ne permet pas de récupérer la météo lorsque la date est dans plus de 15 jours. Rajoutez un test afin de vérifier que l'utilisateur ne demande pas une date dans le passé ou trop dans le futur.
 
 --sep--
 ---
@@ -427,7 +465,8 @@ duration: 10
 Lorsque nous avons rentré les Training Phrases dans le trainer, nous avons entré des phrases comme `Quel temps fera-t-il demain?`.
 Notre bot doit être capable de voir que l'information sur le lieu manque et la demander à l'utilisateur pour pouvoir lui donner la météo
 
-Dans le fichier meteo-view.js
+Vous pouvez tester la présence des entités dans le fichier `meteo-view.js` afin de renvoyer un message à l'utilisateur pour lui demander plus d'informations.
+
 ```javascript
 ...
 if (missingEntities.size !== 0) {
@@ -448,8 +487,11 @@ if (missingEntities.size !== 0) {
 title: Ajouter des quick replies
 duration: 5
 ---
-Vous pouvez ajouter des Quick Replies à votre bot pour indiquer plus rapidement certaines dates (aujourd’hui, demain, …).
-<a href="https://docs.botfuel.io/dialog/reference/messages#quickrepliesmessage" target="_blank">documentation des Quick replies</a>
+
+Vous pouvez ajouter des `Quick Replies` à votre bot pour indiquer plus rapidement certaines dates (aujourd’hui, demain, …).
+Pour en apprendre plus sur les `Quick Replies`, rendez-vous dans la <a href="https://docs.botfuel.io/dialog/reference/messages#quickrepliesmessage" target="_blank">documentation</a>
+
+Dans le fichier `meteo-view.js`, vous pouvez renvoyer des `QuickrepliesMessage` qui proposeront des valeurs à l'utilisateur
 
 Dans le fichier meteo-view.js
 ```javascript
@@ -469,6 +511,11 @@ if (missingEntities.size !== 0) {
 ...
 ```
 
+Vous devriez arriver au résultat ci-dessous lorsque vous demandez la météo sans spécifier de jour.
+
+<center>
+<img src="./assets/tutorials/weather-bot/images/quickreplies.png" />
+</center>
 
 --sep--
 ---
@@ -476,22 +523,19 @@ title: Ajouter des images
 duration: 5
 ---
 
-* Créer un dossier static/images
-* 
+# Ajouter des images
 
-Dans weather-view.js
+Pour termier sur une pointe de couleur, rajoutons quelques images à note bot en utilisant `BotImageMessage`.
+
+Vous pouvez télécharger un pack d'images <a href="https://drive.google.com/drive/folders/11GxjsG3upQCuVMnl2uYJrVXPSy3Qsubp" target="_blank">ici</a>
+
+`BotImageMessage` est aussi simple à utiliser que `BotTextMessage`ou encore `QuickrepliesMessage``
 
 ```javascript
-if (Object.keys(images).includes(description)) {
-  messages.push(
-    new BotImageMessage(WebAdapter.getStaticUrl(`images/${images[description]}`)),
-  );
-}
+new BotImageMessage(WebAdapter.getStaticUrl(`images/neige.jpg`)),
 ```
 
 Pour en savoir plus sur comment marche BotImageMessage, rendez-cous sur la <a href="https://docs.botfuel.io/dialog/reference/images-in-bot-messages" target="_blank">documentation</a>
-
-Vous pouvez télécharger un pack d'images <a href="https://drive.google.com/drive/folders/11GxjsG3upQCuVMnl2uYJrVXPSy3Qsubp" target="_blank">ici</a>
 
 
 --sep--
