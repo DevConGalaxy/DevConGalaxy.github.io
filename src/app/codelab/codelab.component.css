@@ -244,6 +244,11 @@ aside.error {
   text-decoration: none;
 }
 
+.btn-info:hover {
+  color: #fff;
+  background-color: #2c823f;
+}
+
 code {
   background-color: #E8EAEd;
   padding: 0.1em 0.3em;
