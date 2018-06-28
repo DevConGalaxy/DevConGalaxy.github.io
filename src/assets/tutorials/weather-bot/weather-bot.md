@@ -11,11 +11,11 @@ duration: 3
 
 # Introduction
 
-Ce tutorial utilisera le <a href="https://github.com/Botfuel/botfuel-sample-starter">botfuel-sample-starter</a>
+Ce tutoriel utilisera le <a href="https://github.com/Botfuel/botfuel-sample-starter">botfuel-sample-starter</a>
 
-A la fin de ce tutorial, vous aurez construit un bot capable de répondre à un utilisateur qui se présente. Vous aurez aussi vu comment ajouter de nouvelles fonctionnalités pour répondre lorsqu'un utilisateur demande la météo.
+A la fin de ce tutoriel, vous aurez construit un bot capable de répondre à un utilisateur qui se présente. Vous aurez aussi vu comment ajouter de nouvelles fonctionnalités pour répondre lorsqu'un utilisateur demande la météo.
 
-Le but de ce tutorial est donc de créer un bot qui donnera la météo en utilisant l'API de World Weather Online.
+Le but de ce tutoriel est donc de créer un bot qui donnera la météo en utilisant l'API de World Weather Online.
 
 <center>
 <img src="./assets/tutorials/weather-bot/images/demo.png" title="Final result" alt="Final result" targer="_blank" />
@@ -26,7 +26,7 @@ Vous pouvez voir une démo du bot <a href="https://botfuel-webchat-demo.herokuap
 
 ## Vous allez apprendre
 * A créer un bot sur la plateforme Botfuel
-* A entrainer votre bot
+* A entraîner votre bot
 * A faire appel à une API pour répondre à l'utilisateur
 * A envoyer des Quick Replies via votre chatbot
 * A tester votre bot dans le Webchat
@@ -50,21 +50,21 @@ duration: 5
 1. Allez créer un compte sur <a href="https://app.botfuel.io/apps" target="_blank">https://app.botfuel.io/apps</a>
 2. Puis créez une app sur <a href="https://app.botfuel.io/apps/create" target="_blank">https://app.botfuel.io/apps/create</a>
 
-Vous pourrez trouvez un guide pour créer une App <a href="https://codelabs-65b58.firebaseapp.com/#/codelab/getting-started?step=2" target="_blank">ici</a>
-<aside class="infos"><b>Note:</b> La langue que vous choisissez lors de la création du Bot ne peut être changée par la suite. Elle sera utilisée par le trainer pour comprendre les "Training Phrases".</aside>
+Vous pourrez trouver un guide pour créer une App <a href="https://codelabs-65b58.firebaseapp.com/#/codelab/getting-started?step=2" target="_blank">ici</a>
+<aside class="infos"><b>Note:</b> La langue choisie  lors de la création du Bot ne peut être changée par la suite. Elle sera utilisée par le trainer pour comprendre les "Training Phrases".</aside>
 
 
 ## Installation du starter
 
-Pour commencer ce tutorial, nous allons utiliser un bot existant qui répond quand on lui dit bonjour et vous répond votre nom lorsque vous vous présentez.
+Pour commencer ce tutoriel, nous allons utiliser un bot existant qui répond quand on lui dit "bonjour" et vous répond votre nom lorsque vous vous présentez.
 
-Pour récuperer le code, vous pouvez soit cloner le repository Github:
+Pour récupérer le code, vous pouvez soit cloner le repository Github:
 
 ```bash
 git clone https://github.com/Botfuel/botfuel-sample-starter.git
 ```
 
-Ou, vous pouvez cliquer sur le lien suivant pour télécharger le code :
+Soit cliquer sur le lien suivant pour télécharger le code :
 
 <a class="btn-info" href="https://github.com/Botfuel/botfuel-sample-starter/archive/master.zip" target="_blank"><i class="fas fa-download"></i> Télécharger le code source</a>
 
@@ -78,39 +78,39 @@ module.exports = {
 
 Vous pouvez trouver plus d'informations sur comment configurer votre bot <a href="https://docs.botfuel.io/dialog/reference/configuration" target="blank">ici</a>
 
-Rendez-vous ensuite dans le repertoire de votre projet puis faite un `npm install`
+Rendez-vous ensuite dans le répertoire de votre projet puis faite un `npm install`
 
-Il ne vous reste ensuite plus qu'à lancer votre bot dans un terminal grâce aux informations que vous trouverez dans la page `App settings` du trainer.
+Il ne vous reste plus qu'à lancer votre bot dans un terminal grâce aux informations que vous trouverez dans la page `App settings` du trainer.
 ```bash
 BOTFUEL_APP_ID=<...> BOTFUEL_APP_KEY=<...> BOTFUEL_APP_TOKEN=<...> npm start config 
 ```
 
 --sep--
 ---
-title: Entrainez votre bot
+title: Entraînez votre bot
 duration: 3
 ---
 
 # Entrainez votre bot
 
-Dans la page `Trainer/Intents`, cliquez sur le bouton `Add intent` afin de créer un intent labelisé `greetings` avec la description "L'utilisateur salut le bot". Laisser le champ `User prompt` vide.
+Dans la page `Trainer/Intents`, cliquez sur le bouton `Add intent` afin de créer un intent labellisé `greetings` avec la description "L'utilisateur salut le bot". Laissez le champ `User prompt` vide.
 
 <aside class="warning"><b>Attention:</b> Le label ne peut contenir que des lettres en minuscule, des nombres, des traits d'unions sans espace. Il ne peut pas non plus commencer ou finir par un trait d'union.</aside>
 
-La liste des `Training phrases` liste toutes les phrases utilisées pour entrainer le bot. Entrez ce que vous pensez que vos utilisateurs demanderont au bot.
+La section des `Training phrases` liste toutes les phrases utilisées pour entraîner le bot. Entrez ce que vous pensez que vos utilisateurs demanderont au bot.
 Ici, entrez la phrase "Bonjour bot" puis cliquez sur `entrer`. Cliquez ensuite sur le bouton `Save`.
 
 ![Adding an intent](./assets/tutorials/weather-bot/images/getting_started-create_intent.png "Adding an intent")
 
-Faites la même chose pour créer un intent labélisé `name`:
+Faites la même chose pour créer un intent labellisé `name`:
 
 ![Adding an intent 2](./assets/tutorials/weather-bot/images/getting_started-create_intent2.png "Adding an intent 2")
 
 Notez que ici, quand votre entrez `Mon nom est Bob`, notre trainer détecte que Bob est un prénom, une des 31 entités reconnues par défaut par Botfuel.
 
-<aside class="infos"><b>Note:</b> A chaque fois que vous cliquez sur le bouton <code>save</code>, votre bot est entrainé avec les nouvelles phrases d'entrainement.</aside>
+<aside class="infos"><b>Note:</b> A chaque fois que vous cliquez sur le bouton <code>save</code>, votre bot est entraîné avec les nouvelles "Training phrases".</aside>
 
-Vous pouvez vérifier que votre bot est bien entrainé en utilisant le paneau de test sur la droite de votre écran en tapant une phrases proche de celles utilisées pour l'entrainement:
+Vous pouvez vérifier que votre bot est bien entraîné en utilisant le panneau de test sur la droite de votre écran en tapant une phrases proche de celles utilisées pour l'entraînement:
 
 ![Test panel](./assets/tutorials/weather-bot/images/getting_started-testpanel.png "Test panel")
 
@@ -123,9 +123,9 @@ duration: 10
 
 ## Configuration du bot
 
-Pour l'instant, notre chatbot fonctionne avec l'adapter `shell` par défaut. Nous devons lui dire que nous allons le déployer en utilisant l'adapter webchat.
+Pour l'instant, notre chatbot fonctionne avec l'adapteur `shell` par défaut. Nous devons lui dire que nous allons le déployer en utilisant l'adapteur webchat.
 
-Modifiez votre fichier `config.js`et ajoutez-y l'adapter du webchat:
+Modifiez votre fichier `config.js`et ajoutez-y l'adapteur du webchat:
 
 ```bash
 module.exports = {
@@ -136,7 +136,7 @@ module.exports = {
 };
 ```
 
-Vous devez ensuite redémarrer votre bot afin de prendre en compte le nouvel adapter.
+Vous devez ensuite redémarrer votre bot afin de prendre en compte le nouvel adapteur.
 
 Si tout se passe bien, votre terminal devrait ressembler à cela:
 
@@ -147,18 +147,18 @@ Si tout se passe bien, votre terminal devrait ressembler à cela:
 2018-02-16T15:37:06.395Z - info: [WebAdapter] run: listening on port 5000
 ```
 
-La dernière ligne indique que votre bot écoute les messages sur `http://localhost:5000`. Nous allons maintenant pouvoir connecter le webchat sur notre bot!
+La dernière ligne indique que votre bot écoute les messages sur `http://localhost:5000`. Nous allons maintenant pouvoir connecter le webchat sur notre bot !
 
 
 ## Affichage dans le webchat
 
-Rendez-vous dans la partie Channel > Webchat de votre bot sur <a href="https://app.botfuel.io" target="_blank">https://app.botfuel.io</a>
+Rendez-vous dans la partie `Channel > Webchat` de votre bot sur <a href="https://app.botfuel.io" target="_blank">https://app.botfuel.io</a>
 
 <center>
 <img src="./assets/tutorials/weather-bot/images/webchat-config.png" />
 </center>
 
-Vous pouvez voir deux champs sur la partie droite de votre écran:
+Vous pouvez voir deux champs sur la partie droite de votre écran :
 * Bot endpoint
 * Allowed origins
 
@@ -173,7 +173,7 @@ Suivez les <a href="https://ngrok.com/download">instructions</a> pour votre syst
 ngrok http 5000
 ```
 
-Vous devriez ensuite avoir quelque chose comme ci-dessous: 
+Vous devriez ensuite avoir quelque chose comme ci-dessous : 
 
 <center>
 <img src="./assets/tutorials/weather-bot/images/ngrok.png" />
@@ -199,7 +199,7 @@ Cliquez ensuite sur le bouton `Save`.
 
 ## Test
 
-Vous pouvez vérifier que votre chatbot marche dans le Webchat Playground en envoyant des messages
+Vous pouvez vérifier que votre chatbot marche dans le Webchat Playground en envoyant des messages.
 
 <center>
 <img src="./assets/tutorials/weather-bot/images/webchat-starter-conversation.png">
@@ -214,7 +214,7 @@ duration: 5
 
 # Ajouter votre bot sur votre site
 
-En allant dans l'onglet `Code` du portail, vous trouverez un bout de code a coller dans votre site pour afficher le Webchat de votre bot.
+En allant dans l'onglet `Code` du portail, vous trouverez un bout de code à coller dans votre site pour afficher le Webchat de votre bot.
 
 ```javascript
 <script src="https://cdn.jsdelivr.net/npm/botfuel-webchat-client@3.13.8"></script>
@@ -225,7 +225,7 @@ En allant dans l'onglet `Code` du portail, vous trouverez un bout de code a coll
   </script>
 ```
 
-Vous pouvez retrouver toutes les options afin de configurer et personaliser le webchat <a href="https://docs.botfuel.io/api#webchat" target="_blank">ici</a>.
+Vous pouvez retrouver toutes les options afin de configurer et personnaliser le webchat <a href="https://docs.botfuel.io/api#webchat" target="_blank">ici</a>.
 
 Voici un exemple de page web intégrant le Webchat. 
 
@@ -276,7 +276,7 @@ Vous devriez avoir une page web avec le bouton  pour lancer le chatbot en bas à
 </center>
 --sep--
 ---
-title: Ajouter la fonctionalité météo
+title: Ajouter la fonctionnalité météo
 duration: 20
 ---
 
@@ -284,14 +284,14 @@ duration: 20
 
 ## Créez l'intent Météo
 
-Nous allons devoir rajouter un nouvel `intent` dans le trainer. Pour cela, répétez ce que vous avez fait à l'étape 3 pour créer l'intent meteo
+Nous allons devoir rajouter un nouvel `intent` dans le trainer. Pour cela, répétez ce que vous avez fait à l'étape 3 pour créer l'intent météo.
 
 <center>
 <img src="./assets/tutorials/weather-bot/images/create-intent-meteo.png" target="_blank" />
 </center>
 
 
-## Créez l'extracteur d'entités Meteo
+## Créez l'extracteur d'entités Météo
 
 Créez un nouveau fichier `meteo-extractor.js` dans le dossier `src/extractors` afin d'indiquer au bot que nous cherchons à extraire des noms de ville et des dates.
 
@@ -308,13 +308,13 @@ module.exports = MeteoExtractor;
 ```
 
 
-## Créez le Dialog Meteo
+## Créez le Dialog Météo
 
 Créez un fichier `meteo-dialog.js` dans le dossier `src/dialogs`. 
 
-Comme notre bot a besoin de la ville et de la date afin de pouvoir répondre à l'utilisateur, le weather dialog est donc un `PromptDialog`
+Comme notre bot a besoin de la ville et de la date afin de pouvoir répondre à l'utilisateur, le weather dialog est donc un `PromptDialog`.
 
-Nous devons indiquer à notre bot que nous allons extraire une entité de type (dimension) `city` ainsi qu'une entité de type `time`. Les clés `location` et `date` nous permettrons d'accéder aux valeures extraites.
+Nous devons indiquer à notre bot que nous allons extraire une entité de type (dimension) `city` ainsi qu'une entité de type `time`. Les clés `location` et `date` nous permettrons d'accéder aux valeurs extraites.
 
 ```javascript
 const { PromptDialog } = require('botfuel-dialog');
@@ -337,20 +337,20 @@ module.exports = MeteoDialog;
 ```
 
 
-## Créez la view Meteo
+## Créez la view Météo
 
 Créez un fichier `meteo-view.js` dans le dossier `src/views`. 
 La vue va vous permettre de générer un message basé sur les données traitées dans le dialog. Botfuel peut générer plusieurs types de messages :
 * Messages texte et quick replies
 * Images
 * Liens
-* Bouttons avec gestion des clicks
-* Carousels
+* Boutons avec gestion des clicks
+* Carrousels
 
 Nous allons dans un premier temps utiliser `BotTextMessage` qui permet de renvoyer un simple texte à l'utilisateur.
-Les vues doivent implementer la méthode `render()` qui prend en paramètre le `userMessage` et un objet de données envoyées par le dialog correspondant à la vue. On renvoie ensuite un tableau de <a href="https://docs.botfuel.io/dialog/reference/messages">messages</a>
+Les vues doivent implémenter la méthode `render()` qui prend en paramètre le `userMessage` et un objet de données envoyé par le dialog correspondant à la vue. On renvoie ensuite un tableau de <a href="https://docs.botfuel.io/dialog/reference/messages">messages</a>.
 
-Pour plus d'information sur le fonctionnement des vues, n'hésitez pas à aller consulter la <a href="https://docs.botfuel.io/dialog/reference/views" target="_blank">documentation</a>
+Pour plus d'informations sur le fonctionnement des vues, n'hésitez pas à aller consulter la <a href="https://docs.botfuel.io/dialog/reference/views" target="_blank">documentation</a>.
 ```javascript
 const { PromptView, BotTextMessage } = require('botfuel-dialog');
 
@@ -379,23 +379,23 @@ duration: 5
 
 # Appeler l'API de météo
 
-Pour l'instant, notre bot ne renvoi pas la météo
+Pour l'instant, notre bot ne renvoi pas la météo.
 
 
 ## Installer node-fetch
 
-Commencez par installer le package nodejs `node-fetch` afin de pouvoir faire des appels REST à l'API de météo
+Commencez par installer le package nodejs `node-fetch` afin de pouvoir faire des appels REST à l'API de météo.
 
 ```bash
 npm install node-fetch --save
 ```
 
-<aside class="infos"><b>Note:</b> node-fetch est une bibliothèque qui apporte window.fetch dans Nodejs</aside>
+<aside class="infos"><b>Note:</b> node-fetch est une bibliothèque qui apporte window.fetch dans NodeJS.</aside>
 
 
 ## Appeler l'API
 
-Vous allez devoir appeler l'<a href="https://developer.worldweatheronline.com/api/docs/" target="_blank">API worldweatheronline</a> afin de récupérer les infos météorologiques.
+Vous allez devoir appeler l'<a href="https://developer.worldweatheronline.com/api/docs/" target="_blank">API worldweatheronline</a> afin de récupérer les informations météorologiques.
 
 ```javascript
 const response = await fetch(`http://api.worldweatheronline.com/premium/v1/weather.ashx?key=8c021b4e600b4cd8b24194452182606&q=${location}&format=json&date=${formattedDate}&lang=fr`);      
@@ -489,9 +489,9 @@ duration: 5
 # Ajouter des Quick Replies
 
 Vous pouvez ajouter des `Quick Replies` à votre bot pour indiquer plus rapidement certaines dates (aujourd’hui, demain, …).
-Pour en apprendre plus sur les `Quick Replies`, rendez-vous dans la <a href="https://docs.botfuel.io/dialog/reference/messages#quickrepliesmessage" target="_blank">documentation</a>
+Pour en apprendre plus sur les `Quick Replies`, rendez-vous dans la <a href="https://docs.botfuel.io/dialog/reference/messages#quickrepliesmessage" target="_blank">documentation</a>.
 
-Dans le fichier `meteo-view.js`, vous pouvez renvoyer des `QuickrepliesMessage` qui proposeront des valeurs à l'utilisateur
+Dans le fichier `meteo-view.js`, vous pouvez renvoyer des `QuickrepliesMessage` qui proposeront des valeurs à l'utilisateur.
 
 ```javascript
 const { QuickrepliesMessage } = require('botfuel-dialog');
@@ -526,15 +526,15 @@ duration: 5
 
 Pour terminer sur une pointe de couleur, rajoutons quelques images à notre bot en utilisant `BotImageMessage`.
 
-Vous pouvez télécharger un pack d'images <a href="https://drive.google.com/drive/folders/11GxjsG3upQCuVMnl2uYJrVXPSy3Qsubp" target="_blank">ici</a>
+Vous pouvez télécharger un pack d'images <a href="https://drive.google.com/drive/folders/11GxjsG3upQCuVMnl2uYJrVXPSy3Qsubp" target="_blank">ici</a>.
 
-`BotImageMessage` est aussi simple à utiliser que `BotTextMessage`ou encore `QuickrepliesMessage`
+`BotImageMessage` est aussi simple à utiliser que `BotTextMessage`ou encore `QuickrepliesMessage`.
 
 ```javascript
 new BotImageMessage(WebAdapter.getStaticUrl(`images/neige.jpg`)),
 ```
 
-Pour en savoir plus sur comment marche BotImageMessage, rendez-vous sur la <a href="https://docs.botfuel.io/dialog/reference/images-in-bot-messages" target="_blank">documentation</a>
+Pour en savoir plus sur comment marche BotImageMessage, rendez-vous sur la <a href="https://docs.botfuel.io/dialog/reference/images-in-bot-messages" target="_blank">documentation</a>.
 
 <center>
 <img src="./assets/tutorials/weather-bot/images/demo.png" title="Final result" alt="Final result" targer="_blank" />
@@ -548,11 +548,11 @@ duration: 1
 
 # Bravo
 
-Vous avez atteint la fin de ce tutorial. Vous avez su prendre en main certains des principaux composants de Botfuel comme le Webchat, le trainer ou encore les QuickReplies.
+Vous avez atteint la fin de ce tutoriel. Vous avez su prendre en main certains des principaux composants de Botfuel comme le Webchat, le trainer ou encore les QuickReplies.
 
 Vous êtes maintenant en mesure de faire un bot en utilisant le SDK de Botfuel.
 
 Pour en savoir plus :
 * La <a href="https://docs.botfuel.io/" target="_blank">documentation</a> du SDK
-* Deployez votre chatbot sur Heroku avec <a href="https://codelabs-65b58.firebaseapp.com/#/codelab/deploy-heroku?step=1" target="_blank">ce tutoriel</a> (en anglais)
-* Deployez votre chatbot sur Facebook Messenger en suivant <a href="https://codelabs-65b58.firebaseapp.com/#/codelab/connect-messenger?step=1" target="_blank">ce tutorial</a>
+* Déployez votre chatbot sur Heroku avec <a href="https://codelabs-65b58.firebaseapp.com/#/codelab/deploy-heroku?step=1" target="_blank">ce tutoriel</a> (en anglais)
+* Déployez votre chatbot sur Facebook Messenger en suivant <a href="https://codelabs-65b58.firebaseapp.com/#/codelab/connect-messenger?step=1" target="_blank">ce tutoriel</a>
