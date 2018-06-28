@@ -536,6 +536,9 @@ new BotImageMessage(WebAdapter.getStaticUrl(`images/neige.jpg`)),
 
 Pour en savoir plus sur comment marche BotImageMessage, rendez-vous sur la <a href="https://docs.botfuel.io/dialog/reference/images-in-bot-messages" target="_blank">documentation</a>
 
+<center>
+<img src="./assets/tutorials/weather-bot/images/demo.png" title="Final result" alt="Final result" targer="_blank" />
+</center>
 
 --sep--
 ---
