@@ -50,7 +50,7 @@ duration: 5
 1. Allez créer un compte sur <a href="https://app.botfuel.io/apps" target="_blank">https://app.botfuel.io/apps</a>
 2. Puis créez une app sur <a href="https://app.botfuel.io/apps/create" target="_blank">https://app.botfuel.io/apps/create</a>
 
-Vous pourrez trouvez un guide pour créer une App <a href="/#/codelab/getting-started?step=2">ici</a>
+Vous pourrez trouvez un guide pour créer une App <a href="https://codelabs-65b58.firebaseapp.com/#/codelab/getting-started?step=2" target="_blank">ici</a>
 <aside class="infos"><b>Note:</b> La langue que vous choisissez lors de la création du Bot ne peut être changée par la suite. Elle sera utilisée par le trainer pour comprendre les "Training Phrases".</aside>
 
 
@@ -100,11 +100,11 @@ Dans la page `Trainer/Intents`, cliquez sur le bouton `Add intent` afin de crée
 La liste des `Training phrases` liste toutes les phrases utilisées pour entrainer le bot. Entrez ce que vous pensez que vos utilisateurs demanderont au bot.
 Ici, entrez la phrase "Bonjour bot" puis cliquez sur `entrer`. Cliquez ensuite sur le bouton `Save`.
 
-![Adding an intent](./assets/tutorials/getting-started/images/getting_started-create_intent.png "Adding an intent")
+![Adding an intent](./assets/tutorials/weather-bot/images/getting_started-create_intent.png "Adding an intent")
 
 Faites la même chose pour créer un intent labélisé `name`:
 
-![Adding an intent 2](./assets/tutorials/getting-started/images/getting_started-create_intent2.png "Adding an intent 2")
+![Adding an intent 2](./assets/tutorials/weather-bot/images/getting_started-create_intent2.png "Adding an intent 2")
 
 Notez que ici, quand votre entrez `Mon nom est Bob`, notre trainer détecte que Bob est un prénom, une des 31 entités reconnues par défaut par Botfuel.
 
@@ -112,7 +112,7 @@ Notez que ici, quand votre entrez `Mon nom est Bob`, notre trainer détecte que 
 
 Vous pouvez vérifier que votre bot est bien entrainé en utilisant le paneau de test sur la droite de votre écran en tapant une phrases proche de celles utilisées pour l'entrainement:
 
-![Test panel](./assets/tutorials/getting-started/images/getting_started-testpanel.png "Test panel")
+![Test panel](./assets/tutorials/weather-bot/images/getting_started-testpanel.png "Test panel")
 
 
 --sep--
@@ -551,5 +551,5 @@ Vous êtes maintenant en mesure de faire un bot en utilisant le SDK de Botfuel.
 
 Pour en savoir plus :
 * La <a href="https://docs.botfuel.io/" target="_blank">documentation</a> du SDK
-* Deployez votre chatbot sur Heroku avec <a href="http://localhost:4200/#/codelab/deploy-heroku?step=1" target="_blank">ce tutoriel</a> (en anglais)
-* Deployez votre chatbot sur Facebook Messenger en suivant <a href="http://localhost:4200/#/codelab/connect-messenger?step=1" target="_blank">ce tutorial</a>
+* Deployez votre chatbot sur Heroku avec <a href="https://codelabs-65b58.firebaseapp.com/#/codelab/deploy-heroku?step=1" target="_blank">ce tutoriel</a> (en anglais)
+* Deployez votre chatbot sur Facebook Messenger en suivant <a href="https://codelabs-65b58.firebaseapp.com/#/codelab/connect-messenger?step=1" target="_blank">ce tutorial</a>
