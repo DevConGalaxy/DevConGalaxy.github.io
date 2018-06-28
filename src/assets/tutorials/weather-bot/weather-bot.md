@@ -1,12 +1,12 @@
 ---
 title: Chatbot Météo
-duration: 30
+duration: 76
 ---
 
 --sep--
 ---
 title: Introduction
-duration: 3
+duration: 5
 ---
 
 # Introduction
@@ -42,7 +42,7 @@ Vous pouvez voir une démo du bot <a href="https://botfuel-webchat-demo.herokuap
 --sep--
 ---
 title: Création d'une app Botfuel
-duration: 5
+duration: 7
 ---
 
 # Mise en place
@@ -88,10 +88,10 @@ BOTFUEL_APP_ID=<...> BOTFUEL_APP_KEY=<...> BOTFUEL_APP_TOKEN=<...> npm start con
 --sep--
 ---
 title: Entraînez votre bot
-duration: 3
+duration: 5
 ---
 
-# Entrainez votre bot
+# Entraînez votre bot
 
 Dans la page `Trainer/Intents`, cliquez sur le bouton `Add intent` afin de créer un intent labellisé `greetings` avec la description "L'utilisateur salut le bot". Laissez le champ `User prompt` vide.
 
@@ -202,7 +202,7 @@ Cliquez ensuite sur le bouton `Save`.
 Vous pouvez vérifier que votre chatbot marche dans le Webchat Playground en envoyant des messages.
 
 <center>
-<img src="./assets/tutorials/weather-bot/images/webchat-starter-conversation.png">
+<img src="./assets/tutorials/weather-bot/images/webchat-start-conversation.png">
 </center>
 
 
@@ -274,10 +274,11 @@ Vous devriez avoir une page web avec le bouton  pour lancer le chatbot en bas à
 <center>
 <img src="./assets/tutorials/weather-bot/images/webchat0.png" target="_blank" />
 </center>
+
 --sep--
 ---
 title: Ajouter la fonctionnalité météo
-duration: 20
+duration: 12
 ---
 
 # Ajouter la fonctionnalité météo
@@ -374,7 +375,7 @@ module.exports = MeteoView;
 --sep--
 ---
 title: Appeler l'API de météo
-duration: 5
+duration: 10
 ---
 
 # Appeler l'API de météo
@@ -455,7 +456,7 @@ L'API ne permet pas de récupérer la météo lorsque la date est dans plus de 1
 --sep--
 ---
 title: Gérer les questions partielles
-duration: 10
+duration: 4
 ---
 
 # Gérer les questions partielles
@@ -477,8 +478,6 @@ if (missingEntities.size !== 0) {
 }
 ...
 ```
-
-
 
 --sep--
 ---
@@ -519,7 +518,7 @@ Vous devriez arriver au résultat ci-dessous lorsque vous demandez la météo sa
 --sep--
 ---
 title: Ajouter des images
-duration: 5
+duration: 12
 ---
 
 # Ajouter des images

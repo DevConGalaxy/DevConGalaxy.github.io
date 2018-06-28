@@ -1,12 +1,12 @@
 ---
 title: Deploying to Heroku
-duration: 30
+duration: 18
 ---
 
 --sep--
 ---
 title: Introduction
-duration: 2
+duration: 5
 ---
 
 # Introduction
@@ -70,7 +70,7 @@ We’ll now connect your repository to Heroku.
 --sep--
 ---
 title: Deployment
-duration: 4
+duration: 5
 ---
 
 # Deployment
@@ -112,7 +112,7 @@ Done! Your bot should be up and running on `https://heroku-tutorial-bot.herokuap
 --sep--
 ---
 title: See it in action
-duration: 6
+duration: 3
 ---
 
 # See it in action
@@ -150,12 +150,12 @@ Your chatbot will answer right in the Webchat! Congratulations, you deployed you
 
 --sep--
 ---
-title: Bravo
+title: Congratulations
 duration: 1
 ---
 
-Vous avez atteind la fin de ce tutorial. Vous pouvez maintenant deployer un bot en production et le faire tester par vos utilisateurs \o/
+You have reached the end of this tutorial. You can now deploy a bot in production and make your users test it \o/
 
-Pour en savoir plus :
-* La <a href="https://docs.botfuel.io/" target="_blank">documentation</a> du SDK
-* Deployez votre chatbot sur Facebook Messenger en suivant <a href="http://localhost:4200/#/codelab/connect-messenger?step=1" target="_blank">ce tutorial</a>
+Learn more :
+* The SDK <a href="https://docs.botfuel.io/" target="_blank">documentation</a>
+* Deploy your chatbot on Facebook Messenger with <a href="http://localhost:4200/#/codelab/connect-messenger?step=1" target="_blank">this tutorial</a>
