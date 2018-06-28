@@ -50,7 +50,7 @@
         {{codelab.title}}
       </div>
       <div class="footer">
-        <button mat-button routerLink="/codelab/{{codelab.id}}">START</button>
+        <button mat-button routerLink="/codelab/{{codelab.id}}" angulartics2On="click" angularticsAction="StartClick" angularticsLabel="start-{{codelab.id}}" [angularticsCategory]="codelab.id" >START</button>
         <div class="language">{{codelab.language}}</div>
       </div>
     </div>

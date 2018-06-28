@@ -11,39 +11,37 @@ duration: 3
 
 # Introduction
 
-This tutorial will be using the [botfuel-sample-starter](https://github.com/Botfuel/botfuel-sample-starter).
+Ce tutorial utilisera le <a href="https://github.com/Botfuel/botfuel-sample-starter">botfuel-sample-starter</a>
 
-By the end of this tutorial, you will have a bot that is able to respond to greeting and say back your name. You will also know how to add new functionalities 
-By the end of this tutorial, you will have a simple bot that is able to respond to a greeting and say back your name. You will also learn how to add new functionality that will allow the bot to understand a weather intent.
+A la fin de ce tutorial, vous aurez construit un bot capable de répondre à un utilisateur qui se présente. Vous aurez aussi vu comment ajouter de nouvelles fonctionnalités pour répondre lorsqu'un utilisateur demande la météo.
 
-The goal of this tutorial is to create a bot that is reponding to weather forecast requests using the Qorkd Weather Online API.
+Le but de ce tutorial est donc de créer un bot qui donnera la météo en utilisant l'API de World Weather Online.
 
 <center>
 <img src="./assets/tutorials/weather-bot/images/demo.png" title="Final result" alt="Final result" targer="_blank" />
 </center>
 
-You can view a demo of the bot <a href="https://botfuel-webchat-demo.herokuapp.com/weather" target="_blank">here</a>
+Vous pouvez voir une démo du bot <a href="https://botfuel-webchat-demo.herokuapp.com/weather" target="_blank">ici</a>
 
 
-## What you will learn
-* How to create a bot on the Botfuel platform
-* How to train your bot
-* How to make API call from your bot to answer user questions
-* How to send quickreplies via your chatbot
-* How to test your bot in the webchat
+## Vous allez apprendre
+* A créer un bot sur la plateforme Botfuel
+* A entrainer votre bot
+* A faire appel à une API pour répondre à l'utilisateur
+* A envoyer des Quick Replies via votre chatbot
+* A tester votre bot dans le Webchat
 
-## what you will need
-* A computer with a text editor installed like 
-You can view a demo of the bot <a href="https://code.visualstudio.com/" target="_blank">vscode</a>
-* A recent version of a web browser
-* Basic knowledge javascript and nodejs
-* NodeJS installed on your computer
-* ngrok installed
+## Vous aurez besoin
+* D'un ordinateur avec un editeur de texte/code comme <a href="https://code.visualstudio.com/" target="_blank">vscode</a>
+* Un navigateur internet récent
+* De connaissances de base en javascript et nodeJS
+* De NodeJS installé sur votre ordinateur
+* De ngrok installé sur votre ordinateur
 
 
 --sep--
 ---
-title: Create a Botfuel App
+title: Création d'une app Botfuel
 duration: 5
 ---
 
@@ -95,24 +93,24 @@ duration: 3
 
 # Entrainez votre bot
 
-On the `Trainer/Intents` page, click on the `Add intent` button to create an intent labelled `greetings` with the description “User greets the bot”. Leave the `User prompt` field empty.
+Dans la page `Trainer/Intents`, cliquez sur le boutton `Add intent` afin de créer un intent labelisé `greetings` avec la description "L'utilisateur salut le bot". Laisser le champ `User prompt` vide.
 
-<aside class="warning"><b>Attention:</b> The label can only contains lowercase letters, numbers, hyphens without spaces. It also cannot start or end with a hyphen.</aside>
+<aside class="warning"><b>Attention:</b> Le label ne peut contenir que des lettres en minuscule, des nombres, des traits d'unions sans espace. Il ne peut pas non plus commencer ou finir par un trait d'union.</aside>
 
-The `Training phrases` lists all the phrases used to train your bot. Enter here what you believe your user may ask the bot.
-Here, fill in the phrase “Hello bot.” and then press `enter`. Click the button `Save`.
+La liste des `Training phrases` liste toutes les phrases utilisées pour entrainer le bot. Entrez ce que vous pensez que vos utilisateur demanderont au bot.
+Ici, entrez la phrase "Bonjour bot" puis cliquez sur `entrer`. Cliquez ensuite sur le bouton `Save`.
 
 ![Adding an intent](./assets/tutorials/getting-started/images/getting_started-create_intent.png "Adding an intent")
 
-Repeat the same steps and create an intent labeled `name`:
+Faites la même chose pour créer un intent labélisé `name`:
 
 ![Adding an intent 2](./assets/tutorials/getting-started/images/getting_started-create_intent2.png "Adding an intent 2")
 
-Note here, when you put `My name is Bob.`, our trainer detects Bob as a forename, one of 31 built-in entities recognised by Botfuel.
+Notez que ici, quand votre entrez `Mon nom est Bot`, notre trainer détecte que Bob est un prénom, une des 31 entités reconnues par défaut par Botfuel.
 
-<aside class="infos"><b>Note:</b> Every time you click on the save button, your app is trained with the new training phrases.</aside>
+<aside class="infos"><b>Note:</b> A chaque fois que vous cliquez sur le bouton save, votre bot est entrainé avec les nouvelles phrases d'entrainement.</aside>
 
-You can check that the app is properly trained by using the test panel on the right of your screen and typing a sentence that is close to one of your training phrases:
+Vous pouvez vérifier que vous bot est bien entrainé en utilisant le paneau de test sur la droite de votre écran en tapant une phrases proche de celle utilisées pour l'entrainement:
 
 ![Test panel](./assets/tutorials/getting-started/images/getting_started-testpanel.png "Test panel")
 

@@ -5,6 +5,9 @@ import { Routes, RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule }   from '@angular/forms';
 
+import { Angulartics2Module } from 'angulartics2';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
+
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 
 import { AppComponent } from './app.component';
@@ -47,6 +50,7 @@ const routes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes, { useHash: true }),
+    Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
     MarkdownModule.forRoot({
       markedOptions: {
         provide: MarkedOptions,
