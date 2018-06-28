@@ -488,12 +488,13 @@ title: Ajouter des quick replies
 duration: 5
 ---
 
+# Ajouter des Quick Replies
+
 Vous pouvez ajouter des `Quick Replies` à votre bot pour indiquer plus rapidement certaines dates (aujourd’hui, demain, …).
 Pour en apprendre plus sur les `Quick Replies`, rendez-vous dans la <a href="https://docs.botfuel.io/dialog/reference/messages#quickrepliesmessage" target="_blank">documentation</a>
 
 Dans le fichier `meteo-view.js`, vous pouvez renvoyer des `QuickrepliesMessage` qui proposeront des valeurs à l'utilisateur
 
-Dans le fichier meteo-view.js
 ```javascript
 const { QuickrepliesMessage } = require('botfuel-dialog');
 ...
