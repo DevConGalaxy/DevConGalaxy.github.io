@@ -356,7 +356,7 @@ Pour plus d'informations sur le fonctionnement des vues, n'hésitez pas à aller
 const { PromptView, BotTextMessage } = require('botfuel-dialog');
 
 class MeteoView extends PromptView {
-  render(userMessage, { matchedEntities, missingEntities, meteoData }) {
+  render(userMessage, { matchedEntities, missingEntities, weatherData }) {
     const messages = [];
 
     // On commencer par récupérer les valeurs extraites pour la ville et la date si ceux-ci ont été renseignés
