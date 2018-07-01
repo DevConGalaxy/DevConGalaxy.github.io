@@ -15,7 +15,10 @@
       <mat-toolbar-row>
         <a routerLink="/"><i class="fas fa-chevron-left"></i></a>
         <div class="title">{{tutorialDetails?.title}}</div>
-        <div><div class="duration"><i class="far fa-clock"></i><span>{{remainDuration}} min</span></div></div>
+        <div>
+          <div *ngIf="currentStep === tutorialSteps.length"><i class="fas fa-trophy"></i></div>
+          <div class="duration" *ngIf="currentStep < tutorialSteps.length"><i class="far fa-clock"></i><span>{{remainDuration}} min</span></div>
+        </div>
       </mat-toolbar-row>
     </mat-toolbar>
     <div class="codelab-step">
