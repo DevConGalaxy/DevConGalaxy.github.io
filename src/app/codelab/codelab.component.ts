@@ -62,6 +62,14 @@ export class CodelabComponent implements OnInit {
           }
         } else {
           this.currentStep = Number(params.get("step"));
+          if (this.currentStep < 1) {
+            this.currentStep = 1;
+            this.updateStepUrl(true);
+          }
+        }
+        if (this.tutorialSteps.length > 0 && this.currentStep > this.tutorialSteps.length) {
+          this.currentStep = this.tutorialSteps.length;
+          this.updateStepUrl(true);
         }
       });
     });
@@ -117,6 +125,10 @@ export class CodelabComponent implements OnInit {
         i++;
       });
 
+      if (this.currentStep > this.tutorialSteps.length) {
+        this.currentStep = this.tutorialSteps.length;
+        this.updateStepUrl(true);
+      }
       this.calculateRemainingDuration();
     });
   }
