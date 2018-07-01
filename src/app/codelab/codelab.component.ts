@@ -125,6 +125,8 @@ export class CodelabComponent implements OnInit {
         i++;
       });
 
+      console.log(`totalDuration: ${this.totalDuration}`);
+
       if (this.currentStep > this.tutorialSteps.length) {
         this.currentStep = this.tutorialSteps.length;
         this.updateStepUrl(true);
@@ -158,7 +160,7 @@ export class CodelabComponent implements OnInit {
   calculateRemainingDuration() {
     this.remainDuration = this.totalDuration;
     for (let i = 0; i < this.steps.length; i++) {
-      if (i < this.currentStep) {
+      if (i < this.currentStep - 1) {
         this.remainDuration -= this.steps[i].duration;
       }
     }
