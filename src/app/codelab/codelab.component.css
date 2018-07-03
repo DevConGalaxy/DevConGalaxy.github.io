@@ -13,6 +13,21 @@ a, a:visited, a:hover {
 mat-sidenav {
   background: #f5f5f5;
   width: 256px;
+  display: flex !important;
+  flex-direction: column;
+}
+
+mat-sidenav .steps {
+  flex: 1;
+}
+
+mat-sidenav .footer {
+  text-align: center;
+  padding: 1em 0;
+}
+
+mat-sidenav .footer a {
+  text-decoration: none;
 }
 
 mat-sidenav-content {

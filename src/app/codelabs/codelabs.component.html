@@ -1,58 +1,52 @@
-<mat-toolbar color="primary" class="header">
-  <mat-toolbar-row>
-    <img src="./assets/images/botfuel-logo.png" />
-    <div class="title">Botfuel Tutorials</div>
-    <input class="searchbox" type="text" placeholder="Search..." [(ngModel)]="searchText" />
-  </mat-toolbar-row>
-</mat-toolbar>
-<header class="banner">
-  <div>
-    <div class="headline">Welcome to Botfuel Tutorials Platform !</div>
-    <!-- <div>
-        {{ '{' }} <i class="fas fa-flask"></i> {{ '}' }}
-      <i class="fas fa-chevron-left"></i><i class="fas fa-flask"></i><i class="fas fa-chevron-right"></i>
-    </div> -->
-    <div class="content">
-      <div>
-        Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat
-        vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae
-        est. Mauris placerat eleifend leo.
-      </div>
-      <div class="logo">
-        <!-- <div class="bracket">{{ '{' }}</div> <i class="fas fa-flask"></i> <div class="bracket">{{ ' }' }}</div> -->
-        <img src="./assets/images/orion_chemistry.png" />
-        <!-- <i class="fas fa-chevron-left"></i><i class="fas fa-flask"></i><i class="fas fa-chevron-right"></i> -->
-      </div>
-    </div>
-  </div>
-</header>
-<div class="container">
-  <div class="menu">
-    <mat-form-field>
-      <mat-select placeholder="Sort by" (selectionChange)="filter($event)" [value]="'alphabetical'">
-        <mat-option *ngFor="let sorting of sortingOptions" [value]="sorting.value">
-          {{ sorting.viewValue }}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
-  </div>
-  <div class="cards">
-    <div class="card" *ngFor="let codelab of codelabs  | filter : searchText">
-      <mat-toolbar color="primary" class="header">
-        <mat-toolbar-row>
-          <div class="duration">
-            <i class="far fa-clock"></i>
-            <span>{{codelab.duration}} min</span>
-          </div>
-        </mat-toolbar-row>
-      </mat-toolbar>
+<div *ngIf="infos">
+  <mat-toolbar color="primary" class="header">
+    <mat-toolbar-row>
+      <img src="./assets/images/botfuel-logo.png" />
+      <div class="title">{{infos.title}}</div>
+      <input class="searchbox" type="text" placeholder="Search..." [(ngModel)]="searchText" />
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <header class="banner">
+    <div>
+      <div class="headline">{{infos.headline}}</div>
       <div class="content">
-        {{codelab.title}}
+        <div>
+          {{infos.tagline}}
+        </div>
+        <div class="logo">
+          <img src="./assets/images/orion_chemistry.png" />
+        </div>
       </div>
-      <div class="footer">
-        <button mat-button routerLink="/codelab/{{codelab.id}}" angulartics2On="click" angularticsAction="StartClick" angularticsLabel="start-{{codelab.id}}" [angularticsCategory]="codelab.id" >START</button>
-        <div class="language">{{codelab.language}}</div>
+    </div>
+  </header>
+  <div class="container">
+    <div class="menu">
+      <mat-form-field>
+        <mat-select placeholder="Sort by" (selectionChange)="filter($event)" [value]="'alphabetical'">
+          <mat-option *ngFor="let sorting of sortingOptions" [value]="sorting.value">
+            {{ sorting.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div class="cards">
+      <div class="card" *ngFor="let tutorial of infos.tutorials | filter : searchText">
+        <mat-toolbar color="primary" class="header">
+          <mat-toolbar-row>
+            <div class="duration">
+              <i class="far fa-clock"></i>
+              <span>{{tutorial.duration}} min</span>
+            </div>
+          </mat-toolbar-row>
+        </mat-toolbar>
+        <div class="content">
+          {{tutorial.title}}
+        </div>
+        <div class="footer">
+          <button mat-button routerLink="/codelab/{{tutorial.id}}" angulartics2On="click" angularticsAction="StartClick" angularticsLabel="start-{{tutorial.id}}"
+            [angularticsCategory]="tutorial.id">START</button>
+          <div class="language">{{tutorial.language}}</div>
+        </div>
       </div>
     </div>
   </div>
-</div>

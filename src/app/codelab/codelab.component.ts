@@ -125,8 +125,6 @@ export class CodelabComponent implements OnInit {
         i++;
       });
 
-      console.log(`totalDuration: ${this.totalDuration}`);
-
       if (this.currentStep > this.tutorialSteps.length) {
         this.currentStep = this.tutorialSteps.length;
         this.updateStepUrl(true);

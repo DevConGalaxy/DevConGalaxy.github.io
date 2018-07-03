@@ -1,5 +1,11 @@
 {
-  "codelabs": [
+  "theme": {
+    "main": "#2bb673"
+  },
+  "title": "Botfuel Tutorials",
+  "headline": "Welcome to Botfuel Tutorials Platform !",
+  "tagline": "We will find here tutorials and examples that cover a whide range of Botfuel features such as testing, integration with different platforms, deployment, and modules. You will also find end to end chatbot example tutorials to build your own chatbot.",
+  "tutorials": [
     {
       "id": "getting-started",
       "title": "Getting started",

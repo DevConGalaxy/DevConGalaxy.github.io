@@ -67,6 +67,7 @@
 .banner .content {
   display: flex;
   flex-direction: row;
+  line-height: 32px;
 }
 
 .banner .logo {

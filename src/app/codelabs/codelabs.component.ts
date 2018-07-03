@@ -1,6 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { TutorialService } from '../tutorial.service';
 
+
+export interface CodelabInfos {
+  title: string;
+  headline: string,
+  tagline: string,
+  codelabs: Array<any>
+}
+
 @Component({
   selector: 'app-codelabs',
   templateUrl: './codelabs.component.html',
@@ -8,7 +16,7 @@ import { TutorialService } from '../tutorial.service';
 })
 export class CodelabsComponent implements OnInit {
   public searchText: string;
-  public codelabs: Array<any> = [];
+  public infos: CodelabInfos;
 
   public sortingOptions: Array<any> = [
     { value: 'alphabetical', viewValue: 'Alphabetical' },
@@ -18,7 +26,7 @@ export class CodelabsComponent implements OnInit {
 
   constructor(private ts: TutorialService) {
     this.ts.getCodelabs().subscribe((response: any) => {
-      this.codelabs = response.codelabs;
+      this.infos = response;
     });
   }
 
