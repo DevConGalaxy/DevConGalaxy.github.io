@@ -148,3 +148,12 @@ mat-card .no-padding {
   margin: -24px -24px 0px -24px;
   width: calc(100% + 48px);
 }
+
+
+mat-form-field {
+  padding-right: 1em;
+}
+
+mat-form-field:last-of-type {
+  padding-right: 0;
+}
