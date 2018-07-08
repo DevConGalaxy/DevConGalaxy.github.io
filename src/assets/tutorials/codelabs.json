@@ -4,49 +4,56 @@
   },
   "title": "Botfuel Tutorials",
   "headline": "Welcome to Botfuel Tutorials Platform !",
-  "tagline": "We will find here tutorials and examples that cover a whide range of Botfuel features such as testing, integration with different platforms, deployment, and modules. You will also find end to end chatbot example tutorials to build your own chatbot.",
+  "tagline": "You will find here tutorials and examples that cover a whide range of Botfuel features such as testing, integration with different platforms, deployment, and modules. You will also find end to end chatbot example tutorials to build your own chatbot.",
   "tutorials": [
     {
       "id": "getting-started",
       "title": "Getting started",
       "duration": 50,
-      "language": "en"
+      "language": "en",
+      "date": "Sun Jan 01 2017 00:00:00 GMT+0100"
     },
     {
       "id": "weather-bot",
       "title": "Faire un bot de météo",
       "duration": 76,
-      "language": "fr"
+      "language": "fr",
+      "date": "Fri Jun 29 2018 00:00:00 GMT+0200"
     },
     {
       "id": "calling-api",
       "title": "Calling an API",
       "duration": 27,
-      "language": "en"
+      "language": "en",
+      "date": "Fri Jun 08 2018 00:00:00 GMT+0200"
     },
     {
       "id": "deploy-heroku",
       "title": "Deploying on Heroku",
       "duration": 27,
-      "language": "en"
+      "language": "en",
+      "date": "Sun Jan 01 2017 00:00:00 GMT+0100"
     },
     {
       "id": "connect-messenger",
       "title": "Connecting to Messenger",
       "duration": 27,
-      "language": "en"
+      "language": "en",
+      "date": "Sun Jan 01 2017 00:00:00 GMT+0100"
     },
     {
       "id": "qna-bot",
       "title": "Create a Q&A bot",
       "duration": 27,
-      "language": "en"
+      "language": "en",
+      "date": "Sun Jan 01 2017 00:00:00 GMT+0100"
     },
     {
       "id": "integration-testing",
       "title": "Integration testing",
       "duration": 27,
-      "language": "en"
+      "language": "en",
+      "date": "Sun Jan 01 2017 00:00:00 GMT+0100"
     }
   ]
 }
