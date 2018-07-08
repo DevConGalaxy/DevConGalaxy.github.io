@@ -36,7 +36,7 @@ export class CodelabsComponent implements OnInit {
   constructor(private ts: TutorialService) {
     this.ts.getCodelabs().subscribe((response: any) => {
       this.infos = response;
-      this.tutorials = response.tutorials;
+      this.sortTutorialsBy({value:'title'});
     });
   }
 
@@ -52,7 +52,7 @@ export class CodelabsComponent implements OnInit {
     return 0;
   }
 
-  sortBy(event) {
+  sortTutorialsBy(event) {
     this.tutorials = this.infos.tutorials.sort((tutorial1, tutorial2) => {
       console.log(event);
       if (event.value === "date") {

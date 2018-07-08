@@ -22,7 +22,7 @@
   <div class="container">
     <div class="menu">
       <mat-form-field>
-        <mat-select placeholder="Sort by" (selectionChange)="sortBy($event)" [value]="'title'">
+        <mat-select placeholder="Sort by" (selectionChange)="sortTutorialsBy($event)" [value]="'title'">
           <mat-option *ngFor="let sorting of sortingOptions" [value]="sorting.value">
             {{ sorting.viewValue }}
           </mat-option>
