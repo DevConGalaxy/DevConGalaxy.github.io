@@ -36,19 +36,21 @@ duration: 4
 
 # Configuration
 
-In the root directory of your bot, create a file named `botfuel-config.js` with the following content:
+Before deploying or bot to GAE, we need to configure it to work with the webchat. We will then start by pluging the webchat adaptor, named botfuel.
+
+In the root directory of your bot, create a new file named `botfuel-config.js` with the following content:
 
 ```javascript
 module.exports = {
   adapter: {
     name: 'botfuel',
-  },
+  }
 };
 ```
 
 This will simply tell your bot to use the Botfuel Webchat adapter.
 
-Edit your package.json and modify the start command to specify the config file. When  you deploy your app, Google App Engine will run `npm install` or `yarn install` automaticaly and will use `npm start` to launch your app.
+Edit your package.json and modify the start command to specify the config file we want to use when we launch the bot. When  you deploy your app, Google App Engine will run `npm install` or `yarn install` automaticaly and will use the `start` script to launch your app.
 
 ```javascript
 "scripts": {
@@ -57,13 +59,45 @@ Edit your package.json and modify the start command to specify the config file. 
 }
 ```
 
-Then link your project to your Google Cloud Account.
+
+--sep--
+---
+title: Deployment
+duration: 5
+---
+
+# Deployment
+
+## Create a project
+
+Go to <a href="https://console.cloud.google.com" target="_blank">https://console.cloud.google.com</a> an log in with your Google account.
+
+In the navbar, click on `Select a project`, then on `NEW PROJECT` to create a new project for your chatbot.
+
+![Create new project](./assets/tutorials/deploy-gae/images/create_cloud_project.png "Create new project")
+
+## Install the SDK
+
+Let't go back to your local computer.
+
+Google Cloud comes with a handy SDK and a command line interface that we will use to deploy our app.
+
+Gol <a href="https://cloud.google.com/sdk/docs/" target="_blank">download</a> and install the SDK on your computer.
+
+
+## Set up
+
+You first need to initialize your gcloud account if you haven't done it yet. The `init` command performs the following steps :
+* Authorize gcloud to access Google Cloud Platform using your credentials
+* Set properties in gcloud configuration, including the current project, the region and zone
 
 ```shell
 gcloud init
 ```
 
-Google App Engine use an `app.yaml` file
+You then need to create a configuration file to let Google App Engine know what version of nodejs you want to use. We will also use this file to set the environment variables.
+
+Create a file named `app.yaml` in the root directory of your project and rempace the varibles.
 
 ```yaml
 runtime: nodejs8
@@ -74,23 +108,10 @@ env_variables:
 ```
 
 <aside class="infos">
-The app.yaml is used to configure your app. You can find the all the possible properties <a href="https://cloud.google.com/appengine/docs/standard/nodejs/config/appref" target="_blank">here</a>
+<b>Note:</b> The app.yaml is used to configure your app. You can find the all the possible properties <a href="https://cloud.google.com/appengine/docs/standard/nodejs/config/appref" target="_blank">here</a>
 </aside>
 
-
---sep--
----
-title: Deployment
-duration: 5
----
-
-# Set up
-
-Google Cloud comes with a handy SDK and a command line interface that we will use to deploy our app.
-
-<a href="https://cloud.google.com/sdk/docs/" target="_blank">Download</a> and install the SDK on your computer.
-
-# Deploy
+## Deploy
 
 Deploying on Google App Engine is very easy once you have the SDK installed. Simply run the command below 
 
@@ -98,11 +119,11 @@ Deploying on Google App Engine is very easy once you have the SDK installed. Sim
 gcloud app deploy
 ```
 
-# See logs
+<center>
+<img src="./assets/tutorials/deploy-gae/images/deploy.png" alt="Deploy project" title="Deploy project"/>
+</center>
 
-// Deployment console screenshot
-
-// Google Console screenshot
+Your bot is now deployed on Google App Engine
 
 --sep--
 ---
@@ -114,34 +135,38 @@ duration: 3
 
 Now, to see it in action in the Botfuel Webchat, go to the <a href="https://app.botfuel.io">Botfuel Developer Portal</a> and login.
 
-Click on the "Webchat" button of your app:
+Select your bot app and go to the `Channel > Webchat` page.
 
-<br>
+<img src="./assets/tutorials/deploy-gae/images/webchat-config.png" alt="Webchat configuration"/>
 
-<img src="./assets/tutorials/deploy-heroku/images/webchat-button.png" alt="Webchat button"/>
+You can see two input text fields on the right panel:
+* Bot endpoint
+* Allowed origins
 
-<br>
+The input `Bot endpoint` is the URL to which Botfuel Webchat will send the user messages. In our case it is `https://getting-started-209712.appspot.com` (replace `getting-started-209712` with the id of your Google Cloud project).
 
-Then on the "Configuration" tab:
+In the `Bot endpoint`, put the url of your bot. You can find the url in your console once the deployment is done.
 
-<br>
+<center>
+  <img src="./assets/tutorials/deploy-gae/images/webchat-endpoint.png">
+</center>
 
-<img src="./assets/tutorials/deploy-heroku/images/webchat-config.png" alt="Webchat configuration"/>
+Don't forget to add the `/webhook`at the end of the url.
 
-<br>
+The `Allowed origin` input lists the urls authorized to display and run the bot:
+<center>
+  <img src="./assets/tutorials/deploy-gae/images/webchat-origins.png" alt="Webchat playground test"/>
+</center>
 
-Here you’ll need to set your bot endpoint. This is the URL to which Botfuel Webchat will send the user messages.
-In our case it is `https://heroku-tutorial-bot.herokuapp.com/webhook` (replace `heroku-tutorial-bot` with the name of your app).
+Clien on the `save button``
 
-<br>
+## Test
 
-<img src="./assets/tutorials/deploy-heroku/images/webchat-endpoint.png" alt="Webchat endpoint"/>
+You can test your chatbot in the Webchat playground.
 
-Click on the "Playground" tab and try sending messages to your chatbot:
-
-<img src="./assets/tutorials/deploy-heroku/images/webchat-playground.png" alt="Webchat playground test"/>
-
-Your chatbot will answer right in the Webchat! Congratulations, you deployed your bot!
+<center>
+<img src="./assets/tutorials/deploy-gae/images/webchat-start-conversation.png">
+</center>
 
 --sep--
 ---
@@ -149,8 +174,20 @@ title: A little bit further
 duration: 5
 ---
 
+# A little bit firther
+
 Let's go a little bit further and deploy our bot in our own webpage.
 Botfuel uses a static folder 
+
+Create a file `index.html` in the `src/static` folder of your bot.
+
+```text
+/src
+  /static
+    index.html
+```
+
+Copy and paste the code bolow in the `index.html` file.
 
 ```html
 <!DOCTYPE html>
@@ -164,33 +201,29 @@ Botfuel uses a static folder
     <script src="https://cdn.jsdelivr.net/npm/botfuel-webchat-client@3.13.5"></script>
     <script>
       BotfuelWebChat.init({
-      appToken: '<YOUR_APP_TOKEN>',
-      size: {
-          width: 500,
-          height: 600
-      },
-      startOpen: false,
-      startFullScreen: false,
-      theme: {
-          colors: {
-            background: '#ffffff',
-            main: '#244891',
-            primary: '#0084f4'
-          },
-          layout: {
-            compact: false,
-            rounded: false,
-            shadowed: false,
-            noHeader: false,
-            noBorder: false,
-            noHelpMessage: false
-          }
-      }
-    });
+        appToken: '<YOUR_APP_TOKEN>',
+        startOpen: true
+      });
     </script>
   </body>
 </html>
 ```
+
+## Deploy your bot
+
+Re-deploy your bot with the same command we use earlier
+
+
+```shell
+gcloud app deploy
+```
+
+You bot is now deployed and ready to be used. Simply go to the url of your bot followed by `/static`. In our case `https://getting-started-209712.appspot.com/static/` and you will be able to talk to your bot
+=
+<center>
+<img src="./assets/tutorials/deploy-gae/images/webchat-live.png">
+</center>
+
 
 --sep--
 ---
@@ -202,4 +235,5 @@ You have reached the end of this tutorial. You can now deploy a bot in productio
 
 Learn more :
 * The SDK <a href="https://docs.botfuel.io/" target="_blank">documentation</a>
+* Deploy your chatbot on Heroku <a href="http://localhost:4200/#/codelab/deploy-heroku?step=1" target="_blank">this tutorial</a>
 * Deploy your chatbot on Facebook Messenger with <a href="http://localhost:4200/#/codelab/connect-messenger?step=1" target="_blank">this tutorial</a>

@@ -12,12 +12,8 @@ html, body {
   padding: 0;
   margin: 0;
   color: #5F6368;
-  /* font-family: 'Roboto', sans-serif; */
+  font-family: 'Roboto', sans-serif;
   background: #e0e0e0;
-}
-
-* {
-  font-family: 'Lato', sans-serif !important;
 }
 
 /* code[class*="language-"] {

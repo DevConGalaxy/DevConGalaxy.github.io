@@ -47,6 +47,10 @@ mat-sidenav-content {
   width: auto !important;
 }
 
+h2 {
+  margin-top: 2em;
+}
+
 @media screen and (max-width: 720px) {
   .title-toolbar {
     left: 0px;
