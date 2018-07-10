@@ -1,6 +1,6 @@
 ---
 title: Deploying to Heroku
-duration: 18
+duration: 26
 ---
 
 --sep--
@@ -31,7 +31,7 @@ We’ll proceed in three steps:
 --sep--
 ---
 title: Configuration
-duration: 4
+duration: 5
 ---
 
 # Configuration
@@ -70,7 +70,7 @@ We’ll now connect your repository to Heroku.
 --sep--
 ---
 title: Deployment
-duration: 5
+duration: 10
 ---
 
 # Deployment
@@ -112,7 +112,7 @@ Done! Your bot should be up and running on `https://heroku-tutorial-bot.herokuap
 --sep--
 ---
 title: See it in action
-duration: 3
+duration: 5
 ---
 
 # See it in action

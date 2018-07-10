@@ -23,7 +23,7 @@ In this tutorial, you will see how to create a Q&A bot in just a few minutes usi
 --sep--
 ---
 title: Architecture
-duration: 3
+duration: 5
 ---
 
 ## Architecture
@@ -42,7 +42,7 @@ We will begin by adding Q&A content to Botfuel Trainer and then build the bot us
 --sep--
 ---
 title: Add Q&As
-duration: 3
+duration: 7
 ---
 # Add content to Botfuel Trainer
 
@@ -77,7 +77,7 @@ You can test your bot at any moment on the right panel of the trainer.
 --sep--
 ---
 title: Create your bot using Botfuel Dialog
-duration: 3
+duration: 5
 ---
 
 # Create your bot
@@ -133,7 +133,7 @@ BOTFUEL_APP_TOKEN=<...> BOTFUEL_APP_ID=<...> BOTFUEL_APP_KEY=<...> npm start bot
 --sep--
 ---
 title: Run your bot in the webchat
-duration: 3
+duration: 10
 ---
 
 # Run your bot in the Webchat

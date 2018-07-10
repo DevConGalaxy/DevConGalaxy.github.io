@@ -1,6 +1,6 @@
 ---
 title: Connecting to Messenger
-duration: 30
+duration: 34
 ---
 
 --sep--
@@ -17,7 +17,7 @@ In this tutorial, you will learn how to connect your Botfuel Dialog chatbot with
 --sep--
 ---
 title: Get your public URL
-duration: 3
+duration: 5
 ---
 
 ## Get the public URL of your bot webhook
@@ -46,7 +46,7 @@ Locate the forwarding link (in our case `https://3efeb72c.ngrok.io`). All reques
 --sep--
 ---
 title: Set up the Facebook App
-duration: 3
+duration: 10
 ---
 
 ## Set up the Facebook App
@@ -86,7 +86,7 @@ Also, make sure your app has subscribed to messages:
 --sep--
 ---
 title: Set up the bot
-duration: 3
+duration: 10
 ---
 
 ## Set up the bot

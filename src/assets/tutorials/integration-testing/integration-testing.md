@@ -1,6 +1,6 @@
 ---
 title: Integration Testing
-duration: 30
+duration: 18
 ---
 
 --sep--

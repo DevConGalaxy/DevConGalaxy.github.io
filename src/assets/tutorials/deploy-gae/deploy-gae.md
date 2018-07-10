@@ -1,6 +1,6 @@
 ---
 title: Deploying on Google App Engine
-duration: 18
+duration: 31
 ---
 
 --sep--
@@ -31,7 +31,7 @@ We’ll proceed in three steps:
 --sep--
 ---
 title: Configuration
-duration: 4
+duration: 5
 ---
 
 # Configuration
@@ -63,7 +63,7 @@ Edit your package.json and modify the start command to specify the config file w
 --sep--
 ---
 title: Deployment
-duration: 5
+duration: 10
 ---
 
 # Deployment
@@ -128,7 +128,7 @@ Your bot is now deployed on Google App Engine
 --sep--
 ---
 title: See it in action
-duration: 3
+duration: 5
 ---
 
 # See it in action
