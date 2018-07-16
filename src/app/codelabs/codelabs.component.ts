@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TutorialService } from '../tutorial.service';
 import { languages } from 'prismjs';
+import { ApplicationService } from '../services/application.service';
 
 export interface Tutorial {
   id: string,
@@ -24,7 +25,7 @@ export interface CodelabInfos {
 })
 export class CodelabsComponent implements OnInit {
   public searchText: string;
-  public infos: CodelabInfos;
+  // public infos: CodelabInfos;
   public tutorials: Array<Tutorial>
 
   public sortingOptions: Array<any> = [
@@ -33,11 +34,12 @@ export class CodelabsComponent implements OnInit {
     { value: 'date', viewValue: 'Recent' }
   ];
 
-  constructor(private ts: TutorialService) {
-    this.ts.getCodelabs().subscribe((response: any) => {
-      this.infos = response;
-      this.sortTutorialsBy({value:'title'});
-    });
+  constructor(private ts: TutorialService,
+              private application: ApplicationService) {
+    // this.ts.getCodelabs().subscribe((response: any) => {
+      // this.infos = response;
+      // this.sortTutorialsBy({value:'title'});
+    // });
   }
 
   sortByDate(tutorial1, tutorial2) {
@@ -53,7 +55,7 @@ export class CodelabsComponent implements OnInit {
   }
 
   sortTutorialsBy(event) {
-    this.tutorials = this.infos.tutorials.sort((tutorial1, tutorial2) => {
+    this.tutorials = this.ts.infos.tutorials.sort((tutorial1, tutorial2) => {
       console.log(event);
       if (event.value === "date") {
         return this.sortByDate(tutorial1, tutorial2);
@@ -71,9 +73,9 @@ export class CodelabsComponent implements OnInit {
 
   filterByLanguage(event) {
     if (event.value === "all") {
-      this.tutorials = this.infos.tutorials;
+      this.tutorials = this.ts.infos.tutorials;
     } else {
-      this.tutorials = this.infos.tutorials.filter(tutorial => tutorial.language === event.value);
+      this.tutorials = this.ts.infos.tutorials.filter(tutorial => tutorial.language === event.value);
     }
   }
 

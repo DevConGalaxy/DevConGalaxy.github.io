@@ -78,33 +78,33 @@ duration: 10
 Once logged into Heroku, create a new app:
 
 <br>
-<img src="./assets/tutorials/deploy-heroku/images/new-heroku-app.png" alt="Create a new Heroku app"/>
+<img src="https://github.com/Botfuel/tutorials/raw/master/deploy-heroku/images/new-heroku-app.png" alt="Create a new Heroku app"/>
 <br>
 
 Give it the name you want, choose a region, then click on "Create app":
 
 <br>
-<img src="./assets/tutorials/deploy-heroku/images/new-heroku-app2.png" alt="Create a new Heroku app 2"/>
+<img src="https://github.com/Botfuel/tutorials/raw/master/deploy-heroku/images/new-heroku-app2.png" alt="Create a new Heroku app 2"/>
 <br>
 
 In the Deploy tab, click on GitHub for the Deployment method.
 You can now search for your GitHub repository and connect it by clicking on the "Connect" button:
 
 <br>
-<img src="./assets/tutorials/deploy-heroku/images/connect-github.png" alt="Connect Heroku app to GitHub"/>
+<img src="https://github.com/Botfuel/tutorials/raw/master/deploy-heroku/images/connect-github.png" alt="Connect Heroku app to GitHub"/>
 <br>
 
 Finally, we need to fill in the environment variables.
 Click on the Settings tab and then on the "Reveal Config Vars" button:
 
 <br>
-<img src="./assets/tutorials/deploy-heroku/images/env-vars.png" alt="Set environment variables"/>
+<img src="https://github.com/Botfuel/tutorials/raw/master/deploy-heroku/images/env-vars.png" alt="Set environment variables"/>
 <br>
 
 Add the App Token, App Id and App Key of your app:
 
 <br>
-<img src="./assets/tutorials/deploy-heroku/images/env-vars2.png" alt="Set Botfuel environment variables"/>
+<img src="https://github.com/Botfuel/tutorials/raw/master/deploy-heroku/images/env-vars2.png" alt="Set Botfuel environment variables"/>
 <br>
 
 Done! Your bot should be up and running on `https://heroku-tutorial-bot.herokuapp.com` (replace `heroku-tutorial-bot` with the name of your app).
@@ -123,7 +123,7 @@ Click on the "Webchat" button of your app:
 
 <br>
 
-<img src="./assets/tutorials/deploy-heroku/images/webchat-button.png" alt="Webchat button"/>
+<img src="https://github.com/Botfuel/tutorials/raw/master/deploy-heroku/images/webchat-button.png" alt="Webchat button"/>
 
 <br>
 
@@ -131,7 +131,7 @@ Then on the "Configuration" tab:
 
 <br>
 
-<img src="./assets/tutorials/deploy-heroku/images/webchat-config.png" alt="Webchat configuration"/>
+<img src="https://github.com/Botfuel/tutorials/raw/master/deploy-heroku/images/webchat-config.png" alt="Webchat configuration"/>
 
 <br>
 
@@ -140,11 +140,11 @@ In our case it is `https://heroku-tutorial-bot.herokuapp.com/webhook` (replace `
 
 <br>
 
-<img src="./assets/tutorials/deploy-heroku/images/webchat-endpoint.png" alt="Webchat endpoint"/>
+<img src="https://github.com/Botfuel/tutorials/raw/master/deploy-heroku/images/webchat-endpoint.png" alt="Webchat endpoint"/>
 
 Click on the "Playground" tab and try sending messages to your chatbot:
 
-<img src="./assets/tutorials/deploy-heroku/images/webchat-playground.png" alt="Webchat playground test"/>
+<img src="https://github.com/Botfuel/tutorials/raw/master/deploy-heroku/images/webchat-playground.png" alt="Webchat playground test"/>
 
 Your chatbot will answer right in the Webchat! Congratulations, you deployed your bot!
 

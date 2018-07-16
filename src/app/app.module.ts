@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { Routes, RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
@@ -22,6 +22,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MarkdownParserService } from './markdown-parser.service';
 import { CodelabsComponent } from './codelabs/codelabs.component';
 import { FilterPipe } from './filter.pipe';
+import { ApplicationService } from './services/application.service';
+
+export function app_Init(appService: ApplicationService) {
+  return() => appService.initializeApp();
+}
 
 const routes: Routes = [
   {
@@ -74,7 +79,10 @@ const routes: Routes = [
     MatSelectModule,
     MatDialogModule
   ],
-  providers: [MarkdownParserService],
+  providers: [
+    MarkdownParserService,
+    ApplicationService, { provide: APP_INITIALIZER, useFactory: app_Init, deps: [ApplicationService], multi: true }
+  ],
   entryComponents: [ResumeDialog],
   bootstrap: [AppComponent]
 })

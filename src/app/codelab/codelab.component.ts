@@ -8,6 +8,7 @@ import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 
 const SMALL_WIDTH_BREAKPOINT = 720;
 import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
+import { ApplicationService } from '../services/application.service';
 
 @Component({
   selector: 'app-codelab',
@@ -37,6 +38,7 @@ export class CodelabComponent implements OnInit {
   constructor(private router: Router,
     private route: ActivatedRoute,
     private ts: TutorialService,
+    private application: ApplicationService,
     private md: MarkdownParserService,
     private markdownService: MarkdownService,
     public dialog: MatDialog) {
@@ -90,9 +92,9 @@ export class CodelabComponent implements OnInit {
     }, 0);
   }
 
-  getTutorialMdUrl() {
-    return `./assets/tutorials/${this.tutorialId}/${this.tutorialId}.md`;
-  }
+  // getTutorialMdUrl() {
+  //   return `./assets/tutorials/${this.tutorialId}/${this.tutorialId}.md`;
+  // }
 
   getTutorial() {
     console.log(`tutorial : ${this.tutorialId}`);

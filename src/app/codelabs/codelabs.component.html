@@ -1,17 +1,17 @@
-<div *ngIf="infos">
+<div *ngIf="application.applicationInfos">
   <mat-toolbar color="primary" class="header">
     <mat-toolbar-row>
       <img src="./assets/images/botfuel-logo.png" />
-      <div class="title">{{infos.title}}</div>
+      <div class="title">{{application.title}}</div>
       <input class="searchbox" type="text" placeholder="Search..." [(ngModel)]="searchText" />
     </mat-toolbar-row>
   </mat-toolbar>
   <header class="banner">
     <div>
-      <div class="headline">{{infos.headline}}</div>
+      <div class="headline">{{application.applicationInfos.headline}}</div>
       <div class="content">
         <div>
-          {{infos.tagline}}
+          {{application.applicationInfos.tagline}}
         </div>
         <div class="logo">
           <img src="./assets/images/orion_chemistry.png" />
@@ -43,7 +43,7 @@
       </mat-form-field>
     </div>
     <div class="cards">
-      <div class="card" *ngFor="let tutorial of tutorials | filter : searchText">
+      <div class="card" *ngFor="let tutorial of application.applicationInfos.tutorials | filter : searchText">
         <mat-toolbar color="primary" class="header">
           <mat-toolbar-row>
             <div class="duration">

@@ -29,6 +29,8 @@
     },
     {
       "id": "deploy-heroku",
+      "markdownUrl": "https://raw.githubusercontent.com/Botfuel/tutorials/master/deploy-heroku/deploy-heroku.md",
+      "imagesUrl": "https://github.com/Botfuel/tutorials/raw/master/deploy-heroku/images/",
       "title": "Deploying on Heroku",
       "duration": 26,
       "language": "en",
