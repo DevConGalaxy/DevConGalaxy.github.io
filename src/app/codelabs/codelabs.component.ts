@@ -35,7 +35,7 @@ export class CodelabsComponent implements OnInit {
   ];
 
   constructor(private ts: TutorialService,
-              private application: ApplicationService) {
+              public application: ApplicationService) {
     // this.ts.getCodelabs().subscribe((response: any) => {
       // this.infos = response;
       // this.sortTutorialsBy({value:'title'});
