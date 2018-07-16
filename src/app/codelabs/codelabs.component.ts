@@ -35,10 +35,12 @@ export class CodelabsComponent implements OnInit {
   ];
 
   constructor(private ts: TutorialService,
-              public application: ApplicationService) {
+    public application: ApplicationService) {
+    this.tutorials = application.applicationInfos.tutorials;
+    this.sortTutorialsBy({ value: 'title' });
     // this.ts.getCodelabs().subscribe((response: any) => {
-      // this.infos = response;
-      // this.sortTutorialsBy({value:'title'});
+    // this.infos = response;
+    // this.sortTutorialsBy({value:'title'});
     // });
   }
 
@@ -55,7 +57,7 @@ export class CodelabsComponent implements OnInit {
   }
 
   sortTutorialsBy(event) {
-    this.tutorials = this.ts.infos.tutorials.sort((tutorial1, tutorial2) => {
+    this.tutorials = this.application.applicationInfos.tutorials.sort((tutorial1, tutorial2) => {
       console.log(event);
       if (event.value === "date") {
         return this.sortByDate(tutorial1, tutorial2);
@@ -73,9 +75,9 @@ export class CodelabsComponent implements OnInit {
 
   filterByLanguage(event) {
     if (event.value === "all") {
-      this.tutorials = this.ts.infos.tutorials;
+      this.tutorials = this.application.applicationInfos.tutorials;
     } else {
-      this.tutorials = this.ts.infos.tutorials.filter(tutorial => tutorial.language === event.value);
+      this.tutorials = this.application.applicationInfos.tutorials.filter(tutorial => tutorial.language === event.value);
     }
   }
 
