@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TutorialService } from '../tutorial.service';
-import { languages } from 'prismjs';
+
 import { ApplicationService } from '../services/application.service';
 
 export interface Tutorial {

@@ -7,6 +7,7 @@
 .container .menu {
   display: flex;
   justify-content: flex-end;
+  flex-direction: column;
 }
 
 .cards {
@@ -21,11 +22,14 @@
   max-width: 1024px;
   align-self: center;
   padding: 0;
+  margin: 0px auto;
+  width: 90vw;
+  max-width: 1024px;
 }
 
 .header img {
   max-height: 40px;
-  margin-right: 1em;
+  margin-right: 0em;
 }
 
 .header .title {
@@ -71,13 +75,14 @@
 }
 
 .banner .logo {
+  display: none;
   font-size: 3em;
   padding: 0 40px;
-  display: flex;
   flex-direction: row;
   align-items: center;
   color: #2bb673;
 }
+
 
 .banner .logo .bracket {
   margin: 0 2px;
@@ -96,19 +101,8 @@
   background-color: #fff;
 }
 
-@media screen and (min-width: 720px) {
-  .card {
-    flex: 0 0 48%;
-  }
-}
 
-@media screen and (min-width: 1024px) {
-  .card {
-    flex: 0 0 32%;
-  }
-}
-
-.card .header mat-toolbar-row {
+.card .card-header mat-toolbar-row {
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -116,11 +110,11 @@
   padding: 0 12px;
 }
 
-.card .header i {
+.card .card-header i {
   margin-right: 5px;
 }
 
-.card .header .duration {
+.card .card-header .duration {
   font-weight: normal;
   font-size: 16px;
 }
@@ -163,11 +157,36 @@ mat-card .no-padding {
   width: calc(100% + 48px);
 }
 
+@media screen and (min-width: 440px) {
+  .container .menu {
+    flex-direction: row;
+  }
 
-mat-form-field {
-  padding-right: 1em;
+  mat-form-field {
+    padding-right: 1em;
+  }
 }
 
-mat-form-field:last-of-type {
-  padding-right: 0;
+@media screen and (min-width: 600px) {
+  .header img {
+    margin-right: 1em;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    flex: 0 0 48%;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .card {
+    flex: 0 0 32%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .banner .logo {
+    display: flex;
+  }
 }

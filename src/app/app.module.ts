@@ -4,6 +4,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { Routes, RouterModule } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 import { FormsModule }   from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { Angulartics2Module } from 'angulartics2';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
@@ -56,6 +57,7 @@ const routes: Routes = [
     BrowserAnimationsModule,
     RouterModule.forRoot(routes, { useHash: true }),
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
+    FlexLayoutModule,
     MarkdownModule.forRoot({
       markedOptions: {
         provide: MarkedOptions,
