@@ -10,7 +10,8 @@
       </div>
     </div>
     <div class="footer">
-      See <a href='https://docs.botfuel.io/' target='_blank'>documentation</a>
+      <div *ngIf="application.applicationInfos?.links?.documentation">See <a href='{{application.applicationInfos.links.documentation}}' target='_blank'>documentation</a></div>
+      <div *ngIf="application.applicationInfos?.links?.github"><i class="fab fa-github"></i> Star us on <a href='{{application.applicationInfos.links.github}}' target='_blank'>github</a>.</div>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>

@@ -23,9 +23,11 @@ mat-sidenav .steps {
 
 mat-sidenav .footer {
   text-align: center;
-  padding: 1em 0;
 }
 
+mat-sidenav .footer div {
+  padding: 0 0 1em 0;
+}
 mat-sidenav .footer a {
   text-decoration: none;
 }
@@ -271,4 +273,8 @@ aside.error {
 code {
   background-color: #E8EAEd;
   padding: 0.1em 0.3em;
+}
+
+.fa-heart {
+  color: #f50b0b;
 }

@@ -38,7 +38,7 @@ export class CodelabComponent implements OnInit {
   constructor(private router: Router,
     private route: ActivatedRoute,
     private ts: TutorialService,
-    private application: ApplicationService,
+    public application: ApplicationService,
     private md: MarkdownParserService,
     private markdownService: MarkdownService,
     public dialog: MatDialog) {
