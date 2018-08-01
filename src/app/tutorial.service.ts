@@ -12,9 +12,9 @@ export class TutorialService {
               private application: ApplicationService) { }
 
   getTutorialMd(tutorialId: string) {
-    
+
     const tutorial = this.application.applicationInfos.tutorials.find(element => {
-      return element.id == tutorialId;
+      return element.id === tutorialId;
     });
 
     return this.http.get(tutorial.markdownUrl, {responseType: 'text'});

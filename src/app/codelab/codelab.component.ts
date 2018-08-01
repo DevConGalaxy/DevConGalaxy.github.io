@@ -1,20 +1,28 @@
-import { Component, OnInit, ViewEncapsulation, Inject } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { MarkdownParserService } from '../markdown-parser.service';
 import { TutorialService } from '../tutorial.service';
 
 import { MarkdownService } from 'ngx-markdown';
-import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+import { MatDialog } from '@angular/material';
 
 const SMALL_WIDTH_BREAKPOINT = 720;
-import { trigger, state, style, animate, transition, keyframes } from '@angular/animations';
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+  keyframes
+} from '@angular/animations';
 import { ApplicationService } from '../services/application.service';
+import { ResumeDialogComponent } from './resume-dialog.component';
 
 @Component({
   selector: 'app-codelab',
   templateUrl: './codelab.component.html',
   styleUrls: ['./codelab.component.css'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
   // animations: [
   //   trigger('toggleState', [
   //     state('true' , style({ transform: 'translateX(0)' })),
@@ -25,32 +33,37 @@ import { ApplicationService } from '../services/application.service';
   // ]
 })
 export class CodelabComponent implements OnInit {
-  private mediaMatcher: MediaQueryList = matchMedia(`(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`);
-  public currentStep: number = 0;
+  private mediaMatcher: MediaQueryList = matchMedia(
+    `(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`
+  );
+  public currentStep = 0;
   private tutorialId: string;
   public tutorialDetails: any;
   public steps: Array<any> = new Array<any>();
   private tutorialMd: any;
   public tutorialSteps: Array<string> = new Array<string>();
-  private totalDuration: number = 0;
-  public remainDuration: number = 0;
+  private totalDuration = 0;
+  public remainDuration = 0;
 
-  constructor(private router: Router,
+  constructor(
+    private router: Router,
     private route: ActivatedRoute,
     private ts: TutorialService,
     public application: ApplicationService,
     private md: MarkdownParserService,
     private markdownService: MarkdownService,
-    public dialog: MatDialog) {
-  }
+    public dialog: MatDialog
+  ) {}
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.tutorialId = params.get("id");
+      this.tutorialId = params.get('id');
       this.getTutorial();
-      this.route.queryParamMap.subscribe(params => {
-        if (!params.has("step")) {
-          const localStorageStep = JSON.parse(localStorage.getItem(this.tutorialId));
+      this.route.queryParamMap.subscribe(innerParams => {
+        if (!innerParams.has('step')) {
+          const localStorageStep = JSON.parse(
+            localStorage.getItem(this.tutorialId)
+          );
           if (localStorageStep) {
             this.currentStep = localStorageStep.step;
           } else {
@@ -63,13 +76,16 @@ export class CodelabComponent implements OnInit {
             this.updateStepUrl(true);
           }
         } else {
-          this.currentStep = Number(params.get("step"));
+          this.currentStep = Number(innerParams.get('step'));
           if (this.currentStep < 1) {
             this.currentStep = 1;
             this.updateStepUrl(true);
           }
         }
-        if (this.tutorialSteps.length > 0 && this.currentStep > this.tutorialSteps.length) {
+        if (
+          this.tutorialSteps.length > 0 &&
+          this.currentStep > this.tutorialSteps.length
+        ) {
           this.currentStep = this.tutorialSteps.length;
           this.updateStepUrl(true);
         }
@@ -79,7 +95,7 @@ export class CodelabComponent implements OnInit {
 
   openResumeDialog(): void {
     setTimeout(() => {
-      let dialogRef = this.dialog.open(ResumeDialog, {
+      const dialogRef = this.dialog.open(ResumeDialogComponent, {
         width: '350px'
       });
 
@@ -97,21 +113,18 @@ export class CodelabComponent implements OnInit {
   // }
 
   getTutorial() {
-    console.log(`tutorial : ${this.tutorialId}`);
     // this.ts.getConfig(this.tutorialId).subscribe(response => {
     //   this.tutorialDetails = response;
     // });
     let i = 0;
     this.ts.getTutorialMd(this.tutorialId).subscribe(response => {
-
       this.tutorialMd = response;
 
       response.split('--sep--').map(str => {
-
+        // tslint:disable-next-line:prefer-const
         let [, title, duration, , ...txt] = str.trim().split('\n');
         title = title.split(':').pop();
         duration = duration.split(':').pop();
-        console.log(`title : ${title} duration: ${duration}`);
         if (i === 0) {
           this.tutorialDetails = {
             title: title.trim()
@@ -122,7 +135,7 @@ export class CodelabComponent implements OnInit {
             duration: Number(duration.trim())
           });
           this.totalDuration += Number(duration);
-          this.tutorialSteps.push(txt.join("\n"));
+          this.tutorialSteps.push(txt.join('\n'));
         }
         i++;
       });
@@ -143,7 +156,6 @@ export class CodelabComponent implements OnInit {
     this.currentStep = step;
     this.updateStepUrl();
   }
-
 
   next() {
     this.currentStep++;
@@ -169,35 +181,13 @@ export class CodelabComponent implements OnInit {
   updateStepUrl(replaceUrl = false) {
     this.calculateRemainingDuration();
     if (this.tutorialId) {
-      localStorage.setItem(this.tutorialId, `{"step":${this.currentStep}}`);;
+      localStorage.setItem(this.tutorialId, `{"step":${this.currentStep}}`);
     }
-    this.router.navigate([], { queryParams: { step: this.currentStep }, replaceUrl: replaceUrl });
+    this.router.navigate([], {
+      queryParams: { step: this.currentStep },
+      replaceUrl: replaceUrl
+    });
   }
 }
 
 
-@Component({
-  selector: 'resume-dialog',
-  template: `
-    <h2 mat-dialog-title>Resume Tutorial</h2>
-    <mat-dialog-content>We noticed you have already started this tutorial. Do you want to continue it?</mat-dialog-content>
-    <mat-dialog-actions>
-      <button mat-raised-button (click)="close('restart')">Restart</button>
-      <button mat-raised-button color="primary" (click)="close('resume')">Continue</button>
-    </mat-dialog-actions>
-  `,
-})
-export class ResumeDialog {
-
-  constructor(
-    public dialogRef: MatDialogRef<ResumeDialog>,
-    @Inject(MAT_DIALOG_DATA) public data: any) { }
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
-
-  close(val: string) {
-    this.dialogRef.close(val);
-  }
-}
