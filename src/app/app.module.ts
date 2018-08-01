@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, APP_INITIALIZER } from '@angular/core';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { Routes, RouterModule } from "@angular/router";
-import { HttpClientModule } from "@angular/common/http";
-import { FormsModule }   from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { Angulartics2Module } from 'angulartics2';
@@ -12,7 +12,8 @@ import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 
 import { AppComponent } from './app.component';
-import { CodelabComponent, ResumeDialog } from './codelab/codelab.component';
+import { CodelabComponent } from './codelab/codelab.component';
+import { ResumeDialogComponent } from './codelab/resume-dialog.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -26,20 +27,20 @@ import { FilterPipe } from './filter.pipe';
 import { ApplicationService } from './services/application.service';
 
 export function app_Init(appService: ApplicationService) {
-  return() => appService.initializeApp();
+  return () => appService.initializeApp();
 }
 
 const routes: Routes = [
   {
-    path: "",
+    path: '',
     component: CodelabsComponent
   },
   {
-    path: "codelabs",
+    path: 'codelabs',
     component: CodelabsComponent
   },
   {
-    path: "codelab/:id",
+    path: 'codelab/:id',
     component: CodelabComponent
   }
 ];
@@ -49,7 +50,7 @@ const routes: Routes = [
     AppComponent,
     CodelabComponent,
     CodelabsComponent,
-    ResumeDialog,
+    ResumeDialogComponent,
     FilterPipe
   ],
   imports: [
@@ -68,9 +69,9 @@ const routes: Routes = [
           pedantic: false,
           sanitize: false,
           smartLists: true,
-          smartypants: false,
-        },
-      },
+          smartypants: false
+        }
+      }
     }),
     FormsModule,
     HttpClientModule,
@@ -83,9 +84,15 @@ const routes: Routes = [
   ],
   providers: [
     MarkdownParserService,
-    ApplicationService, { provide: APP_INITIALIZER, useFactory: app_Init, deps: [ApplicationService], multi: true }
+    ApplicationService,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: app_Init,
+      deps: [ApplicationService],
+      multi: true
+    }
   ],
-  entryComponents: [ResumeDialog],
+  entryComponents: [ResumeDialogComponent],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
