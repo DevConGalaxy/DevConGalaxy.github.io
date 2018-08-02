@@ -59,7 +59,7 @@ export class CodelabsComponent implements OnInit {
   }
 
   sortTutorialsBy(event) {
-    this.tutorials = this.application.applicationInfos.tutorials.sort(
+    this.tutorials = this.tutorials.sort(
       (tutorial1, tutorial2) => {
         if (event.value === 'date') {
           return this.sortByDate(tutorial1, tutorial2);
