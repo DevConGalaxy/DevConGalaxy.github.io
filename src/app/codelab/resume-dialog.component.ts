@@ -1,5 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
+
 @Component({
   selector: 'app-resume-dialog',
   template: `
@@ -12,12 +13,15 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
   `
 })
 export class ResumeDialogComponent {
-  constructor(public dialogRef: MatDialogRef<ResumeDialogComponent>,
-    @Inject(MAT_DIALOG_DATA)
-    public data: any) { }
+  constructor(
+    public dialogRef: MatDialogRef<ResumeDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) {}
+
   onNoClick(): void {
     this.dialogRef.close();
   }
+
   close(val: string) {
     this.dialogRef.close(val);
   }
