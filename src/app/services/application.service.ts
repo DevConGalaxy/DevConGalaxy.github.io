@@ -10,22 +10,18 @@ export class ApplicationService {
 
   constructor(private http: HttpClient) {}
 
-  initializeApp(): Promise<any> {
-    return new Promise((resolve, reject) => {
-      this.http
+  /**
+   * Fetch the application configuration from the provided remote URL.
+   * This method will resolve with an empty value if we managed to fetch sucessfully.
+   */
+  async initializeApp(): Promise<void | Object> {
+    try {
+      this.applicationInfos = await this.http
         .get(environment.application)
-        .toPromise()
-        .then(res => {
-          this.applicationInfos = res;
-          resolve();
-        })
-        .catch(this.handleError());
-    });
-  }
-
-  handleError() {
-    return (error: any) => {
-      console.log(error);
-    };
+        .toPromise();
+      return Promise.resolve();
+    } catch (error) {
+      return Promise.reject(error);
+    }
   }
 }

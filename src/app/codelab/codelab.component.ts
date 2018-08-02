@@ -50,8 +50,6 @@ export class CodelabComponent implements OnInit {
     private route: ActivatedRoute,
     private ts: TutorialService,
     public application: ApplicationService,
-    private md: MarkdownParserService,
-    private markdownService: MarkdownService,
     public dialog: MatDialog
   ) {}
 

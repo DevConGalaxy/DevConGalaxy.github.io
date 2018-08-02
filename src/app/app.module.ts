@@ -26,7 +26,12 @@ import { CodelabsComponent } from './codelabs/codelabs.component';
 import { FilterPipe } from './filter.pipe';
 import { ApplicationService } from './services/application.service';
 
-export function app_Init(appService: ApplicationService) {
+/**
+ * Fetch the application configuration before bootstraping Angular.
+ *
+ * @param ApplicationService The application initializer service that will fetch the application configuration.
+ */
+export function appInitialiser(appService: ApplicationService) {
   return () => appService.initializeApp();
 }
 
@@ -87,7 +92,7 @@ const routes: Routes = [
     ApplicationService,
     {
       provide: APP_INITIALIZER,
-      useFactory: app_Init,
+      useFactory: appInitialiser,
       deps: [ApplicationService],
       multi: true
     }

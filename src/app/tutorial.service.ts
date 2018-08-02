@@ -13,9 +13,7 @@ export class TutorialService {
 
   getTutorialMd(tutorialId: string) {
 
-    const tutorial = this.application.applicationInfos.tutorials.find(element => {
-      return element.id === tutorialId;
-    });
+    const tutorial = this.application.applicationInfos.tutorials.find(element => element.id === tutorialId);
 
     return this.http.get(tutorial.markdownUrl, {responseType: 'text'});
   }
