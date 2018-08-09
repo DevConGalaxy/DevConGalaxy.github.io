@@ -25,6 +25,7 @@ import { MarkdownParserService } from './markdown-parser.service';
 import { CodelabsComponent } from './codelabs/codelabs.component';
 import { FilterPipe } from './filter.pipe';
 import { ApplicationService } from './services/application.service';
+import { StatusPipe } from './status.pipe';
 
 /**
  * Fetch the application configuration before bootstraping Angular.
@@ -56,7 +57,8 @@ const routes: Routes = [
     CodelabComponent,
     CodelabsComponent,
     ResumeDialogComponent,
-    FilterPipe
+    FilterPipe,
+    StatusPipe
   ],
   imports: [
     BrowserModule,

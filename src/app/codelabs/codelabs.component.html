@@ -43,7 +43,7 @@
       </mat-form-field>
     </div>
     <div class="cards">
-      <div class="card" *ngFor="let tutorial of tutorials | filter : searchText">
+      <div class="card" *ngFor="let tutorial of tutorials |status: 'published' | filter : searchText ">
         <mat-toolbar color="primary" class="card-header">
           <mat-toolbar-row>
             <div class="duration">
