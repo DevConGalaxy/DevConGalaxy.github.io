@@ -2,7 +2,7 @@
   <mat-toolbar color="primary" class="header">
     <mat-toolbar-row>
       <img src="./assets/images/botfuel-logo.png" />
-      <div class="title">{{application.title}}</div>
+      <div class="title">{{application.applicationInfos.title}}</div>
       <input class="searchbox" type="text" placeholder="Search..." [(ngModel)]="searchText" />
     </mat-toolbar-row>
   </mat-toolbar>
@@ -19,7 +19,7 @@
       </div>
     </div>
   </header>
-  <div class="container">
+  <main class="container">
     <div class="menu">
       <mat-form-field>
         <mat-select placeholder="Sort by" (selectionChange)="sortTutorialsBy($event)" [value]="'title'">
@@ -62,4 +62,9 @@
         </div>
       </div>
     </div>
-  </div>
+  </main>
+
+  <footer class="footer" [style.background-color]="application.applicationInfos.theme.main">
+    <pre>{{application.applicationInfos.links |json}}</pre>
+  </footer>
+</div>

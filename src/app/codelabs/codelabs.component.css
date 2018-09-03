@@ -87,6 +87,10 @@
   margin: 0 2px;
 }
 
+.footer {
+  color: #fff;
+}
+
 .card {
   display: flex;
   position: relative;
