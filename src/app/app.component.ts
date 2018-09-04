@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import { TutorialService } from './tutorial.service';
+import { ApplicationService } from './services/application.service';
 
 export interface Tutorial {
   id: string;
@@ -26,11 +27,5 @@ export class AppComponent {
   title = 'app';
   constructor(
     angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
-    private ts: TutorialService
-  ) {
-    // this.ts.getCodelabs().subscribe((response: any) => {
-    //   // this.infos = response;
-    //   this.ts.infos = response;
-    // });
-  }
+  ) {}
 }
