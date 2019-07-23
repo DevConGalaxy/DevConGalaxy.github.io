@@ -403,6 +403,12 @@ il vous faudra probablement les include suivants:
 
 La commande **Azure IoT Device Workbench: Open Examples** vous permet d'accéder à un ensemble d'exemples préassemblés. Testez-en un, comme par exemple le _DevKit Translator_.
 
+
+--sep--
+---
+title: Conclusion
+---
+
 # Conclusion
 
 Bravo, vous avez fini le workshop!
