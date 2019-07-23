@@ -13,6 +13,14 @@ Ce repository contient le code ainsi que les instructions vous permettant de
 réaliser le workshop _codez votre premier projet IoT_ lors du 
 [RoadShow développeurs Microsoft](https://twitter.com/hashtag/MsDevRoadShow?src=hashtag_click&f=live).
 
+### Pré-requis
+
+Afin de réaliser ce workshop, vous aurez besoin: 
+
+- D'un PC (ou Mac) de développement, sur lequel il faudra installer un certain nombre d'outils et de drivers,
+- D'un abonnement Azure (d'essai, payant ou MSDN),
+- Dans l'idéal, d'une carte de développement [MXChip](https://aka.ms/iot-devkit?wt.mc_id=WTMCID) ([acheter](https://aka.ms/iot-devkit-purchase?wt.mc_id=WTMCID)), ou de l'émulateur.
+
 --sep--
 ---
 title: Objectif du workshop
@@ -24,25 +32,13 @@ Ce workshop, accessible à **tous les développeurs même sans connaissance en I
 découvrir la programmation sur des devices IoT avec ([Arduino](https://www.arduino.cc)) et [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=WTMCID)), ainsi que 
 la création d'expériences connectées avec les services [Azure](https://azure.microsoft.com/fr-fr/?wt.mc_id=WTMCID)).
 
---sep--
----
-title: Préparez votre environnement
----
-
-## Préparez votre environnement
-
-Afin de réaliser ce workshop, vous aurez besoin: 
-
-* D'un PC (ou Mac) de développement, sur lequel il faudra installer un certain nombre d'outils et de drivers,
-* D'un abonnement Azure (d'essai, payant ou MSDN),
-* Dans l'idéal, d'une carte de développement [MXChip](https://aka.ms/iot-devkit?wt.mc_id=WTMCID) ([acheter](https://aka.ms/iot-devkit-purchase?wt.mc_id=WTMCID)), ou de l'émulateur.
 
 --sep--
 ---
-title: Préparez votre environnement
+title: Préparez votre machine de dev
 ---
 
-### Préparer sa machine de dev
+## Préparer sa machine de dev
 
 Afin de pouvoir développer, puis déployer à la fois sur le board MXChip et sur Azure, il vous faudra plusieurs outils
 (gratuits): 
@@ -57,13 +53,13 @@ Afin de pouvoir développer, puis déployer à la fois sur le board MXChip et su
         - JavaScript est déjà inclus :)
 - [Arduino IDE](https://www.arduino.cc/en/Main/Software): il contient les outils de builds et de déploiment pour la carte MXChip. **Attention:** Installez la version "standalone", et non pas la version du Store.
 - Le driver _ST-Link_: 
-	* Windows
+	- Windows
 	Télécharger et installer le driver depuis le site [STMicro](http://www.st.com/en/development-tools/stsw-link009.html).
 
-	* macOS
+	- macOS
 	Pas de driver nécessaire
 
-	* Ubuntu
+	- Ubuntu
   	Exécuter la commande suivante dans votre terminal, puis déconnectez/reconnectez-vous afin d'appliquer le changement 
     de permissions
 
@@ -127,10 +123,10 @@ Enfin il faudra ajouter le SDK spécifique pour la board Arduino MXChip. Pour ce
 
 --sep--
 ---
-title: Préparez votre environnement
+title: Préparez votre environnement Azure
 ---
 
-### Préparer son environnement Azure
+## Préparer son environnement Azure
 
 Afin de réaliser cet atelier, vous aurez besoin d'une souscription Azure. Il y a plusieurs moyens d'en obtenir une: 
 
@@ -138,7 +134,7 @@ Afin de réaliser cet atelier, vous aurez besoin d'une souscription Azure. Il y 
 - Ou si vous êtes abonnés MSDN, utiliser les crédits offerts par votre abonnement.
 - Ou créer un [abonnement d'essai](https://azure.microsoft.com/en-us/free/?wt.mc_id=WTMCID),
 
-#### Utiliser votre Azure Pass
+### Utiliser votre Azure Pass
 
 1. Rendez-vous sur [microsoftazurepass.com](https://www.microsoftazurepass.com/?wt.mc_id=WTMCID) et cliquez sur **Start**,
 ![Démarrer l'utilisation du pass](media/redeempass-1.jpg)
