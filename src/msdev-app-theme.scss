@@ -6,21 +6,21 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
-$md-botfuel-palette: (
-    50 : #e6f6ee,
-    100 : #bfe9d5,
-    200 : #95dbb9,
-    300 : #6bcc9d,
-    400 : #4bc188,
-    500 : #2bb673,
-    600 : #26af6b,
-    700 : #20a660,
-    800 : #1a9e56,
-    900 : #108e43,
-    A100 : #c0ffd7,
-    A200 : #8dffb6,
-    A400 : #5aff96,
-    A700 : #41ff85,
+$md-msdev-palette: (
+    50: #e0f1fa,
+    100: #b3dcf3,
+    200: #80c5eb,
+    300: #4dade3,
+    400: #269cdd,
+    500: #008ad7,
+    600: #0082d3,
+    700: #0077cd,
+    800: #006dc7,
+    900: #005abe,
+    A100: #e6f0ff,
+    A200: #b3d2ff,
+    A400: #80b4ff,
+    A700: #67a5ff,
     contrast: (
         50 : #000000,
         100 : #000000,
@@ -44,16 +44,16 @@ $md-botfuel-palette: (
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$botfuel-app-primary: mat-palette($md-botfuel-palette);
-$botfuel-app-accent:  mat-palette($mat-pink, A200, A100, A400);
+$msdev-app-primary: mat-palette($md-msdev-palette);
+$msdev-app-accent:  mat-palette($mat-pink, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$botfuel-app-warn:    mat-palette($mat-red);
+$msdev-app-warn:    mat-palette($mat-red);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$botfuel-app-theme: mat-light-theme($botfuel-app-primary, $botfuel-app-accent, $botfuel-app-warn);
+$msdev-app-theme: mat-light-theme($msdev-app-primary, $msdev-app-accent, $msdev-app-warn);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($botfuel-app-theme);
+@include angular-material-theme($msdev-app-theme);

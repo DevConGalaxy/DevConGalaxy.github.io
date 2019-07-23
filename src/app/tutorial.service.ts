@@ -13,8 +13,8 @@ export class TutorialService {
 
   getTutorialMd(tutorialId: string) {
 
-    const tutorial = this.application.applicationInfos.tutorials.find(element => element.id === tutorialId);
-
-    return this.http.get(tutorial.markdownUrl, {responseType: 'text'});
+    //const tutorial = this.application.applicationInfos.tutorials.find(element => element.id === tutorialId);
+    return this.http.get(`/assets/codelabs/${tutorialId}/${tutorialId}.md`, {responseType: 'text'});
+    //return this.http.get(tutorial.markdownUrl, {responseType: 'text'});
   }
 }

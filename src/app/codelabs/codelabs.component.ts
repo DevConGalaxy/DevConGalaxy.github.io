@@ -38,53 +38,49 @@ export class CodelabsComponent implements OnInit {
     private ts: TutorialService,
     public application: ApplicationService
   ) {
-    this.tutorials = application.applicationInfos.tutorials;
-    this.sortTutorialsBy({ value: 'title' });
-    // this.ts.getCodelabs().subscribe((response: any) => {
-    // this.infos = response;
-    // this.sortTutorialsBy({value:'title'});
-    // });
+    // this.tutorials = application.applicationInfos.tutorials;
+    // this.sortTutorialsBy({ value: 'title' });
   }
 
-  sortByDate(tutorial1, tutorial2) {
-    const date1 = new Date(tutorial1.date);
-    const date2 = new Date(tutorial2.date);
-    if (date1 < date2) {
-      return 1;
-    }
-    if (date1 > date2) {
-      return -1;
-    }
-    return 0;
-  }
+  // sortByDate(tutorial1, tutorial2) {
+  //   const date1 = new Date(tutorial1.date);
+  //   const date2 = new Date(tutorial2.date);
+  //   if (date1 < date2) {
+  //     return 1;
+  //   }
+  //   if (date1 > date2) {
+  //     return -1;
+  //   }
+  //   return 0;
+  // }
 
-  sortTutorialsBy(event) {
-    this.tutorials = this.tutorials.sort(
-      (tutorial1, tutorial2) => {
-        if (event.value === 'date') {
-          return this.sortByDate(tutorial1, tutorial2);
-        } else {
-          if (tutorial1[event.value] > tutorial2[event.value]) {
-            return 1;
-          }
-          if (tutorial1[event.value] < tutorial2[event.value]) {
-            return -1;
-          }
-          return 0;
-        }
-      }
-    );
-  }
+  // sortTutorialsBy(event) {
+  //   this.tutorials = this.tutorials.sort(
+  //     (tutorial1, tutorial2) => {
+  //       if (event.value === 'date') {
+  //         return this.sortByDate(tutorial1, tutorial2);
+  //       } else {
+  //         if (tutorial1[event.value] > tutorial2[event.value]) {
+  //           return 1;
+  //         }
+  //         if (tutorial1[event.value] < tutorial2[event.value]) {
+  //           return -1;
+  //         }
+  //         return 0;
+  //       }
+  //     }
+  //   );
+  // }
 
-  filterByLanguage(event) {
-    if (event.value === 'all') {
-      this.tutorials = this.application.applicationInfos.tutorials;
-    } else {
-      this.tutorials = this.application.applicationInfos.tutorials.filter(
-        tutorial => tutorial.language === event.value
-      );
-    }
-  }
+  // filterByLanguage(event) {
+  //   if (event.value === 'all') {
+  //     this.tutorials = this.application.applicationInfos.tutorials;
+  //   } else {
+  //     this.tutorials = this.application.applicationInfos.tutorials.filter(
+  //       tutorial => tutorial.language === event.value
+  //     );
+  //   }
+  // }
 
   ngOnInit() {}
 }

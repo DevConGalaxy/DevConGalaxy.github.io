@@ -16,9 +16,9 @@ export class ApplicationService {
    */
   async initializeApp(): Promise<void | Object> {
     try {
-      this.applicationInfos = await this.http
-        .get(environment.application)
-        .toPromise();
+      // this.applicationInfos = await this.http
+      //   .get(environment.application)
+      //   .toPromise();
       return Promise.resolve();
     } catch (error) {
       return Promise.reject(error);

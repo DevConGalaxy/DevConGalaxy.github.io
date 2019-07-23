@@ -7,7 +7,7 @@ mat-sidenav-container li {
 }
 
 a, a:visited, a:hover {
-  color: #2bb673;
+  color: #008ad7;
   /* text-decoration: none; */
 }
 mat-sidenav {
@@ -108,12 +108,12 @@ h2 {
 }
 
 .step.complete i {
-  background-color: #2bb673;
+  background-color: #008ad7;
   color: #fff;
 }
 
 .step.complete i:before, .step.complete i:after {
-  border-color: #2bb673;
+  border-color: #008ad7;
 }
 
 .step i {
@@ -133,14 +133,14 @@ h2 {
   font-size: 14px;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
-  border: solid 2px #2bb673;
+  border: solid 2px #008ad7;
 
   transition: background-color .3s ease-in-out,
               color .3s ease-in-out;
 }
 
 .step.active {
-  background-color: #bdf0d7;
+  background-color: #e0f1fa;
   /* font-weight: bold; */
 }
 
@@ -153,8 +153,8 @@ h2 {
   margin-left: 10px;
   content: '';
   display: block;
-  border-left: 1px solid #2bb673;
-  border-right: 1px solid #2bb673;
+  border-left: 1px solid #008ad7;
+  border-right: 1px solid #008ad7;
   width: 0;
   height: 44px;
   z-index: 1;
@@ -164,8 +164,8 @@ h2 {
   margin-left: 10px;
   content: '';
   display: block;
-  border-left: 1px solid #2bb673;
-  border-right: 1px solid #2bb673;
+  border-left: 1px solid #008ad7;
+  border-right: 1px solid #008ad7;
   /* border-right: 1px solid #80868B; */
   width: 0;
   height: 44px;
@@ -229,7 +229,7 @@ aside {
 }
 
 aside.infos {
-  border-left-color: #2bb673;
+  border-left-color: #008ad7;
   background-color: #E6F4EA;
   color: #155724;
 }
@@ -277,4 +277,17 @@ code {
 
 .fa-heart {
   color: #f50b0b;
+}
+
+mat-card-content[markdown] li+li {
+  margin-top: .25em;
+}
+
+mat-card-content[markdown] li {
+  word-wrap: break-all;
+  padding: 0px;
+}
+
+mat-card-content[markdown] h1 {
+  font-weight: normal;
 }

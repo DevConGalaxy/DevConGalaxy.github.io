@@ -42,8 +42,7 @@ export class CodelabComponent implements OnInit {
   public steps: Array<any> = new Array<any>();
   private tutorialMd: any;
   public tutorialSteps: Array<string> = new Array<string>();
-  private totalDuration = 0;
-  public remainDuration = 0;
+  public mcid = '';
 
   constructor(
     private router: Router,
@@ -56,6 +55,8 @@ export class CodelabComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.tutorialId = params.get('id');
+      this.mcid = this.route.snapshot.queryParamMap.get('wtmcid');
+
       this.getTutorial();
       this.route.queryParamMap.subscribe(innerParams => {
         if (!innerParams.has('step')) {
@@ -106,23 +107,17 @@ export class CodelabComponent implements OnInit {
     }, 0);
   }
 
-  // getTutorialMdUrl() {
-  //   return `./assets/tutorials/${this.tutorialId}/${this.tutorialId}.md`;
-  // }
-
   getTutorial() {
-    // this.ts.getConfig(this.tutorialId).subscribe(response => {
-    //   this.tutorialDetails = response;
-    // });
     let i = 0;
     this.ts.getTutorialMd(this.tutorialId).subscribe(response => {
-      this.tutorialMd = response;
+      const path = `/assets/codelabs/${this.tutorialId}`;
+      this.tutorialMd = response.replace(/media/g, `${path}/images`);
+      this.tutorialMd = this.tutorialMd.replace(/WTMCID/g, this.mcid);
 
-      response.split('--sep--').map(str => {
+      this.tutorialMd.split('--sep--').map(str => {
         // tslint:disable-next-line:prefer-const
         let [, title, duration, , ...txt] = str.trim().split('\n');
         title = title.split(':').pop();
-        duration = duration.split(':').pop();
         if (i === 0) {
           this.tutorialDetails = {
             title: title.trim()
@@ -130,9 +125,7 @@ export class CodelabComponent implements OnInit {
         } else {
           this.steps.push({
             title: title.trim(),
-            duration: Number(duration.trim())
           });
-          this.totalDuration += Number(duration);
           this.tutorialSteps.push(txt.join('\n'));
         }
         i++;
@@ -142,7 +135,6 @@ export class CodelabComponent implements OnInit {
         this.currentStep = this.tutorialSteps.length;
         this.updateStepUrl(true);
       }
-      this.calculateRemainingDuration();
     });
   }
 
@@ -167,22 +159,12 @@ export class CodelabComponent implements OnInit {
     }
   }
 
-  calculateRemainingDuration() {
-    this.remainDuration = this.totalDuration;
-    for (let i = 0; i < this.steps.length; i++) {
-      if (i < this.currentStep - 1) {
-        this.remainDuration -= this.steps[i].duration;
-      }
-    }
-  }
-
   updateStepUrl(replaceUrl = false) {
-    this.calculateRemainingDuration();
     if (this.tutorialId) {
       localStorage.setItem(this.tutorialId, `{"step":${this.currentStep}}`);
     }
     this.router.navigate([], {
-      queryParams: { step: this.currentStep },
+      queryParams: { step: this.currentStep, wtmcid: this.mcid },
       replaceUrl: replaceUrl
     });
   }

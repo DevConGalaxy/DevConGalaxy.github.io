@@ -10,8 +10,8 @@
       </div>
     </div>
     <div class="footer">
-      <div *ngIf="application.applicationInfos?.links?.documentation">See <a href='{{application.applicationInfos.links.documentation}}' target='_blank'>documentation</a></div>
-      <div *ngIf="application.applicationInfos?.links?.github"><i class="fab fa-github"></i> Star us on <a href='{{application.applicationInfos.links.github}}' target='_blank'>github</a>.</div>
+      <div>See <a href='https://docs.microsoft.com' target='_blank'>documentation</a></div>
+      <div>Learn more on <a href='https://docs.microsoft.com/learn/' target='_blank'>Microsoft Learn</a>.</div>
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -19,10 +19,10 @@
       <mat-toolbar-row>
         <a routerLink="/"><i class="fas fa-chevron-left"></i></a>
         <div class="title">{{tutorialDetails?.title}}</div>
-        <div>
+        <!-- <div>
           <div *ngIf="currentStep === tutorialSteps.length"><i class="fas fa-trophy"></i></div>
           <div class="duration" *ngIf="currentStep < tutorialSteps.length"><i class="far fa-clock"></i><span>{{remainDuration}} min</span></div>
-        </div>
+        </div> -->
       </mat-toolbar-row>
     </mat-toolbar>
     <div class="codelab-step">

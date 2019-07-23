@@ -24,7 +24,7 @@
             ],
             "styles": [
               "src/styles.css",
-              "src/botfuel-app-theme.scss",
+              "src/msdev-app-theme.scss",
               "node_modules/prismjs/themes/prism-okaidia.css"
             ],
             "scripts": [
