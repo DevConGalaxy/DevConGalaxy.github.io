@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/codelabs-platform",
+    "public": "dist/workshops",
     "ignore": [
       "firebase.json",
       "**/.*",

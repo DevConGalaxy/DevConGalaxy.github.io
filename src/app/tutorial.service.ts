@@ -12,9 +12,7 @@ export class TutorialService {
               private application: ApplicationService) { }
 
   getTutorialMd(tutorialId: string) {
-
-    //const tutorial = this.application.applicationInfos.tutorials.find(element => element.id === tutorialId);
-    return this.http.get(`/assets/codelabs/${tutorialId}/${tutorialId}.md`, {responseType: 'text'});
-    //return this.http.get(tutorial.markdownUrl, {responseType: 'text'});
+    return this.http.get(`https://raw.githubusercontent.com/tagazok/workshops/gh-pages/assets/codelabs/${tutorialId}/${tutorialId}.md`, {responseType: 'text'});
+    // return this.http.get(`assets/codelabs/${tutorialId}/${tutorialId}.md`, {responseType: 'text'});
   }
 }

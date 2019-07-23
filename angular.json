@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "codelabs-platform": {
+    "workshops": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/codelabs-platform",
+            "outputPath": "dist/workshops",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -56,18 +56,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "codelabs-platform:build"
+            "browserTarget": "workshops:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "codelabs-platform:build:production"
+              "browserTarget": "workshops:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "codelabs-platform:build"
+            "browserTarget": "workshops:build"
           }
         },
         "test": {
@@ -101,7 +101,7 @@
         }
       }
     },
-    "codelabs-platform-e2e": {
+    "workshops-e2e": {
       "root": "e2e/",
       "projectType": "application",
       "architect": {
@@ -109,11 +109,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "codelabs-platform:serve"
+            "devServerTarget": "workshops:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "codelabs-platform:serve:production"
+              "devServerTarget": "workshops:serve:production"
             }
           }
         },
@@ -129,5 +129,5 @@
       }
     }
   },
-  "defaultProject": "codelabs-platform"
+  "defaultProject": "workshops"
 }

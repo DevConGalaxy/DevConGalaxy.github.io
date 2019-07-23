@@ -9,40 +9,38 @@ title: Introduction
 
 # Microsoft Dev Roadshow - MXChip Atelier IoT
 
+# Introduction
+
 Ce repository contient le code ainsi que les instructions vous permettant de 
 réaliser le workshop _codez votre premier projet IoT_ lors du 
 [RoadShow développeurs Microsoft](https://twitter.com/hashtag/MsDevRoadShow?src=hashtag_click&f=live).
+
+## Pré-requis
+
+Afin de réaliser ce workshop, vous aurez besoin: 
+
+- D'un PC (ou Mac) de développement, sur lequel il faudra installer un certain nombre d'outils et de drivers,
+- D'un abonnement Azure (d'essai, payant ou MSDN),
+- Dans l'idéal, d'une carte de développement [MXChip](https://aka.ms/iot-devkit?wt.mc_id=WTMCID) ([acheter](https://aka.ms/iot-devkit-purchase?wt.mc_id=WTMCID)), ou de l'émulateur.
 
 --sep--
 ---
 title: Objectif du workshop
 ---
 
-## Objectif du workshop
+# Objectif du workshop
 
 Ce workshop, accessible à **tous les développeurs même sans connaissance en IoT ou sur Azure -**, vous permettra de 
 découvrir la programmation sur des devices IoT avec ([Arduino](https://www.arduino.cc)) et [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=WTMCID)), ainsi que 
 la création d'expériences connectées avec les services [Azure](https://azure.microsoft.com/fr-fr/?wt.mc_id=WTMCID)).
 
---sep--
----
-title: Préparez votre environnement
----
-
-## Préparez votre environnement
-
-Afin de réaliser ce workshop, vous aurez besoin: 
-
-* D'un PC (ou Mac) de développement, sur lequel il faudra installer un certain nombre d'outils et de drivers,
-* D'un abonnement Azure (d'essai, payant ou MSDN),
-* Dans l'idéal, d'une carte de développement [MXChip](https://aka.ms/iot-devkit?wt.mc_id=WTMCID) ([acheter](https://aka.ms/iot-devkit-purchase?wt.mc_id=WTMCID)), ou de l'émulateur.
 
 --sep--
 ---
-title: Préparez votre environnement
+title: Préparez votre machine de dev
 ---
 
-### Préparer sa machine de dev
+# Préparer sa machine de dev
 
 Afin de pouvoir développer, puis déployer à la fois sur le board MXChip et sur Azure, il vous faudra plusieurs outils
 (gratuits): 
@@ -57,13 +55,13 @@ Afin de pouvoir développer, puis déployer à la fois sur le board MXChip et su
         - JavaScript est déjà inclus :)
 - [Arduino IDE](https://www.arduino.cc/en/Main/Software): il contient les outils de builds et de déploiment pour la carte MXChip. **Attention:** Installez la version "standalone", et non pas la version du Store.
 - Le driver _ST-Link_: 
-	* Windows
+	- Windows
 	Télécharger et installer le driver depuis le site [STMicro](http://www.st.com/en/development-tools/stsw-link009.html).
 
-	* macOS
+	- macOS
 	Pas de driver nécessaire
 
-	* Ubuntu
+	- Ubuntu
   	Exécuter la commande suivante dans votre terminal, puis déconnectez/reconnectez-vous afin d'appliquer le changement 
     de permissions
 
@@ -127,10 +125,10 @@ Enfin il faudra ajouter le SDK spécifique pour la board Arduino MXChip. Pour ce
 
 --sep--
 ---
-title: Préparez votre environnement
+title: Préparez votre environnement Azure
 ---
 
-### Préparer son environnement Azure
+# Préparer son environnement Azure
 
 Afin de réaliser cet atelier, vous aurez besoin d'une souscription Azure. Il y a plusieurs moyens d'en obtenir une: 
 
@@ -138,7 +136,7 @@ Afin de réaliser cet atelier, vous aurez besoin d'une souscription Azure. Il y 
 - Ou si vous êtes abonnés MSDN, utiliser les crédits offerts par votre abonnement.
 - Ou créer un [abonnement d'essai](https://azure.microsoft.com/en-us/free/?wt.mc_id=WTMCID),
 
-#### Utiliser votre Azure Pass
+## Utiliser votre Azure Pass
 
 1. Rendez-vous sur [microsoftazurepass.com](https://www.microsoftazurepass.com/?wt.mc_id=WTMCID) et cliquez sur **Start**,
 ![Démarrer l'utilisation du pass](media/redeempass-1.jpg)
@@ -167,7 +165,7 @@ visite et de vous familiariser avec l'interface du portail Azure.
 title: Configurez votre board
 ---
 
-## Configurez votre board
+# Configurez votre board
 
 Votre board est normalement déjà configurée. Si vous deviez la reconnecter au WiFi, vous trouverez
 [les instructions ici](docs/configurer-wifi.md).
@@ -180,13 +178,13 @@ En option :
 title: Créer vos services Azure
 ---
 
-## Créer vos services (ressources) dans Azure
+# Créer vos services (ressources) dans Azure
 
 Nous allons maintenant utiliser le [portail Azure](https://portal.azure.com/?feature.customportal=false&wt.mc_id=WTMCID) afin de créer l'ensemble des services dans Azure - 
 appelée _ressources_. Si vous êtes plus bash que clic, vous pouvez utiliser la [Azure CLI](https://docs.microsoft.com/fr-fr/cli/azure/?view=azure-cli-latest&wt.mc_id=WTMCID) (on vous laisse 
 chercher comment faire ;). 
 
-### Créer un resource group
+## Créer un resource group
 
 Nous allons commencer par créer un groupe de ressources (_resource group_). C'est un conteneur logique pour l'ensemble 
 des services que vous allez créer ensuite. Chaque service doit absolument être dans un resource group.
@@ -205,7 +203,7 @@ Occidentale_ ou _West Europe_.
 
 Une fois créé, vous pouvez vous rendre sur la page de la ressource via l'icône de notifications en haut.
 
-### Créer un IoT Hub
+## Créer un IoT Hub
 
 L'IoT Hub est un service qui vous permet de gérer la connexion entre vos devices IoT et vos services hébergés sur Azure 
 (ou ailleurs). Plus concrètement, il vous permet : 
@@ -230,7 +228,7 @@ d'unités permet quand à lui de supporter un plus grand nombre de périphériqu
 
 ![Video - Création d'un IoT Hub](media/creation-iothub.gif)
 
-### Créer un IoT Device
+## Créer un IoT Device
 
 Au sein du IoT Hub, chacun de vos périphériques IoT se doit d'être déclaré afin de pouvoir le gérer et accepter des 
 données. Pour cet atelier simple, nous allons ajouter le périphérique à la main. Si nous avions à déployer des milliers 
@@ -249,7 +247,7 @@ votre code source (ou repository Github)**. Nous verrons plus tard comment la d�
 
 Nous en avons pour l'instant fini avec IoT Hub, mais nous reviendrons plus tard sur cette partie.
 
-### Créer une Azure Function
+## Créer une Azure Function
 
 Notre site web sera simplement un "Front HTML". Il lui faudra communiquer avec l'IoT Hub, et pour cela utiliser un
  _secret_. Afin de protéger ce secret et de limiter ce qu'il est possible de faire, nous allons créer une API contenant 
@@ -267,7 +265,7 @@ ressources, laissez tous les autres paramètres à leurs valeurs par défaut.
 title: Déployez du code sur votre board et connectez-là à Azure
 ---
 
-## Déployez du code sur votre board et connectez-là à Azure
+# Déployez du code sur votre board et connectez-là à Azure
 
 Si vous avez installés tous les prérequis, et que votre board est [connectée à Internet](docs/configurer-wifi.md), alors
  nous pouvons continuer. Notre première étape est de créer un projet **Azure IoT Workbench Visual Studio Code**. Ce type de projet va nous apporter toutes les fonctionnalités nécessaires pour travailler: builder le code, configurer la carte, déployer le code sur la carte, etc...
@@ -313,7 +311,7 @@ Nous l'avons déjà fait pour vous : https://mxchip-workshop.netlify.com/
 
 > Dans une prochaine version de l'atelier, nous proposerons la création d'une interface utilisateur depuis le début.
 
-### Créer une Azure Function pour communiquer avec IoT Hub
+## Créer une Azure Function pour communiquer avec IoT Hub
 
 1. Lancez la commande **Azure Functions: Create new project**,
 2. Sélectionnez un répertoire,
@@ -345,7 +343,7 @@ Il vous restera une dernière petite chose : faire communiquer votre Azure Funct
 
 **ATTENTION**: Nous parlons ici de la _connection string_ à l'IoT Hub, et non pas celle du Device lui-même ! Vous trouverez cette clé dans le portail Azure, sur votre IoT Hub : allez sur **Shared Access Policy**, puis cliquez sur **iothubowner*.
 
-### Le moment de vérité !
+## Le moment de vérité !
 
 Lancez https://mxchip-workshop.netlify.com/, puis indiquez l'URL complète de votre Azure Function. 
 
@@ -355,10 +353,10 @@ Si tout se passe bien, vous devriez voir le status de votre carte, et en cliquan
 
 --sep--
 ---
-title: Ajoutez le support du changement de couleur de la LED
+title: Changer la couleur de la LED
 ---
 
-## Ajoutez le support du changement de couleur de la LED
+# Ajoutez le support du changement de couleur de la LED
 
 Maintenant que votre projet fonctionne, et que vous pouvez allumer et éteindre la LED à distance, essayons d'ajouter 
 un peu de disco ! Nous allons maintenant faire en sorte de pouvoir choisir la couleur de la LED RGB. Jusqu'à présent,
@@ -376,17 +374,15 @@ N'hésitez pas à nous appeler à l'aide en cas de soucis !
 
 --sep--
 ---
-title: [Etape Bonus] Changez à distance le message
+title: Bonus
 ---
+
+# Etapes Bonus
 
 ## [Etape Bonus] Changez à distance le message
 
 Regardez donc la méthode `DeviceTwinCallback`, c'est elle qui est appelée quand le device reçoit un message du cloud.
 
---sep--
----
-title: [Etape cachée] Envoyez un dessin à distance
----
 
 ## [Etape cachée] Envoyez un dessin à distance
 
@@ -407,8 +403,19 @@ il vous faudra probablement les include suivants:
 
 La commande **Azure IoT Device Workbench: Open Examples** vous permet d'accéder à un ensemble d'exemples préassemblés. Testez-en un, comme par exemple le _DevKit Translator_.
 
+
+--sep--
+---
+title: Conclusion
+---
+
+# Conclusion
+
+Bravo, vous avez fini le workshop!
+
 ## Crédit
 
-Ce workshop a été initialement traduit en français par [Christopher Maneu](https://twitter.com/cmaneu). 
+Ce workshop a été créé par [Jim Bennett](https://github.com/jimbobbennett/MXChip-Workshop) puis traduit en français par [Christopher Maneu](https://twitter.com/cmaneu) et ré-arrangé par [Wassim Chegham](https://twitter.com/manekinekko) et [Olivier Leplus](https://twitter.com/olivierleplus). 
 
-Vous pouvez trouver la version anglaise par [Jim Bennett](https://github.com/jimbobbennett/MXChip-Workshop) à [cette adresse](https://github.com/jimbobbennett/MXChip-Workshop).
+Vous pouvez trouver la version anglaise à [cette adresse](https://github.com/jimbobbennett/MXChip-Workshop).
+

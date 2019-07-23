@@ -42,11 +42,7 @@ const routes: Routes = [
     component: CodelabsComponent
   },
   {
-    path: 'codelabs',
-    component: CodelabsComponent
-  },
-  {
-    path: 'codelab/:id',
+    path: ':id',
     component: CodelabComponent
   }
 ];
@@ -63,7 +59,9 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes, { useHash: true }),
+    RouterModule.forRoot(routes, {
+      useHash: true
+    }),
     Angulartics2Module.forRoot([Angulartics2GoogleAnalytics]),
     FlexLayoutModule,
     MarkdownModule.forRoot({

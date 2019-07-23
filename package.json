@@ -1,9 +1,9 @@
 {
-  "name": "codelabs-platform",
+  "name": "workshops",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "http-server ./dist/codelabs-platform/",
+    "start": "http-server ./dist/workshops/",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",

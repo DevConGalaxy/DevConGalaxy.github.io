@@ -110,7 +110,7 @@ export class CodelabComponent implements OnInit {
   getTutorial() {
     let i = 0;
     this.ts.getTutorialMd(this.tutorialId).subscribe(response => {
-      const path = `/assets/codelabs/${this.tutorialId}`;
+      const path = `assets/codelabs/${this.tutorialId}`;
       this.tutorialMd = response.replace(/media/g, `${path}/images`);
       this.tutorialMd = this.tutorialMd.replace(/WTMCID/g, this.mcid);
 
