@@ -168,7 +168,7 @@ title: Configurez votre board
 # Configurez votre board
 
 Votre board est normalement déjà configurée. Si vous deviez la reconnecter au WiFi, vous trouverez
-[les instructions ici](docs/configurer-wifi.md).
+[les instructions ici](https://github.com/cmaneu/DevRoadShow-IOT/blob/master/docs/configurer-wifi.md).
 
 En option :
 - Choisir le port COM dans VS Code
