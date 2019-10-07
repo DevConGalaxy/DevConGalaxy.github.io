@@ -288,7 +288,7 @@ Si vous avez installés tous les prérequis, et que votre board est [connectée 
 
 ![Video - Création d'une Azure Function](media/creation-projetIoT.gif)
 
-Nous pouvons désormais copier-coller le contenu du fichier `.ino` de ce GitHub dans votre projet. A cette étape, il est possible de compiler le code avec la commande `Azure IoT Device Workbench: Compile Device Code`.
+Nous pouvons désormais copier-coller le [contenu du fichier `.ino`](https://raw.githubusercontent.com/cmaneu/DevRoadShow-IOT/master/src/arduino/DevKitState.ino) . A cette étape, il est possible de compiler le code avec la commande `Azure IoT Device Workbench: Compile Device Code`.
 
 Il nous reste désormais deux choses à faire: connecter la board à notre IoT Hub, et déployer le code sur le device. Pour la connection, nous allons simplement envoyer la chaîne de connexion - créée au début du tutoriel - sur la board. Au préalable, assurez-vous que Visual Studio a bien sélectionné votre type de board ainsi que le port série (émulé via l'USB).
 
