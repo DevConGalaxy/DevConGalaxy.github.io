@@ -321,7 +321,7 @@ Nous l'avons déjà fait pour vous : https://mxchip-workshop.netlify.com/
 
 > Si vous êtes plus à l'aise avec Python ou avec NodeJS, vous devriez pouvoir porter le code avec les SDKs correspondants. Mais dites-le nous avant de vous lancer!
 
-Vous pouvez maintenant copier le code C# de ce repository GitHub dans votre dossier de travail.
+Vous pouvez maintenant copier [le code C#](https://github.com/cmaneu/DevRoadShow-IOT/tree/master/src/function) dans votre dossier de travail.
 
 Afin que le code fonctionne, nous devons inclure le SDK _Azure Devices_ dans notre projet. Cela s'effectue
 au niveu du fichier `.csproj`. Assurez-vous que vous retrouvez les lignes de code suivantes (la ligne `PackageReference` qui inclut `Microsoft.Azure.Devices`).
