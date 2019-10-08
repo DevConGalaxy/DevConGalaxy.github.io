@@ -317,7 +317,8 @@ Nous l'avons déjà fait pour vous : https://mxchip-workshop.netlify.com/
 2. Sélectionnez un répertoire,
 3. Choisissez le langage C#,
 4. Sélectionnez la runtime **Azure Functions v2**
-5. Ajoutez le projet a votre workspace courant
+5. Sélectionnez **Skip for now** lors du choix de type de fonction
+6. Ajoutez le projet a votre workspace courant
 
 > Si vous êtes plus à l'aise avec Python ou avec NodeJS, vous devriez pouvoir porter le code avec les SDKs correspondants. Mais dites-le nous avant de vous lancer!
 
