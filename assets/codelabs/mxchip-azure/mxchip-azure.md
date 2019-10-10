@@ -302,52 +302,6 @@ On vous laisse trouver ce qu'il faut changer dans le code.
 
 N'hésitez pas à nous appeler à l'aide en cas de soucis !
 
---sep--
----
-title: Bonus
----
-
-# Etapes Bonus
-
-## [Etape Bonus] Changez à distance le message
-
-Regardez donc la méthode `DeviceTwinCallback`, c'est elle qui est appelée quand le device reçoit un message du cloud.
-
-
-## [Etape cachée] Envoyez un dessin à distance
-
-Le MXChip est équipé d'un écran LCD de 128x64px qui est capable d'afficher des dessins sommaires. Avant de tenter un envoi à distance, 
-essayer de l'afficher en modifiant le code du projet Arduino. Pour vous aider, le site [pixelcraft](https://pixelcraft.cc/) vous 
-permet de générer le code correspondant à votre dessin.
-
-La méthode `Screen.draw` vous permet de dessiner cette matrice à l'écran.
-Enfin, il vous faudra envoyer en JSON ce dessin depuis l'IoT Hub, et décrypter le JSON sur l'arduino. Pour tout cela, 
-il vous faudra probablement les include suivants: 
-
-```cpp
-#include "RGB_LED.h"
-#include <ArduinoJson.h>
-```
-
-## [Premier de la classe] Testez l'un des autres projets
-
-La commande **Azure IoT Device Workbench: Open Examples** vous permet d'accéder à un ensemble d'exemples préassemblés. Testez-en un, comme par exemple le _DevKit Translator_.
-
-
---sep--
----
-title: Conclusion
----
-
-# Conclusion
-
-Bravo, vous avez fini le workshop!
-
-## Crédit
-
-Ce workshop a été créé par [Jim Bennett](https://github.com/jimbobbennett/MXChip-Workshop) puis traduit en français par [Christopher Maneu](https://twitter.com/cmaneu) et ré-arrangé par [Wassim Chegham](https://twitter.com/manekinekko) et [Olivier Leplus](https://twitter.com/olivierleplus). 
-
-Vous pouvez trouver la version anglaise à [cette adresse](https://github.com/jimbobbennett/MXChip-Workshop).
 
 --sep--
 ---
@@ -431,3 +385,51 @@ L'opération peut prendre quelques minutes. Pendant ce temps-là, la LED "progra
 > **Vous n'avez pas de MXChip sous la main et vous voulez tout de même tester cela ?**
 > C'est possible, avec [l'émulateur](https://azure-samples.github.io/iot-devkit-web-simulator/?wt.mc_id=WTMCID) ! Copiez-collez le code Arduino dans l'émulateur, indiquez votre 
 >chaîne de connexion à l'IoT Hub et c'est parti.
+
+
+--sep--
+---
+title: Bonus Bonus
+---
+
+# Etapes Bonus
+
+## [Etape Bonus] Changez à distance le message
+
+Regardez donc la méthode `DeviceTwinCallback`, c'est elle qui est appelée quand le device reçoit un message du cloud.
+
+
+## [Etape cachée] Envoyez un dessin à distance
+
+Le MXChip est équipé d'un écran LCD de 128x64px qui est capable d'afficher des dessins sommaires. Avant de tenter un envoi à distance, 
+essayer de l'afficher en modifiant le code du projet Arduino. Pour vous aider, le site [pixelcraft](https://pixelcraft.cc/) vous 
+permet de générer le code correspondant à votre dessin.
+
+La méthode `Screen.draw` vous permet de dessiner cette matrice à l'écran.
+Enfin, il vous faudra envoyer en JSON ce dessin depuis l'IoT Hub, et décrypter le JSON sur l'arduino. Pour tout cela, 
+il vous faudra probablement les include suivants: 
+
+```cpp
+#include "RGB_LED.h"
+#include <ArduinoJson.h>
+```
+
+## [Premier de la classe] Testez l'un des autres projets
+
+La commande **Azure IoT Device Workbench: Open Examples** vous permet d'accéder à un ensemble d'exemples préassemblés. Testez-en un, comme par exemple le _DevKit Translator_.
+
+
+--sep--
+---
+title: Conclusion
+---
+
+# Conclusion
+
+Bravo, vous avez fini le workshop!
+
+## Crédit
+
+Ce workshop a été créé par [Jim Bennett](https://github.com/jimbobbennett/MXChip-Workshop) puis traduit en français par [Christopher Maneu](https://twitter.com/cmaneu) et ré-arrangé par [Wassim Chegham](https://twitter.com/manekinekko) et [Olivier Leplus](https://twitter.com/olivierleplus). 
+
+Vous pouvez trouver la version anglaise à [cette adresse](https://github.com/jimbobbennett/MXChip-Workshop).
