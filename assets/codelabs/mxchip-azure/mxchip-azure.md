@@ -45,7 +45,7 @@ title: Préparez votre machine de dev
 Afin de pouvoir développer, puis déployer à la fois sur le board MXChip et sur Azure, il vous faudra plusieurs outils
 (gratuits): 
 
-- [.NET Core 2.2](https://dotnet.microsoft.com/download)
+- [.NET Core 3.1](https://dotnet.microsoft.com/download)
 - [Visual Studio Code](https://code.visualstudio.com/?wt.mc_id=WTMCID) ainsi que quelques extensions
     - L'extension [Azure IoT tools](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-tools&wt.mc_id=WTMCID) ([Installer](vscode:extension/vsciot-vscode.azure-iot-tools)), qui contient notamment _IoT Workbench_,
     - L'extension [Arduino](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.vscode-arduino&wt.mc_id=WTMCID) de l'éditeur Microsoft,
@@ -305,18 +305,12 @@ L'opération peut prendre quelques minutes. Pendant ce temps-là, la LED "progra
 > C'est possible, avec [l'émulateur](https://azure-samples.github.io/iot-devkit-web-simulator/?wt.mc_id=WTMCID) ! Copiez-collez le code Arduino dans l'émulateur, indiquez votre 
 >chaîne de connexion à l'IoT Hub et c'est parti.
 
-## Créer une interface utilisateur 
-
-Nous l'avons déjà fait pour vous : https://mxchip-workshop.netlify.com/
-
-> Dans une prochaine version de l'atelier, nous proposerons la création d'une interface utilisateur depuis le début.
-
 ## Créer une Azure Function pour communiquer avec IoT Hub
 
 1. Lancez la commande **Azure Functions: Create new project**,
 2. Sélectionnez un répertoire,
 3. Choisissez le langage C#,
-4. Sélectionnez la runtime **Azure Functions v2**
+4. Sélectionnez la runtime **Azure Functions v3**
 5. Sélectionnez **Skip for now** lors du choix de type de fonction
 6. Ajoutez le projet a votre workspace courant
 
@@ -364,10 +358,7 @@ un peu de disco ! Nous allons maintenant faire en sorte de pouvoir choisir la co
 le code permet uniquement de sélectionner les tons de rouge. Il faut donc compléter le code pour supporter le vert et 
 le bleu.
 
-Pour réaliser cela, il vous faudra retrouver les `TODO` dans le code dans les deux fichiers suivants: 
-
-- Dans le fichier `State.cs`
-- Dans le fichier `main.js`
+Pour réaliser cela, il vous faudra retrouver les `TODO` dans le code dans le fichier `State.cs`
 
 On vous laisse trouver ce qu'il faut changer dans le code.
 
