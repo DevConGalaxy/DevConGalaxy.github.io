@@ -128,8 +128,6 @@ namespace TestChip
             // TODO : il y a deux choses à modifier dans cette méthode
             var color = Regex.Split(state, ",");
             var parsedR = int.TryParse(color[0], out var r);
-            var parsedG = int.TryParse(color[1], out var g);
-            var parsedB = int.TryParse(color[2], out var b);
 
             if (parsedR)
             {
@@ -139,9 +137,7 @@ namespace TestChip
                     {
                         desired = new
                         {
-                            rgbLEDR = r,
-                            rgbLEDG = g,
-                            rgbLEDB = b,
+                            rgbLEDR = r
                         }
                     }
                 };
