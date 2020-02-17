@@ -311,7 +311,7 @@ L'opération peut prendre quelques minutes. Pendant ce temps-là, la LED "progra
 2. Sélectionnez un répertoire,
 3. Choisissez le langage C#,
 4. Sélectionnez la runtime **Azure Functions v3**
-5. Sélectionnez **Skip for now** lors du choix de type de fonction
+5. Sélectionnez **HTTP Trigger** lors du choix de type de fonction
 6. Ajoutez le projet a votre workspace courant
 
 > Si vous êtes plus à l'aise avec Python ou avec NodeJS, vous devriez pouvoir porter le code avec les SDKs correspondants. Mais dites-le nous avant de vous lancer!
@@ -319,7 +319,7 @@ L'opération peut prendre quelques minutes. Pendant ce temps-là, la LED "progra
 Vous pouvez maintenant copier le code C# de [ce repository GitHub](https://github.com/tagazok/workshops/tree/gh-pages/assets/Functions) dans votre dossier de travail.
 
 
-Dans le fichier `State.cs`, à la ligne 22, il vous faudra remplacer la référence MXCHIP par celle du nom du device IoT créé au début de l'atelier.
+Dans le fichier `cs`, à la ligne 22, il vous faudra remplacer la référence MXCHIP par celle du nom du device IoT créé au début de l'atelier.
 
 Enfin pour déployer le code de votre fonction, faites un clic-droit sur le dossier de votre projet fonction, et cliquez sur **Deploy to Function App**. Vous pourrez alors choisir la souscription, puis l'application fonction que vous aviez créé tout au début. 
 
