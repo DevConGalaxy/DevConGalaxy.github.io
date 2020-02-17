@@ -326,7 +326,7 @@ au niveu du fichier `.csproj`. Assurez-vous que vous retrouvez les lignes de cod
   </ItemGroup>
 ```
 
-Dans le fichier `State.cs`, à la ligne 22, il vous faudra remplacer la référence _DeviceMX_ par celle du nom du device IoT créé au début de l'atelier.
+Dans le fichier `cs`, à la ligne 22, il vous faudra remplacer la référence _DeviceMX_ par celle du nom du device IoT créé au début de l'atelier.
 
 Enfin pour déployer le code de votre fonction, faites un clic-droit sur le dossier de votre projet fonction, et cliquez sur **Deploy to Function App**. Vous pourrez alors choisir la souscription, puis l'application fonction que vous aviez créé tout au début. 
 
