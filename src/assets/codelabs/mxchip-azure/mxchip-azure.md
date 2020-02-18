@@ -275,7 +275,7 @@ Si vous avez installés tous les prérequis, et que votre board est [connectée 
  3. Sélectionnez `Arduino`
  4. Sélectionnez `IoT DevKit`
  5. Sélectionnez le template `With Azure IoT Hub`
- 7. Choisissez un dossier dans lequel enregistrer vos fichiers sources
+ 6. Choisissez un dossier dans lequel enregistrer vos fichiers sources
 
 > Nous allons créer plusieurs projets lors de cet atelier. Je vous suggère la hiérarchie de dossiers suivante : 
 > ```
