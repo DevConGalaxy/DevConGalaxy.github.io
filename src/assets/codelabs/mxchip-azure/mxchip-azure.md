@@ -271,9 +271,11 @@ Si vous avez installés tous les prérequis, et que votre board est [connectée 
  Dans la suite de cet atelier, nous allons utiliser beaucoup de commandes. Celles-ci sont accessibles via le raccourci clavier `Ctrl+Shift+P` (ou `Cmd+Shift+P` sous Mac). Pour créer votre projet: 
  
  1. Recherchez `Workbench create`, et choisissez `Azure IoT Device Workbench: Create Project`
- 2. Sélectionnez `IoT DevKit`
- 3. Selectionnez le template `With Azure IoT Hub`
- 4. Choisissez un dossier dans lequel enregistrer vos fichiers sources
+ 2. Choisissez un nom de project
+ 3. Sélectionnez `Arduino`
+ 4. Sélectionnez `IoT DevKit`
+ 5. Sélectionnez le template `With Azure IoT Hub`
+ 7. Choisissez un dossier dans lequel enregistrer vos fichiers sources
 
 > Nous allons créer plusieurs projets lors de cet atelier. Je vous suggère la hiérarchie de dossiers suivante : 
 > ```
