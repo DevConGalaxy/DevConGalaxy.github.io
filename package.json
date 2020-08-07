@@ -34,7 +34,7 @@
     "marked": "^0.4.0",
     "ngx-markdown": "^6.0.1",
     "node-fetch": "^2.1.2",
-    "prismjs": "^1.9.0",
+    "prismjs": "^1.21.0",
     "rxjs": "^6.3.1",
     "rxjs-compat": "^6.3.1",
     "zone.js": "^0.8.26"
