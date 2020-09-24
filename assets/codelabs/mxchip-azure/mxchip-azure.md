@@ -170,8 +170,6 @@ title: Configurez votre board
 Votre board est normalement déjà configurée. Si vous deviez la reconnecter au WiFi, vous trouverez
 [les instructions ici](https://github.com/cmaneu/DevRoadShow-IOT/blob/master/docs/configurer-wifi.md).
 
-En option :
-- Choisir le port COM dans VS Code
 
 --sep--
 ---
@@ -311,15 +309,24 @@ L'opération peut prendre quelques minutes. Pendant ce temps-là, la LED "progra
 2. Sélectionnez un répertoire,
 3. Choisissez le langage C#,
 4. Sélectionnez la runtime **Azure Functions v3**
-5. Sélectionnez **HTTP Trigger** lors du choix de type de fonction
+5. Sélectionnez **Skip for now** lors du choix de type de fonction
 6. Ajoutez le projet a votre workspace courant
 
 > Si vous êtes plus à l'aise avec Python ou avec NodeJS, vous devriez pouvoir porter le code avec les SDKs correspondants. Mais dites-le nous avant de vous lancer!
 
-Vous pouvez maintenant copier le code C# de [ce repository GitHub](https://github.com/tagazok/workshops/tree/gh-pages/assets/Functions) dans votre dossier de travail.
+Vous pouvez maintenant copier le code C# de [ce repository GitHub](https://github.com/cmaneu/DevRoadShow-IOT/tree/master/src) dans votre dossier de travail.
 
+Afin que le code fonctionne, nous devons inclure le SDK _Azure Devices_ dans notre projet. Cela s'effectue
+au niveu du fichier `.csproj`. Assurez-vous que vous retrouvez les lignes de code suivantes (la ligne `PackageReference` qui inclut `Microsoft.Azure.Devices`).
 
-Dans le fichier `cs`, à la ligne 22, il vous faudra remplacer la référence MXCHIP par celle du nom du device IoT créé au début de l'atelier.
+```csharp
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="1.0.24" />
+    <PackageReference Include="Microsoft.Azure.Devices" Version="1.17.1" />
+  </ItemGroup>
+```
+
+Dans le fichier `cs`, à la ligne 22, il vous faudra remplacer la référence _DeviceMX_ par celle du nom du device IoT créé au début de l'atelier.
 
 Enfin pour déployer le code de votre fonction, faites un clic-droit sur le dossier de votre projet fonction, et cliquez sur **Deploy to Function App**. Vous pourrez alors choisir la souscription, puis l'application fonction que vous aviez créé tout au début. 
 
@@ -349,7 +356,7 @@ un peu de disco ! Nous allons maintenant faire en sorte de pouvoir choisir la co
 le code permet uniquement de sélectionner les tons de rouge. Il faut donc compléter le code pour supporter le vert et 
 le bleu.
 
-Pour réaliser cela, il vous faudra retrouver les `TODO` dans le code dans le fichier `State.cs`
+Pour réaliser cela, il vous faudra retrouver les `TODO` dans le code dans le fichier `State.cs`: 
 
 On vous laisse trouver ce qu'il faut changer dans le code.
 
@@ -401,3 +408,4 @@ Bravo, vous avez fini le workshop!
 Ce workshop a été créé par [Jim Bennett](https://github.com/jimbobbennett/MXChip-Workshop) puis traduit en français par [Christopher Maneu](https://twitter.com/cmaneu) et ré-arrangé par [Wassim Chegham](https://twitter.com/manekinekko) et [Olivier Leplus](https://twitter.com/olivierleplus). 
 
 Vous pouvez trouver la version anglaise à [cette adresse](https://github.com/jimbobbennett/MXChip-Workshop).
+
