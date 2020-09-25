@@ -189,14 +189,6 @@ myArray w/= myIndex <- myNewValue;
 La valeur située en position ```myIndex``` de ```myArray``` devient alors ```myNewValue```. 
 
 
-
-
-
-
-
-
-
-
 --sep--
 ---
 title: Conclusion
@@ -206,9 +198,4 @@ title: Conclusion
 
 Bravo, vous avez fini le workshop!
 
-## Crédit
-
-Ce workshop a été créé par [Jim Bennett](https://github.com/jimbobbennett/MXChip-Workshop) puis traduit en français par [Christopher Maneu](https://twitter.com/cmaneu) et ré-arrangé par [Wassim Chegham](https://twitter.com/manekinekko) et [Olivier Leplus](https://twitter.com/olivierleplus). 
-
-Vous pouvez trouver la version anglaise à [cette adresse](https://github.com/jimbobbennett/MXChip-Workshop).
-
+Vous pouvez continuer à approfondir la programmation quantique en allant voir [les autres katas](https://github.com/microsoft/QuantumKatas/tree/master)
