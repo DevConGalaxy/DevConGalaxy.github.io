@@ -13,7 +13,7 @@ export class TutorialService {
 
   getTutorialMd(tutorialId: string) {
     return this.http.get(`https://raw.githubusercontent.com/tagazok/workshops/gh-pages/assets/codelabs/${tutorialId}/${tutorialId}.md`, {responseType: 'text'});
-    
+
     // return this.http.get(`assets/codelabs/${tutorialId}/${tutorialId}.md`, {responseType: 'text'});
   }
 }

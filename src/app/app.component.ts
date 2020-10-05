@@ -25,6 +25,7 @@ export interface CodelabInfos {
 })
 export class AppComponent {
   title = 'app';
+
   constructor(
     angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics,
   ) {}

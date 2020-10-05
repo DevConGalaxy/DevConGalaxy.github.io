@@ -6,6 +6,8 @@ import { TutorialService } from '../tutorial.service';
 import { MarkdownService } from 'ngx-markdown';
 import { MatDialog } from '@angular/material';
 
+declare var Konami: any;
+
 const SMALL_WIDTH_BREAKPOINT = 720;
 import {
   trigger,
@@ -44,6 +46,8 @@ export class CodelabComponent implements OnInit {
   public tutorialSteps: Array<string> = new Array<string>();
   public mcid = '';
 
+  konamicode: any;
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
@@ -53,8 +57,12 @@ export class CodelabComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+
     this.route.paramMap.subscribe(params => {
       this.tutorialId = params.get('id');
+
+    this.konamicode = new Konami(`assets/codelabs/${this.tutorialId}/solution.html`);
+
       this.mcid = this.route.snapshot.queryParamMap.get('wtmcid');
 
       this.getTutorial();

@@ -31,7 +31,8 @@
               "node_modules/prismjs/prism.js",
               "node_modules/prismjs/components/prism-javascript.min.js",
               "node_modules/prismjs/components/prism-bash.min.js",
-              "node_modules/prismjs/components/prism-csharp.min.js"
+              "node_modules/prismjs/components/prism-csharp.min.js",
+              "node_modules/konami/konami.js"
             ]
           },
           "configurations": {
