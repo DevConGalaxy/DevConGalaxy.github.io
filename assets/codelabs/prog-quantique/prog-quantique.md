@@ -43,7 +43,11 @@ Pour en apprendre plus :
 
 ## Instructions
 
-Allez sur [le repo GitHub](https://github.com/microsoft/QuantumKatas/tree/master/DeutschJozsaAlgorithm) du kata et lancez le jupyter Notebook en cliquant sur le 1er lien du Readme.
+Lancer un des Jupyter Notebook suivant :
+ * Lien 1 : <a href="https://mybinder.org/v2/gh/Microsoft/QuantumKatas/main?filepath=index.ipynb" target="_blank">https://mybinder.org/v2/gh/Microsoft/QuantumKatas/main?filepath=index.ipynb</a>
+ * Lien 2 : <a href="https://mybinder.org/v2/gh/tcNickolas/QuantumKatas/master?filepath=index.ipynb" target="_blank">https://mybinder.org/v2/gh/tcNickolas/QuantumKatas/master?filepath=index.ipynb</a>
+
+Cliquez ensuite sur le workshop intitulé "Deutsch–Jozsa algorithm"
 
 Suivez les instructions en remplissant les zones de code. Pour valider une étape, cliquez sur l'îcone ```step forward``` à gauche du champ ou utilisez la combinaison de touche ```Ctrl + Enter```.
 L'output de votre code apparaitra en dessous du champ.
