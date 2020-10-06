@@ -77,7 +77,7 @@ python -c "import qsharp"
 
 Bravo ! Vous avez maintenant le kernel IQ# et Jupyter qui vous fournissent les fonctionnalités de base pour compiler et lancer des opérations Q#depuis un Jupyter Notebook Q#.
 
-<a href="/assets/codelabs/prog-quantique/DeutschJozsaAlgorithm.zip" target="_blank">Téléchargez le projet ici</a>
+<a href="/workshops/assets/codelabs/prog-quantique/DeutschJozsaAlgorithm.zip" target="_blank">Téléchargez le projet ici</a>
 
 Décompressez le fichier et navigez jusqu'au dossier dans votre terminal Conda.
 
