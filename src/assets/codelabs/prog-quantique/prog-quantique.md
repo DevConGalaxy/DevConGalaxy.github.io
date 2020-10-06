@@ -40,15 +40,52 @@ Pour en apprendre plus :
 * Nielsen, M. A. & Chuang, I. L. (2010). Quantum Computation and Quantum Information. pp. 34-36
 * [Lecture 5: A simple searching algorithm; the Deutsch-Jozsa algorithm](https://cs.uwaterloo.ca/~watrous/CPSC519/LectureNotes/05.pdf).
 
+--sep--
+---
+title: Préparation
+---
 
-## Instructions
+## Préparation
 
+### Lancer votre environement
+
+#### Faire le workshop dans le navigateur
 Lancer un des Jupyter Notebook suivant :
  * Lien 1 : <a href="https://mybinder.org/v2/gh/Microsoft/QuantumKatas/main?filepath=index.ipynb" target="_blank">https://mybinder.org/v2/gh/Microsoft/QuantumKatas/main?filepath=index.ipynb</a>
  * Lien 2 : <a href="https://mybinder.org/v2/gh/tcNickolas/QuantumKatas/master?filepath=index.ipynb" target="_blank">https://mybinder.org/v2/gh/tcNickolas/QuantumKatas/master?filepath=index.ipynb</a>
 
 Cliquez ensuite sur le workshop intitulé "Deutsch–Jozsa algorithm"
 
+
+#### Faire le workshop en local
+
+Installez miniconda : <a href="https://docs.conda.io/en/latest/miniconda.html" target="_blank">https://docs.conda.io/en/latest/miniconda.html</a>
+
+Ouvrez un prompt Anaconda
+
+Créez un nouvel environnement Conda appelé ```qsharp-dev``` avec les packages requis (notamment Jupyter Notebook et IQ#) :
+```bash
+conda create -n qsharp-env -c quantum-engineering qsharp notebook
+
+conda activate qsharp-env
+```
+
+Pour tester votre installation, lancez la commande suivante dans le même terminal :
+```bash
+python -c "import qsharp"
+```
+
+Bravo ! Vous avez maintenant le kernel IQ# et Jupyter qui vous fournissent les fonctionnalités de base pour compiler et lancer des opérations Q#depuis un Jupyter Notebook Q#.
+
+<a href="/assets/codelabs/prog-quantique/DeutschJozsaAlgorithm.zip" target="_blank">Téléchargez le projet ici</a>
+
+Décompressez le fichier et navigez jusqu'au dossier dans votre terminal Conda.
+
+Lancez le jupyter notebook :
+```bash
+jupyter notebook DeutschJozsaAlgorithm.ipynb
+```
+### C'est parti !
 Suivez les instructions en remplissant les zones de code. Pour valider une étape, cliquez sur l'îcone ```step forward``` à gauche du champ ou utilisez la combinaison de touche ```Ctrl + Enter```.
 L'output de votre code apparaitra en dessous du champ.
 
