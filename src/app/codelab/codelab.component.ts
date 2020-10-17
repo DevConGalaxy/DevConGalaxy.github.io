@@ -1,71 +1,36 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { MarkdownParserService } from '../markdown-parser.service';
 import { TutorialService } from '../tutorial.service';
-
-import { MarkdownService } from 'ngx-markdown';
-import { MatDialog } from '@angular/material';
-
-declare var Konami: any;
-
-const SMALL_WIDTH_BREAKPOINT = 720;
-import {
-  trigger,
-  state,
-  style,
-  animate,
-  transition,
-  keyframes
-} from '@angular/animations';
-import { ApplicationService } from '../services/application.service';
-import { ResumeDialogComponent } from './resume-dialog.component';
 
 @Component({
   selector: 'app-codelab',
   templateUrl: './codelab.component.html',
-  styleUrls: ['./codelab.component.css'],
-  encapsulation: ViewEncapsulation.None
-  // animations: [
-  //   trigger('toggleState', [
-  //     state('true' , style({ transform: 'translateX(0)' })),
-  //     state('false', style({ maxHeight: 0, padding: 0, transform: 'translateX(-100%)' })),
-  //     // transition
-  //     transition('* => *', animate(3000)),
-  //   ])
-  // ]
+  styleUrls: ['./codelab.component.scss']
 })
 export class CodelabComponent implements OnInit {
-  private mediaMatcher: MediaQueryList = matchMedia(
-    `(max-width: ${SMALL_WIDTH_BREAKPOINT}px)`
-  );
+
   public currentStep = 0;
   private tutorialId: string;
   public tutorialDetails: any;
   public steps: Array<any> = new Array<any>();
   private tutorialMd: any;
+  public tutorialResources: Array<any> = new Array<any>();
   public tutorialSteps: Array<string> = new Array<string>();
   public mcid = '';
-
-  konamicode: any;
 
   constructor(
     private router: Router,
     private route: ActivatedRoute,
     private ts: TutorialService,
-    public application: ApplicationService,
-    public dialog: MatDialog
-  ) {}
+  ) { }
 
-  ngOnInit() {
-
+  ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.tutorialId = params.get('id');
-
-    this.konamicode = new Konami(`assets/codelabs/${this.tutorialId}/solution.html`);
-
       this.mcid = this.route.snapshot.queryParamMap.get('wtmcid');
 
       this.getTutorial();
+      this.getData();
       this.route.queryParamMap.subscribe(innerParams => {
         if (!innerParams.has('step')) {
           const localStorageStep = JSON.parse(
@@ -101,18 +66,20 @@ export class CodelabComponent implements OnInit {
   }
 
   openResumeDialog(): void {
-    setTimeout(() => {
-      const dialogRef = this.dialog.open(ResumeDialogComponent, {
-        width: '350px'
-      });
+    return;
 
-      dialogRef.afterClosed().subscribe(result => {
-        if (result === 'restart') {
-          this.currentStep = 1;
-          this.updateStepUrl();
-        }
-      });
-    }, 0);
+    // setTimeout(() => {
+    //   const dialogRef = this.dialog.open(ResumeDialogComponent, {
+    //     width: '350px'
+    //   });
+
+    //   dialogRef.afterClosed().subscribe(result => {
+    //     if (result === 'restart') {
+    //       this.currentStep = 1;
+    //       this.updateStepUrl();
+    //     }
+    //   });
+    // }, 0);
   }
 
   getTutorial() {
@@ -123,7 +90,6 @@ export class CodelabComponent implements OnInit {
       this.tutorialMd = this.tutorialMd.replace(/WTMCID/g, this.mcid);
 
       this.tutorialMd.split('--sep--').map(str => {
-        // tslint:disable-next-line:prefer-const
         let [, title, duration, , ...txt] = str.trim().split('\n');
         title = title.split(':').pop();
         if (i === 0) {
@@ -146,27 +112,36 @@ export class CodelabComponent implements OnInit {
     });
   }
 
-  isScreenSmall(): boolean {
-    return this.mediaMatcher.matches;
-  }
+  getData() {
+    this.ts.getTutorialData(this.tutorialId).subscribe((response: any) => {
+      console.log(response);
 
+      this.tutorialResources = response.resources || [];
+    });
+  }
   goToStep(step: number) {
     this.currentStep = step;
     this.updateStepUrl();
+    this.scrollToTop();
   }
 
   next() {
     this.currentStep++;
     this.updateStepUrl();
+    this.scrollToTop();
   }
 
   prev() {
     if (this.currentStep > 1) {
       this.currentStep--;
       this.updateStepUrl();
+      this.scrollToTop();
     }
   }
 
+  scrollToTop() {
+    document.querySelector('.codelab-steps').scrollTo(0, 0);
+  }
   updateStepUrl(replaceUrl = false) {
     if (this.tutorialId) {
       localStorage.setItem(this.tutorialId, `{"step":${this.currentStep}}`);
@@ -176,6 +151,5 @@ export class CodelabComponent implements OnInit {
       replaceUrl: replaceUrl
     });
   }
+
 }
-
-
