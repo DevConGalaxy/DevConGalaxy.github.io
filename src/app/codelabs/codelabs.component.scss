@@ -16,37 +16,43 @@
     justify-content: space-between;
   }
   
-  .header mat-toolbar-row {
-    display: flex;
-    flex-direction: row;
-    max-width: 1024px;
-    align-self: center;
-    padding: 0;
-    margin: 0px auto;
-    width: 90vw;
-    max-width: 1024px;
+  // .header mat-toolbar-row {
+  //   display: flex;
+  //   flex-direction: row;
+  //   max-width: 1024px;
+  //   align-self: center;
+  //   padding: 0;
+  //   margin: 0px auto;
+  //   width: 90vw;
+  //   max-width: 1024px;
+  // }
+  
+  .header {
+    padding: 1em 2em;
+    border-bottom: solid 1px #e6e6e6;
+    font-weight: 600;
+    
+    .img {
+      max-height: 40px;
+      margin-right: 0em;
+    }
+  
+    .title {
+      margin-right: 1em;
+    }
   }
   
-  .header img {
-    max-height: 40px;
-    margin-right: 0em;
-  }
-  
-  .header .title {
-    margin-right: 1em;
-  }
-  
-  .header .searchbox {
-    padding: 5px;
-    background-color: #90d0b1;
-    outline: none;
-    box-shadow: none;
-    border: none;
-    color: #444;
-    font-size: 16px;
-    height: 40px;
-    flex: 1;
-  }
+  // .header .searchbox {
+  //   padding: 5px;
+  //   background-color: #90d0b1;
+  //   outline: none;
+  //   box-shadow: none;
+  //   border: none;
+  //   color: #444;
+  //   font-size: 16px;
+  //   height: 40px;
+  //   flex: 1;
+  // }
   
   .banner {
     background-color: #fff;
@@ -119,13 +125,46 @@
   }
   
   .card {
+    position: relative;
+    flex: 1 0 330px;
+    max-width: 330px;
+    margin: 0 16px 16px 0;
+
+    &:nth-of-type(3n) {
+      margin-right: 0;
+    }
+
     .card-header {
       height: 120px;
       background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
+    .card-icon {
+      width: 72px;
+      height: 72px;
+      border: solid 1px #dadce0;
+      position: absolute;
+      top: 84px;
+      left: 20px;
+      background-color: #fff;
+
+      img {
+        width: 100%;
+      }
+    }
     .card-body {
+      margin-top: 36px;
       padding: 1em;
+
+      .title {
+        margin-bottom: 2em;
+      }
+
+      .tags {
+        font-size: .8em;
+      }
     }
   }
   // .card {

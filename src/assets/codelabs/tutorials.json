@@ -10,8 +10,8 @@
     }
   },
   "title": "MS DevRel workshops",
-  "headline": "Welcome to Botfuel Tutorials Platform !",
-  "tagline": "Vous trouverez ici les workshops délivrés par l'équipe MS DevRel France",
+  "headline": "Les workshops DevRel de France !",
+  "tagline": "Vous trouverez ici les workshops délivrés par l'équipe MS DevRel France lors de divers événements (conférences, #MSDevRoadShow, etc)",
   "links": {
     "wegbsite": "https://www.botfuel.io",
     "github": "https://github.com/Botfuel/botfuel-dialog",
@@ -19,32 +19,32 @@
   },
   "footer": [
     {
-      "title": "Company",
+      "title": "Ressources",
       "links": [
         {
-          "title": "Website",
-          "link": "https://www.botfuel.io"
+          "title": "MS Learn",
+          "link": "https://aka.ms/learn"
         },
         {
-          "title": "We are hiring",
-          "link": "https://www.welcometothejungle.co/companies/botfuel/jobs"
+          "title": "Twitter",
+          "link": "https://twitter.com/msdev_fr"
         },
         {
-          "title": "Contact us",
-          "link": "https://www.botfuel.io/en/more/contact"
+          "title": "YouTube",
+          "link": "https://www.youtube.com/user/MSDeveloppeurs"
         }
       ]
     },
     {
-      "title": "Developers",
+      "title": "Communautés",
       "links": [
         {
-          "title": "Portal",
-          "link": "https://platform-app.botfuel.io"
+          "title": "YouTube MUG TV",
+          "link": "https://www.youtube.com/channel/UCIuBHEwIFRjwRMm9--Ga1vg"
         },
         {
-          "title": "Documentation",
-          "link": "https://docs.botfuel.io"
+          "title": "Chaine Twitch",
+          "link": ""
         }
       ]
     }
@@ -53,16 +53,21 @@
     {
       "id": "mxchip-azure",
       "title": "Codez votre premier projet IoT sur MXChip",
-      "image": "https://fossbytes.com/wp-content/uploads/2017/12/q-sharp-programming-language-1200x900.jpg",
+      "image": "./assets/codelabs/mxchip-azure/header.png",
       "language": "fr",
       "date": "Mon Aug 9 2018 00:00:00 GMT+0100",
+      "icon": "iot",
+      "tags": ["iot", "mxchip", "C#", "javascript"],
       "status": "published"
     },
     {
       "id": "prog-quantique",
-      "title": "Réaliser l'algo de DeutschJoszaAlgorihtm",
+      "title": "Réaliser l'algo quantique de DeutschJoszaAlgorihtm",
+      "image": "https://fossbytes.com/wp-content/uploads/2017/12/q-sharp-programming-language-1200x900.jpg",
       "language": "fr",
       "date": "Mon Jul 16 2018 00:00:00 GMT+0100",
+      "icon": "quantum",
+      "tags": ["Q#", "quantum computing", "jupyter notebook"],
       "status": "published"
     }
   ]

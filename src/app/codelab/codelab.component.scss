@@ -45,6 +45,7 @@ a {
     border-right: solid 1px #e6e6e6;
     font-size: 0.85em;
     max-width: 320px;
+    flex-basis: 320px;
 
     .title {
         background-color: #3b3b3b;
@@ -56,7 +57,7 @@ a {
     a.list-item {
         text-decoration: none;
         color: #919191;
-        display: block;
+        // display: block;
 
         &:hover {
             color: $font-color;

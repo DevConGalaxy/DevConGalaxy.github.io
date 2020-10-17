@@ -2,9 +2,9 @@
     <div [style.background-color]="applicationInfos.theme?.primary?.background"
         [style.color]="applicationInfos?.theme?.primary?.text" class="header">
         <div>
-            <img src="./assets/images/botfuel-logo.png" />
+            <!-- <img src="./assets/images/botfuel-logo.png" /> -->
             <div class="title">{{applicationInfos.title}}</div>
-            <input class="searchbox" type="text" placeholder="Search..." [(ngModel)]="searchText" />
+            <!-- <input class="searchbox" type="text" placeholder="Search..." [(ngModel)]="searchText" /> -->
         </div>
     </div>
     <header class="banner">
@@ -20,17 +20,22 @@
             </div>
         </div>
     </header>
-    <main class="container">
+    <main class="container flex" flex-wrap="wrap">
         <div class="cards">
             <div class="card" *ngFor="let tutorial of tutorials |status: 'published'" routerLink="/{{tutorial.id}}">
-                <div class="card-header" [ngStyle]="{backgroundImage:'url(' + tutorial.image + ')'}">
-                    header
+                <div class="card-header" [ngStyle]="{backgroundImage:'url(' + tutorial.image + ')'}"></div>
+                <div class="card-icon">
+                    <img src="./assets/images/logos/{{tutorial.icon}}.png" />
                 </div>
-                <div class="logo">
-                    logo
-                </div>
-                <div class="card-body">
-                    {{tutorial.title}}
+                <div class="card-body flex" flex-align="column" justify-content="space-between">
+                    <div class="title">{{tutorial.title}}</div>
+                    
+                    <div class="tags">
+                        {{tutorial.tags.join(', ')}}
+                        <!-- <span *ngFor="let tag of tutorial.tags">
+                            {{tag}},
+                        </span> -->
+                    </div>
                 </div>
             </div>
         </div>

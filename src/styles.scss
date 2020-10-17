@@ -66,6 +66,10 @@ p {
     align-items: flex-end;
 }
 
+.flex[flex-wrap='wrap'] {
+    flex-wrap: wrap;
+}
+
 div[markdown] * {
     max-width: 100%;
 }

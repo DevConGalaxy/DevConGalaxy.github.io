@@ -6,10 +6,12 @@
                 <div>STEPS</div>
             </div>
         </div>
-        <a *ngFor="let step of steps; index as idx" (click)="goToStep(idx + 1)" class="list-item"
+        <a *ngFor="let step of steps; index as idx" (click)="goToStep(idx + 1)" class="list-item flex" flex-align="row"
             [class.complete]="idx + 1 <= currentStep" [class.active]="currentStep === idx + 1">
-            <i>•</i>
-            <span>{{idx + 1}}. {{step.title}}</span>
+            <!-- <div>
+                <i>•</i>
+            </div> -->
+            <div>{{idx + 1}}. {{step.title}}</div>
         </a>
     </div>
     <div class="resources" *ngIf="tutorialResources">
@@ -32,8 +34,9 @@
 
 <section id="results" class="flex-grow">
     <div class="title">
-        <div class="flex" flex-align="row">
+        <div class="flex" flex-align="row" justify-content="space-between">
             <div>{{tutorialDetails?.title}}</div>
+            <div><a routerLink="/"><i class="fas fa-home"></i></a></div>
         </div>
     </div>
     <div class="codelab-steps">
