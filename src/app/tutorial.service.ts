@@ -10,6 +10,10 @@ export class TutorialService {
 
   constructor(private http: HttpClient) { }
 
+  getAllTutorials() {
+    return this.http.get(`assets/codelabs/tutorials.json`);
+  }
+
   getTutorialMd(tutorialId: string) {
     // return this.http.get(`https://raw.githubusercontent.com/tagazok/workshops/gh-pages/assets/codelabs/${tutorialId}/${tutorialId}.md`, {responseType: 'text'});
 
