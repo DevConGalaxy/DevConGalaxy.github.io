@@ -1,17 +1,17 @@
 {
   "theme": {
     "primary": {
-      "background": "#2bb673",
+      "background": "#3b3b3b",
       "text": "#fff"
     },
     "accent": {
-      "background": "#533d88",
-      "text": "#fff"
+      "background": "#f3f3f3",
+      "text": "#4b4b4b"
     }
   },
-  "title": "Botfuel Tutorials",
+  "title": "MS DevRel workshops",
   "headline": "Welcome to Botfuel Tutorials Platform !",
-  "tagline": "You will find here tutorials and examples that cover a whide range of Botfuel features such as testing, integration with different platforms, deployment, and modules. You will also find end to end chatbot example tutorials to build your own chatbot.",
+  "tagline": "Vous trouverez ici les workshops délivrés par l'équipe MS DevRel France",
   "links": {
     "wegbsite": "https://www.botfuel.io",
     "github": "https://github.com/Botfuel/botfuel-dialog",
@@ -51,93 +51,18 @@
   ],
   "tutorials": [
     {
-      "id": "regex-imatriculation",
-      "markdownUrl": "https://raw.githubusercontent.com/Botfuel/tutorials/master/regex-imatriculation/regex-imatriculation.md",
-      "title": "Identify Licence Plates with the RegexExtractor",
-      "duration": 31,
-      "language": "en",
+      "id": "mxchip-azure",
+      "title": "Codez votre premier projet IoT sur MXChip",
+      "image": "https://fossbytes.com/wp-content/uploads/2017/12/q-sharp-programming-language-1200x900.jpg",
+      "language": "fr",
       "date": "Mon Aug 9 2018 00:00:00 GMT+0100",
       "status": "published"
     },
     {
-      "id": "connecting-webchat",
-      "markdownUrl": "https://raw.githubusercontent.com/Botfuel/tutorials/master/connecting-webchat/connecting-webchat.md",
-      "title": "Connecting Webchat",
-      "duration": 50,
-      "language": "en",
-      "date": "Mon Jul 16 2018 00:00:00 GMT+0100",
-      "status": "published"
-    },
-    {
-      "id": "getting-started",
-      "markdownUrl": "https://raw.githubusercontent.com/Botfuel/tutorials/master/getting-started/getting-started.md",
-      "title": "Getting Started",
-      "duration": 19,
-      "language": "en",
-      "date": "Sun Jan 01 2017 00:00:00 GMT+0100",
-      "status": "published"
-    },
-    {
-      "id": "weather-bot",
-      "markdownUrl": "https://raw.githubusercontent.com/Botfuel/tutorials/master/weather-bot/weather-bot.md",
-      "title": "Faire un Bot de Météo",
-      "duration": 76,
+      "id": "prog-quantique",
+      "title": "Réaliser l'algo de DeutschJoszaAlgorihtm",
       "language": "fr",
-      "date": "Fri Jun 29 2018 00:00:00 GMT+0200",
-      "status": "published"
-    },
-    {
-      "id": "calling-api",
-      "markdownUrl": "https://raw.githubusercontent.com/Botfuel/tutorials/master/calling-api/calling-api.md",
-      "title": "Calling an API",
-      "duration": 15,
-      "language": "en",
-      "date": "Fri Jun 08 2018 00:00:00 GMT+0200",
-      "status": "published"
-    },
-    {
-      "id": "deploy-heroku",
-      "markdownUrl": "https://raw.githubusercontent.com/Botfuel/tutorials/master/deploy-heroku/deploy-heroku.md",
-      "title": "Deploying on Heroku",
-      "duration": 26,
-      "language": "en",
-      "date": "Sun Jan 01 2017 00:00:00 GMT+0100",
-      "status": "published"
-    },
-    {
-      "id": "connect-messenger",
-      "markdownUrl": "https://raw.githubusercontent.com/Botfuel/tutorials/master/connect-messenger/connect-messenger.md",
-      "title": "Connecting to Messenger",
-      "duration": 34,
-      "language": "en",
-      "date": "Sun Jan 01 2017 00:00:00 GMT+0100",
-      "status": "published"
-    },
-    {
-      "id": "qna-bot",
-      "markdownUrl": "https://raw.githubusercontent.com/Botfuel/tutorials/master/qna-bot/qna-bot.md",
-      "title": "Create a Q&A Bot",
-      "duration": 30,
-      "language": "en",
-      "date": "Sun Jan 01 2017 00:00:00 GMT+0100",
-      "status": "published"
-    },
-    {
-      "id": "integration-testing",
-      "markdownUrl": "https://raw.githubusercontent.com/Botfuel/tutorials/master/integration-testing/integration-testing.md",
-      "title": "Integration Testing",
-      "duration": 18,
-      "language": "en",
-      "date": "Sun Jan 01 2017 00:00:00 GMT+0100",
-      "status": "published"
-    },
-    {
-      "id": "deploy-gae",
-      "markdownUrl": "https://raw.githubusercontent.com/Botfuel/tutorials/master/deploy-gae/deploy-gae.md",
-      "title": "Deploying on Google App Engine",
-      "duration": 31,
-      "language": "en",
-      "date": "Mon Jul 09 2017 00:00:00 GMT+0100",
+      "date": "Mon Jul 16 2018 00:00:00 GMT+0100",
       "status": "published"
     }
   ]

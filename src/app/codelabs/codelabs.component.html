@@ -1,86 +1,54 @@
 <div *ngIf="applicationInfos">
-
-  <mat-toolbar [style.background-color]="applicationInfos.theme?.primary?.background" [style.color]="applicationInfos?.theme?.primary?.text"
-    class="header">
-    <mat-toolbar-row>
-      <img src="./assets/images/botfuel-logo.png" />
-      <div class="title">{{applicationInfos.title}}</div>
-      <input class="searchbox" type="text" placeholder="Search..." [(ngModel)]="searchText" />
-    </mat-toolbar-row>
-  </mat-toolbar>
-  <header class="banner">
-    <div>
-      <div class="headline">{{applicationInfos.headline}}</div>
-      <div class="content">
+    <div [style.background-color]="applicationInfos.theme?.primary?.background"
+        [style.color]="applicationInfos?.theme?.primary?.text" class="header">
         <div>
-          {{applicationInfos.tagline}}
+            <img src="./assets/images/botfuel-logo.png" />
+            <div class="title">{{applicationInfos.title}}</div>
+            <input class="searchbox" type="text" placeholder="Search..." [(ngModel)]="searchText" />
         </div>
-        <div class="logo">
-          <img src="./assets/images/orion_chemistry.png" />
-        </div>
-      </div>
     </div>
-  </header>
-  <main class="container">
-
-    <div class="menu">
-      <mat-form-field>
-        <mat-select placeholder="Sort by" (selectionChange)="sortTutorialsBy($event)" [value]="'title'">
-          <mat-option *ngFor="let sorting of sortingOptions" [value]="sorting.value">
-            {{ sorting.viewValue }}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field>
-        <mat-select placeholder="Language" (selectionChange)="filterByLanguage($event)" [value]="'all'">
-          <mat-option value="all">
-            All
-          </mat-option>
-          <mat-option value="en">
-            English
-          </mat-option>
-          <mat-option value="fr">
-            Français
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-
-    <div class="cards">
-      <div class="card" *ngFor="let tutorial of tutorials |status: 'published'">
-        <mat-toolbar [style.background-color]="applicationInfos.theme.primary.background" [style.color]="applicationInfos.theme.primary.text"
-          class="card-header">
-          <mat-toolbar-row>
-            <div class="duration">
-              <i class="far fa-clock"></i>
-              <span>{{tutorial.duration}} min</span>
+    <header class="banner">
+        <div>
+            <div class="headline">{{applicationInfos.headline}}</div>
+            <div class="content">
+                <div>
+                    {{applicationInfos.tagline}}
+                </div>
+                <div class="logo">
+                    <img src="./assets/images/orion_chemistry.png" />
+                </div>
             </div>
-          </mat-toolbar-row>
-        </mat-toolbar>
-        <div class="card-content">
-          {{tutorial.title}}
         </div>
-        <div class="card-footer">
-          <button mat-button routerLink="/codelab/{{tutorial.id}}" angulartics2On="click" angularticsAction="StartClick" angularticsLabel="start-{{tutorial.id}}"
-            [angularticsCategory]="tutorial.id">START</button>
-          <div class="language">{{tutorial.language}}</div>
+    </header>
+    <main class="container">
+        <div class="cards">
+            <div class="card" *ngFor="let tutorial of tutorials |status: 'published'" routerLink="/{{tutorial.id}}">
+                <div class="card-header" [ngStyle]="{backgroundImage:'url(' + tutorial.image + ')'}">
+                    header
+                </div>
+                <div class="logo">
+                    logo
+                </div>
+                <div class="card-body">
+                    {{tutorial.title}}
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </main>
-  <footer class="footer" [style.background-color]="applicationInfos.theme?.primary?.background" [style.color]="applicationInfos.theme?.primary?.text">
-    <div *ngFor="let col of applicationInfos.footer">
-      <h3 class="footer-title">
-        {{col.title}}
-      </h3>
-      <div class="footer-links">
-        <ul>
-          <li *ngFor="let link of col.links">
-            <a [href]="link.link" [attr.alt]="link.title" target="_blank">{{link.title}}</a></li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+    </main>
+    <footer class="footer" [style.background-color]="applicationInfos.theme?.primary?.background"
+        [style.color]="applicationInfos.theme?.primary?.text">
+        <div *ngFor="let col of applicationInfos.footer">
+            <h3 class="footer-title">
+                {{col.title}}
+            </h3>
+            <div class="footer-links">
+                <ul>
+                    <li *ngFor="let link of col.links">
+                        <a [href]="link.link" [attr.alt]="link.title" target="_blank">{{link.title}}</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
 </div>
 <!-- 
 <div>
