@@ -1,56 +1,57 @@
-<!-- <div class="flex" flex-align="row"> -->
-<section id="sidebar" class="flex" flex-align="column">
-    <div class="steps">
-        <div class="title">
-            <div class="flex" flex-align="row">
-                <div>STEPS</div>
+<mat-drawer-container [hasBackdrop]="'true'">
+    <mat-drawer #drawer [mode]="'over'" id="sidebar" class="flex" flex-align="column">
+        <div class="steps">
+            <div class="title">
+                <div class="flex" flex-align="row">
+                    <div>STEPS</div>
+                </div>
             </div>
+            <a *ngFor="let step of steps; index as idx" (click)="goToStep(idx + 1)" class="list-item flex"
+                flex-align="row" [class.complete]="idx + 1 <= currentStep" [class.active]="currentStep === idx + 1">
+                <div>{{idx + 1}}. {{step.title}}</div>
+            </a>
         </div>
-        <a *ngFor="let step of steps; index as idx" (click)="goToStep(idx + 1)" class="list-item flex" flex-align="row"
-            [class.complete]="idx + 1 <= currentStep" [class.active]="currentStep === idx + 1">
-            <!-- <div>
-                <i>•</i>
-            </div> -->
-            <div>{{idx + 1}}. {{step.title}}</div>
-        </a>
-    </div>
-    <div class="resources" *ngIf="tutorialResources">
-        <div class="title">
-            <div class="flex" flex-align="row">
-                <div>RESOURCES</div>
+        <div class="resources" *ngIf="tutorialResources">
+            <div class="title">
+                <div class="flex" flex-align="row">
+                    <div>RESOURCES</div>
+                </div>
             </div>
+            <a *ngFor="let resource of tutorialResources" [href]="resource.link" class="list-item flex" flex-align="row"
+                target="_blank">
+                <div><i class="{{resource.type}}"></i></div>
+                <div>{{resource.label}}</div>
+            </a>
         </div>
-        <a *ngFor="let resource of tutorialResources" [href]="resource.link" class="list-item flex" flex-align="row" target="_blank">
-            <div><i class="{{resource.type}}"></i></div>
-            <div>{{resource.label}}</div>
-        </a>
-    </div>
-    <div class="footer flex flex-grow" flex-align="column" justify-content="flex-end">
-        <div>See <a href='https://docs.microsoft.com?oicd={{mcid}}' target='_blank'>documentation</a></div>
-        <div>Learn more on <a href='https://docs.microsoft.com/learn/?oicd={{mcid}}' target='_blank'>Microsoft
-                Learn</a></div>
-    </div>
-</section>
+        <div class="footer flex flex-grow" flex-align="column" justify-content="flex-end">
+            <div>See <a href='https://docs.microsoft.com?oicd={{mcid}}' target='_blank'>documentation</a></div>
+            <div>Learn more on <a href='https://docs.microsoft.com/learn/?oicd={{mcid}}' target='_blank'>Microsoft
+                    Learn</a></div>
+        </div>
+    </mat-drawer>
 
-<section id="results" class="flex-grow">
-    <div class="title">
-        <div class="flex" flex-align="row" justify-content="space-between">
-            <div>{{tutorialDetails?.title}}</div>
-            <div><a routerLink="/"><i class="fas fa-home"></i></a></div>
-        </div>
-    </div>
-    <div class="codelab-steps">
-        <div *ngFor="let step of tutorialSteps; index as idx" id="step-{{idx + 1}}" class="card"
-            [class.selected]="idx + 1 == currentStep">
-            <div markdown ngPreserveWhitespaces [data]="step" (error)="onError($event)" class="codelab-step"></div>
-            <div class="controls flex" justify-content="space-between">
-                <button [hidden]="currentStep <= 1" mat-raised-button (click)="prev()">
-                    <i class="fas fa-chevron-left"></i> BACK
-                </button>
-                <button [hidden]="currentStep >= steps.length" mat-raised-button (click)="next()" color="primary">
-                    NEXT <i class="fas fa-chevron-right"></i>
-                </button>
+    <mat-drawer-content id="results" class="flex-grow">
+        <div class="title">
+            <div class="flex" flex-align="row" justify-content="space-between">
+                <div class="burger-menu" (click)="drawer.toggle()"><i class="fas fa-bars"></i></div>
+                <div>{{tutorialDetails?.title}}</div>
+                <div><a routerLink="/"><i class="fas fa-home"></i></a></div>
             </div>
         </div>
-    </div>
-</section>
+        <div class="codelab-steps">
+            <div *ngFor="let step of tutorialSteps; index as idx" id="step-{{idx + 1}}" class="card"
+                [class.selected]="idx + 1 == currentStep">
+                <div markdown ngPreserveWhitespaces [data]="step" (error)="onError($event)" class="codelab-step">
+                </div>
+                <div class="controls flex" justify-content="space-between">
+                    <button [hidden]="currentStep <= 1" mat-raised-button (click)="prev()">
+                        <i class="fas fa-chevron-left"></i> BACK
+                    </button>
+                    <button [hidden]="currentStep >= steps.length" mat-raised-button (click)="next()" color="primary">
+                        NEXT <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

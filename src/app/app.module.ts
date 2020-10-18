@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -36,6 +37,7 @@ import { StatusPipe } from './status.pipe';
     HttpClientModule,
     MatDialogModule,
     MatButtonModule,
+    MatSidenavModule,
     MarkdownModule.forRoot({
       markedOptions: {
         provide: MarkedOptions,
