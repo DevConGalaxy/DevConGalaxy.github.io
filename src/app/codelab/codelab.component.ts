@@ -70,7 +70,7 @@ export class CodelabComponent implements OnInit {
       });
     });
   }
-
+  
   openResumeDialog(): void {
 
     setTimeout(() => {
