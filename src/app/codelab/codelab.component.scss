@@ -21,6 +21,7 @@ mat-drawer-container {
 
     .list-item {
         // margin: 1em 0em;
+        background-color: transparent;
         line-height: 2em;
         padding: 1em 2em;
 
@@ -132,16 +133,21 @@ code {
 .burger-menu {
     display: none;
 }
+
 mat-drawer {
+    background-color: #fff;
+    
+    display: flex;
     position: static;
     visibility: visible !important;
     transform: translate3d(0, 0, 0);
 }
 
+
 @media screen and (max-width: 1024px) {
     mat-drawer {
         z-index: 4;
-        display: block;
+        display: flex;
         position: absolute;
         top: 0;
         bottom: 0;
@@ -156,3 +162,4 @@ mat-drawer {
         display: block;
     }
 }
+

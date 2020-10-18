@@ -103,11 +103,12 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 mat-drawer-container {
     width: 100%;
 
-    mat-drawer {
-        background-color: #fff;
-    }
-
     .mat-drawer-backdrop.mat-drawer-shown {
         background-color: rgba(0,0,0,.6);
+    }
+
+    .mat-drawer-inner-container {
+        display: flex;
+        flex-direction: column;
     }
 }
