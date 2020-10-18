@@ -1,42 +1,57 @@
-<mat-sidenav-container>
-  <mat-sidenav #sidenav [mode]="isScreenSmall() ? 'over' : 'side'" [opened]="!isScreenSmall()" [mode]="isScreenSmall() ? 'over' : 'side'"
-    [fixedInViewport]="isScreenSmall()"
-    class="mat-elevation-z1">
-    <div class="steps">
-      <div *ngFor="let step of steps; index as idx" (click)="goToStep(idx + 1)" class="step" [class.complete]="idx + 1 <= currentStep"
-        [class.active]="currentStep === idx + 1">
-        <i>{{idx + 1}}</i>
-        <span>{{step.title}}</span>
-      </div>
-    </div>
-    <div class="footer">
-      <div>See <a href='https://docs.microsoft.com?oicd={{mcid}}' target='_blank'>documentation</a></div>
-      <div>Learn more on <a href='https://docs.microsoft.com/learn/?oicd={{mcid}}' target='_blank'>Microsoft Learn</a>.</div>
-    </div>
-  </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="primary" class="title-toolbar mat-elevation-z1">
-      <mat-toolbar-row>
-        <!-- <a routerLink="/"><i class="fas fa-chevron-left"></i></a> -->
-        <div class="title">{{tutorialDetails?.title}}</div>
-        <!-- <div>
-          <div *ngIf="currentStep === tutorialSteps.length"><i class="fas fa-trophy"></i></div>
-          <div class="duration" *ngIf="currentStep < tutorialSteps.length"><i class="far fa-clock"></i><span>{{remainDuration}} min</span></div>
-        </div> -->
-      </mat-toolbar-row>
-    </mat-toolbar>
-    <div class="codelab-step">
-      <mat-card *ngFor="let step of tutorialSteps; index as idx" id="step-{{idx + 1}}" class="step-card" [class.selected]="idx + 1 == currentStep">
-        <mat-card-content markdown ngPreserveWhitespaces [data]="step" (error)="onError($event)"></mat-card-content>
-      </mat-card>
-      <div class="controls">
-        <button [hidden]="currentStep <= 1" mat-fab (click)="prev()" color="primary">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button [hidden]="currentStep >= steps.length" mat-fab (click)="next()" color="primary">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </div>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+<mat-drawer-container [hasBackdrop]="'true'">
+    <mat-drawer #drawer [mode]="'over'" id="sidebar" class="flex" flex-align="column">
+        <div class="steps">
+            <div class="title">
+                <div class="flex" flex-align="row">
+                    <div>STEPS</div>
+                </div>
+            </div>
+            <button mat-button *ngFor="let step of steps; index as idx" (click)="goToStep(idx + 1)" class="list-item flex"
+                flex-align="row" [class.complete]="idx + 1 <= currentStep" [class.active]="currentStep === idx + 1">
+                <div>{{idx + 1}}. {{step.title}}</div>
+            </button>
+        </div>
+        <div class="resources" *ngIf="tutorialResources">
+            <div class="title">
+                <div class="flex" flex-align="row">
+                    <div>RESOURCES</div>
+                </div>
+            </div>
+            <a *ngFor="let resource of tutorialResources" [href]="resource.link" class="list-item flex" flex-align="row"
+                target="_blank">
+                <div><i class="{{resource.type}}"></i></div>
+                <div>{{resource.label}}</div>
+            </a>
+        </div>
+        <div class="footer flex flex-grow" flex-align="column" justify-content="flex-end">
+            <div>See <a href='https://docs.microsoft.com?oicd={{mcid}}' target='_blank'>documentation</a></div>
+            <div>Learn more on <a href='https://docs.microsoft.com/learn/?oicd={{mcid}}' target='_blank'>Microsoft
+                    Learn</a></div>
+        </div>
+    </mat-drawer>
+
+    <mat-drawer-content id="results" class="flex-grow">
+        <div class="title">
+            <div class="flex" flex-align="row" justify-content="space-between">
+                <div class="burger-menu" (click)="drawer.toggle()"><i class="fas fa-bars"></i></div>
+                <div>{{tutorialDetails?.title}}</div>
+                <div><a routerLink="/"><i class="fas fa-home"></i></a></div>
+            </div>
+        </div>
+        <div class="codelab-steps">
+            <div *ngFor="let step of tutorialSteps; index as idx" id="step-{{idx + 1}}" class="card"
+                [class.selected]="idx + 1 == currentStep">
+                <div markdown ngPreserveWhitespaces [data]="step" (error)="onError($event)" class="codelab-step">
+                </div>
+                <div class="controls flex" justify-content="space-between">
+                    <button [hidden]="currentStep <= 1" mat-raised-button (click)="prev()">
+                        <i class="fas fa-chevron-left"></i> BACK
+                    </button>
+                    <button [hidden]="currentStep >= steps.length" mat-raised-button (click)="next()" color="primary">
+                        NEXT <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </mat-drawer-content>
+</mat-drawer-container>

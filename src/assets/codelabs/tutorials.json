@@ -1,0 +1,74 @@
+{
+  "theme": {
+    "primary": {
+      "background": "#3b3b3b",
+      "text": "#fff"
+    },
+    "accent": {
+      "background": "#f3f3f3",
+      "text": "#4b4b4b"
+    }
+  },
+  "title": "MS DevRel workshops",
+  "headline": "Les workshops MS en Français !",
+  "tagline": "Vous trouverez ici les workshops délivrés par l'équipe MS DevRel France lors de divers événements (conférences, #MSDevRoadShow, etc)",
+  "links": {
+    "wegbsite": "https://www.botfuel.io",
+    "github": "https://github.com/Botfuel/botfuel-dialog",
+    "documentation": "https://docs.botfuel.io/"
+  },
+  "footer": [
+    {
+      "title": "Ressources",
+      "links": [
+        {
+          "title": "MS Learn",
+          "link": "https://aka.ms/learn"
+        },
+        {
+          "title": "Twitter",
+          "link": "https://twitter.com/msdev_fr"
+        },
+        {
+          "title": "YouTube",
+          "link": "https://www.youtube.com/user/MSDeveloppeurs"
+        }
+      ]
+    },
+    {
+      "title": "Communautés",
+      "links": [
+        {
+          "title": "YouTube MUG TV",
+          "link": "https://www.youtube.com/channel/UCIuBHEwIFRjwRMm9--Ga1vg"
+        },
+        {
+          "title": "Chaine Twitch",
+          "link": ""
+        }
+      ]
+    }
+  ],
+  "tutorials": [
+    {
+      "id": "mxchip-azure",
+      "title": "Codez votre premier projet IoT sur MXChip",
+      "image": "./assets/codelabs/mxchip-azure/header.png",
+      "language": "fr",
+      "date": "Mon Aug 9 2018 00:00:00 GMT+0100",
+      "icon": "iot",
+      "tags": ["iot", "mxchip", "C#", "javascript"],
+      "status": "published"
+    },
+    {
+      "id": "prog-quantique",
+      "title": "Réaliser l'algo quantique de DeutschJoszaAlgorihtm",
+      "image": "https://fossbytes.com/wp-content/uploads/2017/12/q-sharp-programming-language-1200x900.jpg",
+      "language": "fr",
+      "date": "Mon Jul 16 2018 00:00:00 GMT+0100",
+      "icon": "quantum",
+      "tags": ["Q#", "quantum computing", "jupyter notebook"],
+      "status": "published"
+    }
+  ]
+}

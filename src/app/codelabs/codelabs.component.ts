@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { TutorialService } from '../tutorial.service';
-
-import { ApplicationService } from '../services/application.service';
+// import { ApplicationService } from '../services/application.service';
 
 export interface Tutorial {
   id: string;
@@ -21,66 +20,22 @@ export interface CodelabInfos {
 @Component({
   selector: 'app-codelabs',
   templateUrl: './codelabs.component.html',
-  styleUrls: ['./codelabs.component.css']
+  styleUrls: ['./codelabs.component.scss']
 })
 export class CodelabsComponent implements OnInit {
-  public searchText: string;
-  // public infos: CodelabInfos;
-  public tutorials: Array<Tutorial>;
-
-  public sortingOptions: Array<any> = [
-    { value: 'title', viewValue: 'Alphabetical' },
-    { value: 'duration', viewValue: 'Duration' },
-    { value: 'date', viewValue: 'Recent' }
-  ];
-
+  public tutorials: Array<Tutorial> = new Array<Tutorial>();
+  public applicationInfos: any = {};
   constructor(
-    private ts: TutorialService,
-    public application: ApplicationService
-  ) {
-    // this.tutorials = application.applicationInfos.tutorials;
-    // this.sortTutorialsBy({ value: 'title' });
+    private ts: TutorialService
+  ) { 
   }
 
-  // sortByDate(tutorial1, tutorial2) {
-  //   const date1 = new Date(tutorial1.date);
-  //   const date2 = new Date(tutorial2.date);
-  //   if (date1 < date2) {
-  //     return 1;
-  //   }
-  //   if (date1 > date2) {
-  //     return -1;
-  //   }
-  //   return 0;
-  // }
+  ngOnInit(): void {
+    this.ts.getAllTutorials().subscribe((response: any) => {
+      console.log(response);
+      this.tutorials = response.tutorials;
+      this.applicationInfos = response;
+    });
+  }
 
-  // sortTutorialsBy(event) {
-  //   this.tutorials = this.tutorials.sort(
-  //     (tutorial1, tutorial2) => {
-  //       if (event.value === 'date') {
-  //         return this.sortByDate(tutorial1, tutorial2);
-  //       } else {
-  //         if (tutorial1[event.value] > tutorial2[event.value]) {
-  //           return 1;
-  //         }
-  //         if (tutorial1[event.value] < tutorial2[event.value]) {
-  //           return -1;
-  //         }
-  //         return 0;
-  //       }
-  //     }
-  //   );
-  // }
-
-  // filterByLanguage(event) {
-  //   if (event.value === 'all') {
-  //     this.tutorials = this.application.applicationInfos.tutorials;
-  //   } else {
-  //     this.tutorials = this.application.applicationInfos.tutorials.filter(
-  //       tutorial => tutorial.language === event.value
-  //     );
-  //   }
-  // }
-
-  ngOnInit() {}
 }

@@ -1,0 +1,165 @@
+$font-color: #4b4b4b;
+$link-color: #2e6da4;
+$bg-color-results: #f3f3f3;
+
+a {
+    color: $link-color;
+}
+
+:host,
+mat-drawer-container {
+    height: 100%;
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: row;
+}
+
+#sidebar,
+.codelab-steps {
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    .list-item {
+        // margin: 1em 0em;
+        background-color: transparent;
+        line-height: 2em;
+        padding: 1em 2em;
+
+        i {
+            margin-right: 1em;
+        }
+
+        &.active {
+            font-weight: 600;
+            color: $font-color;
+        }
+    }
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 auto;
+}
+
+#sidebar {
+    // padding: 0 2em;
+    border-right: solid 1px #e6e6e6;
+    font-size: 0.85em;
+    max-width: 320px;
+    flex-basis: 320px;
+
+    .title {
+        background-color: #3b3b3b;
+        color: #fff;
+        letter-spacing: 0.15em;
+        font-weight: normal;
+    }
+
+    a.list-item {
+        text-decoration: none;
+        color: #919191;
+        // display: block;
+
+        &:hover {
+            color: $font-color;
+        }
+    }
+}
+.blue {
+    color: $link-color;
+}
+
+.title {
+    padding: 1em 2em;
+    border-bottom: solid 1px #e6e6e6;
+    font-weight: 600;
+}
+
+#results {
+    background-color: $bg-color-results;
+
+    .title {
+        background-color: #fff;
+    }
+}
+
+.card {
+    display: none !important;
+
+    .codelab-step {
+        max-width: 800px;
+        margin: auto;
+        padding: 1em;
+    }
+    a {
+        // text-decoration: none;
+        // color: $font-color;
+        color: $link-color;
+    }
+    .padding {
+        padding: 1em;
+    }
+
+    &.selected {
+        display: block !important;
+    }
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+    font-size: 14px;
+}
+
+code {
+    background-color: #e8eaed;
+    padding: 0.1em 0.3em;
+}
+
+.footer {
+    padding: 1em;
+}
+
+.controls {
+    padding: 1em 2em;
+    border-top: solid 1px #e6e6e6;
+
+    button {
+        padding: 0.5em;
+        cursor: pointer;
+    }
+}
+
+.burger-menu {
+    display: none;
+}
+
+mat-drawer {
+    background-color: #fff;
+    
+    display: flex;
+    position: static;
+    visibility: visible !important;
+    transform: translate3d(0, 0, 0);
+}
+
+
+@media screen and (max-width: 1024px) {
+    mat-drawer {
+        z-index: 4;
+        display: flex;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        z-index: 3;
+        outline: 0;
+        box-sizing: border-box;
+        overflow-y: auto;
+        transform: translate3d(-100%, 0, 0);
+    }
+
+    .burger-menu {
+        display: block;
+    }
+}
+
