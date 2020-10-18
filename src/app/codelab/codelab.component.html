@@ -30,7 +30,7 @@
         </div>
     </mat-drawer>
 
-    <mat-drawer-content id="results" class="flex-grow">
+    <mat-drawer-content id="results" class="flex flex-grow">
         <div class="title">
             <div class="flex" flex-align="row" justify-content="space-between">
                 <div class="burger-menu" (click)="drawer.toggle()"><i class="fas fa-bars"></i></div>
@@ -38,7 +38,7 @@
                 <div><a routerLink="/"><i class="fas fa-home"></i></a></div>
             </div>
         </div>
-        <div class="codelab-steps">
+        <div class="codelab-steps flex-grow">
             <div *ngFor="let step of tutorialSteps; index as idx" id="step-{{idx + 1}}" class="card"
                 [class.selected]="idx + 1 == currentStep">
                 <div markdown ngPreserveWhitespaces [data]="step" (error)="onError($event)" class="codelab-step">
