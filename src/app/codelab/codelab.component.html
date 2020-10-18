@@ -44,10 +44,10 @@
             [class.selected]="idx + 1 == currentStep">
             <div markdown ngPreserveWhitespaces [data]="step" (error)="onError($event)" class="codelab-step"></div>
             <div class="controls flex" justify-content="space-between">
-                <button [hidden]="currentStep <= 1" mat-fab (click)="prev()" color="primary">
+                <button [hidden]="currentStep <= 1" mat-raised-button (click)="prev()">
                     <i class="fas fa-chevron-left"></i> BACK
                 </button>
-                <button [hidden]="currentStep >= steps.length" mat-fab (click)="next()" color="primary">
+                <button [hidden]="currentStep >= steps.length" mat-raised-button (click)="next()" color="primary">
                     NEXT <i class="fas fa-chevron-right"></i>
                 </button>
             </div>
