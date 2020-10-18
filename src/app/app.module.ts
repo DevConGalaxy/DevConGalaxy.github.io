@@ -1,6 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, SecurityContext, APP_INITIALIZER } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from "@angular/material/dialog";
+import { MatButtonModule } from '@angular/material/button';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +12,8 @@ import { CodelabsComponent } from './codelabs/codelabs.component';
 import { CodelabComponent } from './codelab/codelab.component';
 import { MarkdownModule, MarkedOptions } from 'ngx-markdown';
 import { ApplicationService } from './services/application.service';
+import { ResumeDialogComponent } from './codelab/resume-dialog.component';
+
 import { FilterPipe } from './filter.pipe';
 import { StatusPipe } from './status.pipe';
 
@@ -20,6 +26,7 @@ import { StatusPipe } from './status.pipe';
     AppComponent,
     CodelabsComponent,
     CodelabComponent,
+    ResumeDialogComponent,
     FilterPipe,
     StatusPipe
   ],
@@ -27,6 +34,8 @@ import { StatusPipe } from './status.pipe';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    MatDialogModule,
+    MatButtonModule,
     MarkdownModule.forRoot({
       markedOptions: {
         provide: MarkedOptions,
@@ -41,6 +50,7 @@ import { StatusPipe } from './status.pipe';
         }
       }
     }),
+    BrowserAnimationsModule,
   ],
   providers: [
     // ApplicationService,

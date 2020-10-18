@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { TutorialService } from '../tutorial.service';
 
+import { MatDialog } from '@angular/material/dialog';
+
+import { ResumeDialogComponent } from './resume-dialog.component';
+
+
 @Component({
   selector: 'app-codelab',
   templateUrl: './codelab.component.html',
@@ -22,6 +27,7 @@ export class CodelabComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute,
     private ts: TutorialService,
+    public dialog: MatDialog
   ) { }
 
   ngOnInit(): void {
@@ -66,20 +72,19 @@ export class CodelabComponent implements OnInit {
   }
 
   openResumeDialog(): void {
-    return;
 
-    // setTimeout(() => {
-    //   const dialogRef = this.dialog.open(ResumeDialogComponent, {
-    //     width: '350px'
-    //   });
+    setTimeout(() => {
+      const dialogRef = this.dialog.open(ResumeDialogComponent, {
+        width: '350px'
+      });
 
-    //   dialogRef.afterClosed().subscribe(result => {
-    //     if (result === 'restart') {
-    //       this.currentStep = 1;
-    //       this.updateStepUrl();
-    //     }
-    //   });
-    // }, 0);
+      dialogRef.afterClosed().subscribe(result => {
+        if (result === 'restart') {
+          this.currentStep = 1;
+        }
+        this.updateStepUrl(true);
+      });
+    }, 0);
   }
 
   getTutorial() {
@@ -142,6 +147,7 @@ export class CodelabComponent implements OnInit {
   scrollToTop() {
     document.querySelector('.codelab-steps').scrollTo(0, 0);
   }
+
   updateStepUrl(replaceUrl = false) {
     if (this.tutorialId) {
       localStorage.setItem(this.tutorialId, `{"step":${this.currentStep}}`);
@@ -151,5 +157,4 @@ export class CodelabComponent implements OnInit {
       replaceUrl: replaceUrl
     });
   }
-
 }

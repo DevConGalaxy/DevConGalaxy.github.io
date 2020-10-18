@@ -1,5 +1,5 @@
 <!-- <div class="flex" flex-align="row"> -->
-<section id="sidebar">
+<section id="sidebar" class="flex" flex-align="column">
     <div class="steps">
         <div class="title">
             <div class="flex" flex-align="row">
@@ -20,15 +20,15 @@
                 <div>RESOURCES</div>
             </div>
         </div>
-        <a *ngFor="let resource of tutorialResources" [href]="resource.link" class="list-item" target="_blank">
-            <i class="{{resource.type}}"></i>
-            <span>{{resource.label}}</span>
+        <a *ngFor="let resource of tutorialResources" [href]="resource.link" class="list-item flex" flex-align="row" target="_blank">
+            <div><i class="{{resource.type}}"></i></div>
+            <div>{{resource.label}}</div>
         </a>
     </div>
-    <div class="footer">
+    <div class="footer flex flex-grow" flex-align="column" justify-content="flex-end">
         <div>See <a href='https://docs.microsoft.com?oicd={{mcid}}' target='_blank'>documentation</a></div>
         <div>Learn more on <a href='https://docs.microsoft.com/learn/?oicd={{mcid}}' target='_blank'>Microsoft
-                Learn</a>.</div>
+                Learn</a></div>
     </div>
 </section>
 

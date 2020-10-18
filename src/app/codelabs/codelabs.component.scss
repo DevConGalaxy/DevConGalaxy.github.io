@@ -129,6 +129,12 @@
     flex: 1 0 330px;
     max-width: 330px;
     margin: 0 16px 16px 0;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out;
+    
+    &:hover {
+      box-shadow: 0 2px 6px -1px rgba(0, 0, 0, 0.2), 0 1px 6px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+    }
 
     &:nth-of-type(3n) {
       margin-right: 0;
