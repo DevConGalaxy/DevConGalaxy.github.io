@@ -3,6 +3,11 @@
 $font-color: #4b4b4b;
 html, body { height: 100%; }
 
+* {
+    max-width: 100%;
+    word-wrap:break-word;
+}
+
 body {
     margin: 0;
     padding: 0;
