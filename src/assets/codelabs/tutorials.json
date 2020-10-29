@@ -69,6 +69,16 @@
       "icon": "quantum",
       "tags": ["Q#", "quantum computing", "jupyter notebook"],
       "status": "published"
+    },
+    {
+      "id": "Grover",
+      "title": "Résoudre un problème de satisfiabilité (SAT) avec Grover",
+      "image": "https://fossbytes.com/wp-content/uploads/2017/12/q-sharp-programming-language-1200x900.jpg",
+      "language": "fr",
+      "date": "Mon Jul 16 2018 00:00:00 GMT+0100",
+      "icon": "quantum",
+      "tags": ["Q#", "quantum computing", "jupyter notebook"],
+      "status": "published"
     }
   ]
 }
