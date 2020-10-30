@@ -16,3 +16,7 @@ Le texte 'See documentation' et 'Learn More on Microsoft Learn' est généré de
 # Liens
 
 Pourquoi y a-t-il '?oicd=WTMCID' à la fin des liens?
+
+# Image
+
+Comment changer l'image du tutoriel? (fossbyte dans tutorials.json)?
