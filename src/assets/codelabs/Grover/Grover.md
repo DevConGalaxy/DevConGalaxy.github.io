@@ -34,7 +34,7 @@ title: Objectif du hackathon
 
 ## Objectif du hackathon
 
-Ce workshop, accessible **même sans connaissance préalable en programmation quantique**, vous permettra d'appliquer l'un des algorithmes quantiques les plus connus (l'algorithme de Grover) à la résolution d'un problème concret et utile dans de nombreux domaines.
+Ce hackathon, **qui ne nécessite pas de connaissances préalables en programmation quantique**, vous permettra d'appliquer l'un des algorithmes quantiques les plus fondamentaux (l'algorithme de Grover) à la **résolution d'un problème concret** et utile dans de nombreux domaines. L'algorithme de Grover est à l'origine d'un grand nombre d'algorithmes quantiques encore plus sophistiqués et pouvant être vus comme des généralisations de Grover. 
 
 --sep--
 ---
@@ -95,38 +95,123 @@ Cliquez ensuite sur le lien run the SolveSATWithGrover kata as a Jupyter Noteboo
 
 --sep--
 ---
-title: Aide au kata - Part 1
+title: GroversAlgorithm - aide
 ---
 
-# Aide au kata - Part 1
+# GroversAlgorithm : aide
 
 Vous trouverez ci-dessous des tips et des liens vers des ressources pour vous aider à faire ce kata.
+
+## Taks 1.1
+
+En Q# une opération est une procédure qui peut manipuler de la mémoire quantique (des qubits). Le type de chaque argument est donné après le symbole `:` suivant chaque nom de variable. Ici la variable `queryRegister` est donc un tableau de qubits et la variable `target` est un qubit. Le dernier type donné (ici `Unit`) est celui renvoyé par l'opération. Ici `Unit` signifie que l'opération ne renvoie rien. C'est l'équivalent de `void` dans d'autres languages. On se passera donc du mot-clé `return` pour cette opération. `is Adj` signifie qu'on peut automatiquement générer l'opération 'adjointe' (on dit aussi l'opération inverse). On peut ne pas s'en occuper dans un premier temps.
+
+Une opération qui ne renvoie rien n'est pas forcément inutile car la manipulation de la mémoire quantique se fait sur place, par effet de bord. Ici par exemple l'opération `Oracle_AllOnes` va modifier l'état (i.e. la valeur interne) du qubit `target`.
+
+Vous aurez besoin de la [porte quantique **X**](https://en.wikipedia.org/wiki/Quantum_logic_gate#Pauli-X_gate), équivalent quantique d'une porte **NOT**. Vous aurez également besoin du [foncteur **Controlled**](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/operations-functions#controlled-and-adjoint-operations):
+
+Contrôler une porte quantique **U** par un ou plusieurs qubits de contrôle ```[controlQubits]``` permet d’appliquer cette porte au qubit cible ```targetQubit``` si et seulement si tous les qubits de contrôle sont dans l’état |1>. C’est d’une certaine façon l’analogue quantique d’un ```if``` classique. On utilise la syntaxe suivante :
+
+
+```csharp
+Controlled U ([controlQubits], targetQubit);
+```
+
+```[controlledQubits]``` est un tableau de qubits. ```targetQubit```  est un qubit.
 
 
 ## Task 1.2
 
-Vous pouvez aller consulter la liste des portes élémentaires [ici](https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.intrinsic?oicd=WTMCID)
+Le foncteur **Controlled** permet d'exprimer la condition que tous les qubits de contrôle sont dans l'état |1>. Il n'existe pas de syntaxe permettant d'exprimer nativement une autre condition. Il faut donc se ramener au cas où tous les qubits de contrôle sont dans l'état |1> en modifiant la valeur des qubits de contrôle avant (et après!) l'utilisation du foncteur **Controlled**.
 
-Allez regarder du côté de la porte X.
+Vous pouvez vous documenter sur comment faire une boucle ```for``` et une condition ```if``` en Q# [ici](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/control-flow?oicd=WTMCID)
+
+*Bonus:* pour un code élégant et concis, je vous recommande la syntaxe [**within {..} apply {..}**](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/control-flow#conjugations).
+
+## Tasks 1.4
+
+Cette procédure ne manipule pas de qubits. C'est pourquoi il s'agit en Q# d'une fonction et non pas d'une opération. Cette fonction transforme l'opération `markingOracle` en une autre opération qu'on peut appeler `phaseOracle`. On utilise la syntaxe [**return**](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/control-flow?view=qsharp-preview#return-statement).
+
+Une étape intermédiaire peut être d'écrire d'abord une opération `OracleConverterWithQubitRegister` qui prend en arguments le `markingOracle` et un tableau de qubits `register` et implémente le `phaseOracle` à `register`. On aura besoin de manipuler un qubit supplémentaire au sein de `OracleConverterWithQubitRegister`. La syntaxe pour déclarer de la mémoire quantique (des qubits) est [**using**](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/working-with-qubits?view=qsharp-preview#allocating-qubits). Vous aurez également besoin de la [porte quantique de Hadamard (**H**)](https://en.wikipedia.org/wiki/Quantum_logic_gate#Hadamard_(H)_gate) et de la [porte quantique **X**](https://en.wikipedia.org/wiki/Quantum_logic_gate#Pauli-X_gate). Pour appliquer les portes **X** et **H** à `qubit` on utilise en Q# la syntaxe suivante:
+```csharp
+X(qubit);
+H(qubit);
+```
+
+Pour écrire la fonction `OracleConverter`, on peut se servir de la possibilité en Q# de définir des [opérations partielles](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/operations-functions?view=qsharp-preview#partial-application).
+
+## Task 2.1
+
+la [porte quantique **H**](https://en.wikipedia.org/wiki/Quantum_logic_gate#Hadamard_(H)_gate) permet de créer un état de superposition à partir des états de base |0> et |1>.
 
 
-## Task 1.3
+## Task 2.2
 
-Allez regarder du côté de la porte CNOT
+Selon l'implémentation choisie, les syntaxes suivantes peuvent être utiles:
+- le foncteur [**Controlled**](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/operations-functions#controlled-and-adjoint-operations).
+- la [porte quantique **Z**](https://en.wikipedia.org/wiki/Quantum_logic_gate#Pauli-Z_(%7F'%22%60UNIQ--postMath-00000028-QINU%60%22'%7F)_gate).
+- les fonctions [**Most**](https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.arrays.most) et [**Tail**](https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.arrays.tail).
+
+## Task 2.3
+
+Appliquer une transformation de Hadamard consiste à appliquer une porte de Hadamard (**H**) à chaque qubit.
+
+## Task 3.1
+
+Cet [article Wikipédia](https://en.wikipedia.org/wiki/Grover%27s_algorithm) décrit l'algorithme de Grover.
+
+## Task 3.2
+
+- La fonction **Message** utilise la syntaxe suivante:
+```csharp
+Message ("texte à afficher");
+```
+
+- Une mesure est faite à l’aide de l’opération M() :
+```csharp
+let myResult = M(qubit);
+```
+
+`myResult` est alors de type `Result`. Le type `Result` est constitué de deux valeurs : `Zero` et `One`. 
+Vous pouvez aller consulter [ici](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/working-with-qubits#measurements) la documentation sur la mesure quantique en Q#.
+La fonction [MultiM](https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.measurement.multim) permet de mesurer directement un array de qubits.
 
 
-## Tasks 1.4 et 1.5
+--sep--
+---
+title: SolveSATWithGrover - aide
+---
 
-Allez vous documenter sur comment faire une boucle ```for``` et une condition ```if``` en Q# [ici](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/control-flow?oicd=WTMCID)
+## Task 1.1
 
-## Tasks 1.7 et 1.8
+Il est courant de devoir appliquer le foncteur **Controlled** à la porte X. Lorsque le contrôle ne se fait que sur 1 qubit ou sur 2 qubits, il existe un raccourci syntaxique:
+- contrôle sur 1 qubit:
+  
+```csharp
+CNOT(controlQubit, targetQubit);
+```
+est strictement équivalent à 
+```csharp
+Controlled X ([controlQubit], targetQubit);
+```
+- contrôle sur 2 qubits:
+  
+```csharp
+CCNOT(FirstControlQubit, SecondControlQubit, targetQubit);
+```
+est strictement équivalent à 
+```csharp
+Controlled X ([FirstControlQubit, SecondControlQubit], targetQubit);
+```
 
-**Passez ces étapes. Vous pourrez y revenir si vous avez fini le kata en avance.**
+## Task 1.2
 
-* Sélection d’un sous-registre de qubits
-Allez jeter un coup d'oeil au paragraphe [Array slices](https://docs.microsoft.com/en-us/quantum/user-guide/language/expressions#array-expressions?oicd=WTMCID).
+Pensez à utiliser la syntaxe [**within {..} apply {..}**](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/control-flow#conjugations).
 
-Pour définir le sous-array de l’array ‘myArray’ dont les indices sont compris entre ‘start’ et ‘stop’, on utilise la syntaxe suivante :
+## Task 1.4
+
+- Sélection d’un sous-registre de qubits
+Pour définir le sous-array de l’array `myArray` dont les indices sont compris entre `start` et `stop`, on utilise la syntaxe suivante :
 
 ```csharp
 let myArray = [10, 11, 12, 13, 14, 15];
@@ -135,81 +220,32 @@ let stop = 3;
 let mySubarray = myArray[start .. stop]; //  mySubarray = [11, 12, 13].
 ```
 
+Pour plus d'informations vous pouvez aller voir le paragraphe [Array slices](https://docs.microsoft.com/en-us/quantum/user-guide/language/expressions#array-expressions).
 
-* Porte multi-contrôlée
-Allez jeter un coup d'oeil au paragraphe [Controlled functor](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/operations-functions?oicd=WTMCID).
-
-Controlled X ([controls], target) implémente la porte X au qubit target lorsque tous les qubits controls sont dans l’état 1.
-
-Contrôler une porte ```U``` sur un ou plusieurs qubits de contrôle ```[controlQubits]``` permet d’appliquer cette porte au qubit cible ```targetQubit``` si et sulement si tous les qubits de contrôle sont dans l’état |1>. C’est d’une certaine façon l’analogue quantique d’un ```if``` classique. On utilise la syntaxe suivante :
-
+- La fonction **Length** renvoie la longueur d'un array:
+  
 ```csharp
-Controlled U ([controlQubits], targetQubit);
+let N = Length(myArray);
 ```
 
-```[controlledQubits]``` est un array de qubits. ```targetQubit```  est un qubit.
-
-
---sep--
----
-title: Aide au kata - Part 2
----
-
-## Task 2.1
-
-Vous pouvez aller consulter la liste des portes élémentaires [ici](https://docs.microsoft.com/en-us/qsharp/api/qsharp/microsoft.quantum.intrinsic?oicd=WTMCID)
-
-Allez regarder du côté de la porte H.
-
-
-## Task 2.2
+## Task 1.5
 
 ### Variables mutables
-
-Vous pouvez aller consulter la documentation des variables mutables [ici](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/variables#mutable-variables?oicd=WTMCID).
 
 Les variables déclarées sous la forme :
 
 ```csharp
-let myImmutableVariable = 2 ;
+let myImmutableVariable = 2;
 ```
-sont immuables.
+sont immutables.
 
-Pour les variables mutables, on utilise les mots-clés ```mutable``` pour la déclaration et ```set``` pour la modification :
+Pour les variables mutables, on utilise les mots-clés `mutable` pour la déclaration et `set` pour la modification :
 
 ```csharp
 mutable myMutableVariable = 4 ;
-set myMutableVariable = 3 
+set myMutableVariable = 3;
 ```
-
-### Mesures
-
-Vous pouvez aller consulter la documentation pour savoir comment mesurer les qbits [ici](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/working-with-qubits#measurements?oicd=WTMCID).
-
-Une mesure est faite à l’aide de l’opération M() :
-```csharp
-let myResult = M(qubit);
-```
-```myResult``` est alors de type ```Result```. Le type ```Result``` est constitué de deux valeurs : ```Zero``` et ```One```. 
-
-
-### Reset
-
-Après avoir manipulé des qubits, il est nécessaire de les remettre à Zéro avant de les libérer. On utilise pour ça la fonction Reset :
-```csharp
-Reset(qubit);
-```
-Pour un array de qubits, on peut également utiliser la fonction ResetAll :
-```csharp
-ResetAll(qubitArray);
-```
-
---sep--
----
-title: Aide au kata - Part 3
----
-
-## Task 1.3
+Vous pouvez aller consulter la documentation des variables mutables [ici](https://docs.microsoft.com/en-us/quantum/user-guide/using-qsharp/variables#mutable-variables).
 
 ### Array mutable
 
@@ -225,14 +261,25 @@ myArray += [myNewValue];
 
 ### Copy & Update
 
-Vous pouvez aller voir le paragraphe Copy & Update Expressions de la documentation [ici](https://docs.microsoft.com/en-us/quantum/user-guide/language/expressions#array-expressions?oicd=WTMCID)
-
 Pour modifier une valeur d’un array, on utilise la syntaxe suivante :
 ```csharp
 myArray w/= myIndex <- myNewValue;
 ```
-La valeur située en position ```myIndex``` de ```myArray``` devient alors ```myNewValue```. 
+La valeur située en position `myIndex` de `myArray` devient alors `myNewValue`. 
 
+Vous pouvez aller voir le paragraphe Copy & Update Expressions de la documentation [ici](https://docs.microsoft.com/en-us/quantum/user-guide/language/expressions#array-expressions).
+
+
+## Task 3.2
+
+Après avoir manipulé des qubits, il est nécessaire de les remettre dans l'état |0> avant de les libérer. On utilise pour ça la fonction Reset :
+```csharp
+Reset(qubit);
+```
+Pour un array de qubits, on peut également utiliser la fonction ResetAll :
+```csharp
+ResetAll(qubitArray);
+```
 
 --sep--
 ---

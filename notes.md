@@ -12,3 +12,7 @@ Les liens de téléchargement ne fonctionnent pas en local.
 # Coin en bas à gauche
 
 Le texte 'See documentation' et 'Learn More on Microsoft Learn' est généré depuis codelab.component.html. Il ne peut donc pas être changé pour un seul workshop.
+
+# Liens
+
+Pourquoi y a-t-il '?oicd=WTMCID' à la fin des liens?
