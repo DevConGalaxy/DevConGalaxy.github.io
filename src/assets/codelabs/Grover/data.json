@@ -1,14 +1,14 @@
 {
     "resources": [
         {
-            "label": "jupyter project Zip file",
+            "label": "jupyter notebook GroversAlgorithm",
             "type": "fas fa-download",
-            "link": "./assets/codelabs/prog-quantique/DeutschJozsaAlgorithm.zip"
+            "link": "./assets/codelabs/prog-quantique/GroversAlgorithm.zip"
         },
         {
-            "label": "Introduction à l'informatique quantique",
-            "type": "fab fa-youtube",
-            "link": "https://www.youtube.com/watch?v=uQhyl_7dmzE"
-        }        
+          "label": "jupyter notebook SolveSATWithGrover",
+          "type": "fas fa-download",
+          "link": "./assets/codelabs/prog-quantique/SolveSATWithGrover.zip"
+      }
     ]
 }
