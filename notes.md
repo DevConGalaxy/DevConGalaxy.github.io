@@ -8,3 +8,7 @@ Dans le fichier tutorial.service.ts, dans les fonctions getTutorialMd et getTuto
 # Téléchargement
 
 Les liens de téléchargement ne fonctionnent pas en local.
+
+# Coin en bas à gauche
+
+Le texte See documentation et Learn More on Microsoft Learn est généré depuis codelab.component.html. Il ne peut donc pas être changé pour un seul workshop.
