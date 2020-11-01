@@ -6,22 +6,30 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+### Add a new workshop
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+#### tutorial.json
+Add a new entry in the `tutorials` array in the tutorials.json file
+```json
+{
+      "id": "tutorial-id",
+      "title": "Tutorial title",
+      "language": "fr",
+      "date": "Mon Jul 16 2020 00:00:00 GMT+0100",
+      "icon": "quantum",
+      "tags": ["Q#", "quantum computing", "jupyter notebook"],
+      "status": "published"
+    }
+```
 
-## Running end-to-end tests
+`id` must be the same as the tutorial folder
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+`date` is the publication date
 
-## Further help
+`icon` can be `iot` or `quantum`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`status` can be `draft` or `published`. Tutorials in draft won't appear on the main page but will still be accessible via direct link  
