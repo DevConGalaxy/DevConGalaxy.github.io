@@ -4,11 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --base-href /workshops/",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "deploy": "npx angular-cli-ghpages --dir=dist/workshops"
+    "deploy": "npx angular-cli-ghpages --dir=dist/workshop"
   },
   "private": true,
   "dependencies": {
