@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material/dialog';
 
 import { ResumeDialogComponent } from './resume-dialog.component';
 
+declare var Konami: any;
 
 @Component({
   selector: 'app-codelab',
@@ -22,6 +23,7 @@ export class CodelabComponent implements OnInit {
   public tutorialResources: Array<any> = new Array<any>();
   public tutorialSteps: Array<string> = new Array<string>();
   public mcid = '';
+  public konamicode: any;
 
   constructor(
     private router: Router,
@@ -31,9 +33,12 @@ export class CodelabComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    
     this.route.paramMap.subscribe(params => {
       this.tutorialId = params.get('id');
       this.mcid = this.route.snapshot.queryParamMap.get('wtmcid');
+      
+      this.konamicode = new Konami(`./assets/codelabs/${this.tutorialId}/solution.html`);
 
       this.getTutorial();
       this.getData();
