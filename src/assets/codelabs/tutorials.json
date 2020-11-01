@@ -53,7 +53,6 @@
     {
       "id": "mxchip-azure",
       "title": "Codez votre premier projet IoT sur MXChip",
-      "image": "./assets/codelabs/mxchip-azure/header.png",
       "language": "fr",
       "date": "Mon Aug 9 2018 00:00:00 GMT+0100",
       "icon": "iot",
@@ -61,9 +60,17 @@
       "status": "published"
     },
     {
-      "id": "prog-quantique",
+      "id": "deutsch-jozsa",
       "title": "Réaliser l'algo quantique de DeutschJoszaAlgorihtm",
-      "image": "https://fossbytes.com/wp-content/uploads/2017/12/q-sharp-programming-language-1200x900.jpg",
+      "language": "fr",
+      "date": "Mon Jul 16 2018 00:00:00 GMT+0100",
+      "icon": "quantum",
+      "tags": ["Q#", "quantum computing", "jupyter notebook"],
+      "status": "published"
+    },
+    {
+      "id": "grover",
+      "title": "Résoudre un problème de satisfiabilité (SAT) avec Grover",
       "language": "fr",
       "date": "Mon Jul 16 2018 00:00:00 GMT+0100",
       "icon": "quantum",

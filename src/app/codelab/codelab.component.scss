@@ -14,7 +14,6 @@ mat-drawer-container {
     flex-direction: row;
 }
 
-
 #sidebar,
 .codelab-steps {
     overflow-y: auto;
@@ -25,7 +24,6 @@ mat-drawer-container {
         background-color: transparent;
         line-height: 2em;
         padding: 1em 2em;
-        text-align: left;
 
         i {
             margin-right: 1em;
@@ -58,7 +56,7 @@ mat-drawer-container {
         font-weight: normal;
     }
 
-    a.list-item, button.list-item {
+    a.list-item {
         text-decoration: none;
         color: #919191;
         // display: block;
@@ -145,9 +143,6 @@ mat-drawer {
     transform: translate3d(0, 0, 0);
 }
 
-button {
-    white-space: normal;
-}
 
 @media screen and (max-width: 1024px) {
     mat-drawer {
@@ -167,4 +162,3 @@ button {
         display: block;
     }
 }
-

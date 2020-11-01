@@ -1,0 +1,14 @@
+{
+    "resources": [
+        {
+            "label": "jupyter notebook GroversAlgorithm",
+            "type": "fas fa-download",
+            "link": "./assets/codelabs/grover/GroversAlgorithm.zip"
+        },
+        {
+          "label": "jupyter notebook SolveSATWithGrover",
+          "type": "fas fa-download",
+          "link": "./assets/codelabs/grover/SolveSATWithGrover.zip"
+      }
+    ]
+}
