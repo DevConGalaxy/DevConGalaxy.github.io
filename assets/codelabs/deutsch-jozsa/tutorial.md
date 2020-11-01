@@ -1,5 +1,5 @@
 ---
-title: Programmation quantique
+title: L'Algo Deutsch-Jozsa
 ---
 
 --sep--
