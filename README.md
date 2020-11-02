@@ -21,10 +21,13 @@ tutorial-name
   cover.png
   tutorial.md
   data.json
+  solution.html
   images\
 ```
 
 `cover.png` is the image that will be diaplayed as a header on the homepage of the platform.
+
+`solution.html` The correction of the workshop can be put in this file. It is accessible when typing the konami code in a tutorial
 
 Put all the images you need in the workshop in the `image` folder
 
