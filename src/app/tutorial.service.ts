@@ -20,7 +20,6 @@ export class TutorialService {
   }
 
   getTutorialData(tutorialId: string) {
-    // return this.http.get(`https://raw.githubusercontent.com/tagazok/workshops/gh-pages/assets/codelabs/${tutorialId}/data.json`);
     return this.http.get(`${environment.baseURL}/assets/codelabs/${tutorialId}/data.json`);
   }
 }
