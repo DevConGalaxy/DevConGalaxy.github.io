@@ -36,13 +36,13 @@ export class CodelabComponent implements OnInit {
     
     this.route.paramMap.subscribe(params => {
       this.tutorialId = params.get('id');
-      this.mcid = this.route.snapshot.queryParamMap.get('wtmcid');
+      this.mcid = this.route.snapshot.queryParamMap.get('wtmcid')  || '3022639';
       
       this.konamicode = new Konami(`./assets/codelabs/${this.tutorialId}/solution.html`);
 
       this.getTutorial();
       this.getData();
-      this.route.queryParamMap.subscribe(innerParams => {
+      this.route.queryParamMap.subscribe((innerParams: any) => {
         if (!innerParams.has('step')) {
           const localStorageStep = JSON.parse(
             localStorage.getItem(this.tutorialId)
