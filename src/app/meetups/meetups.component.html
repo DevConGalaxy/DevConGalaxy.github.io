@@ -1,13 +1,16 @@
-<div style="background-color: #3b3b3b; color: #fff;" class="header">
+<div class="header flex" flex-direction="row" justify-content="space-between">
     <div class="flex" flex-direction="row" align-items="center">
         <img class="logo" src="./assets/images/devcongalaxy.jpg" />
-        <div class="title">DevConGalaxy</div>
+        <div class="title"><a [routerLink]="['/']">DevConGalaxy</a></div>
+    </div>
+    <div class="flex" align-items="center" flex-direction="row">
+        <a [routerLink]="['/workshops']">Workshops</a>
     </div>
 </div>
 <div class="container">
-    <!-- <div *ngFor="let meetup of meetups">
+    <div *ngFor="let meetup of meetups">
         {{meetup.label}}
-    </div> -->
+    </div>
 
     <div *ngFor="let meetup of meetups">
         <div *ngFor="let event of meetup.events" class="event card flex" flex-direction="row">

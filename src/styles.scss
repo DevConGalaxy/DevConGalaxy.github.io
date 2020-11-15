@@ -28,7 +28,9 @@ body {
 .header {
     padding: .7em 2em;
     border-bottom: solid 1px #e6e6e6;
-    font-weight: 600;
+    background-color: #3b3b3b;
+    color: #fff;
+
 
     img {
         max-height: 40px;
@@ -36,6 +38,7 @@ body {
     }
 
     .title {
+        font-weight: 600;
         // margin-right: 1em;
     }
 }
@@ -51,6 +54,11 @@ p {
     margin-top: 0;
     margin-bottom: 1em;
     line-height: 1.7em;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
 }
 
 div[markdown] * {
