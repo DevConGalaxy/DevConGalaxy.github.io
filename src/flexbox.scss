@@ -16,7 +16,7 @@ $properties: (
 
 @each $name, $property in $properties {
     @each $value in $property {
-        .flex[#{$name}="#{$value}"] {
+        .flex.#{$name}-#{$value} {
             #{$name}: $value;
         }
     }

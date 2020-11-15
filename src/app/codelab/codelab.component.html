@@ -1,31 +1,31 @@
 <mat-drawer-container [hasBackdrop]="'true'">
-    <mat-drawer #drawer [mode]="'over'" id="sidebar" class="flex" flex-direction="column">
+    <mat-drawer #drawer [mode]="'over'" id="sidebar" class="flex flex-direction-column">
         <div class="steps">
             <div class="title">
-                <div class="flex" flex-direction="row">
+                <div class="flex flex-direction-row">
                     <div>STEPS</div>
                 </div>
             </div>
-            <div class="flex" flex-direction="column">
-                <button mat-button *ngFor="let step of steps; index as idx" (click)="goToStep(idx + 1)" class="list-item flex"
-                    flex-direction="row" [class.complete]="idx + 1 <= currentStep" [class.active]="currentStep === idx + 1">
+            <div class="flex flex-direction-column">
+                <button mat-button *ngFor="let step of steps; index as idx" (click)="goToStep(idx + 1)" class="list-item flex flex-direction-row"
+                     [class.complete]="idx + 1 <= currentStep" [class.active]="currentStep === idx + 1">
                     <div class="step-title">{{idx + 1}}. {{step.title}}</div>
                 </button>
             </div>
         </div>
         <div class="resources" *ngIf="tutorialResources">
             <div class="title">
-                <div class="flex" flex-direction="row">
+                <div class="flex flex-direction-row">
                     <div>RESOURCES</div>
                 </div>
             </div>
-            <a *ngFor="let resource of tutorialResources" [href]="resource.link" class="list-item flex" flex-direction="row"
+            <a *ngFor="let resource of tutorialResources" [href]="resource.link" class="list-item flex flex-direction-row"
                 target="_blank">
                 <div><i class="{{resource.type}}"></i></div>
                 <div>{{resource.label}}</div>
             </a>
         </div>
-        <div class="footer flex flex-grow" flex-direction="column" justify-content="flex-end">
+        <div class="footer flex flex-grow flex-direction-column justify-content-flex-end">
             <div>See <a href='https://docs.microsoft.com?oicd={{mcid}}' target='_blank'>documentation</a></div>
             <div>Learn more on <a href='https://docs.microsoft.com/learn/?oicd={{mcid}}' target='_blank'>Microsoft
                     Learn</a></div>
@@ -34,10 +34,10 @@
 
     <mat-drawer-content id="results" class="flex flex-grow">
         <div class="title">
-            <div class="flex" flex-direction="row" justify-content="space-between">
+            <div class="flex flex-direction-row justify-content-space-between">
                 <div class="burger-menu" (click)="drawer.toggle()"><i class="fas fa-bars"></i></div>
                 <div>{{tutorialDetails?.title}}</div>
-                <div><a routerLink="/"><i class="fas fa-home"></i></a></div>
+                <div><a [routerLink]="['/workshops']"><i class="fas fa-home"></i></a></div>
             </div>
         </div>
         <div class="codelab-steps flex-grow">
@@ -45,7 +45,7 @@
                 [class.selected]="idx + 1 == currentStep">
                 <div markdown ngPreserveWhitespaces [data]="step" (error)="onError($event)" class="codelab-step">
                 </div>
-                <div class="controls flex" justify-content="space-between">
+                <div class="controls flex justify-content-space-between">
                     <button [hidden]="currentStep <= 1" mat-raised-button (click)="prev()">
                         <i class="fas fa-chevron-left"></i> BACK
                     </button>

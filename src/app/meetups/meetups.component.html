@@ -1,9 +1,9 @@
-<div class="header flex" flex-direction="row" justify-content="space-between">
-    <div class="flex" flex-direction="row" align-items="center">
+<div class="header flex flex-direction-row justify-content-space-between">
+    <div class="flex flex-direction-row align-items-center">
         <img class="logo" src="./assets/images/devcongalaxy.jpg" />
         <div class="title"><a [routerLink]="['/']">DevConGalaxy</a></div>
     </div>
-    <div class="flex" align-items="center" flex-direction="row">
+    <div class="flex flex-direction-row align-items-center">
         <a [routerLink]="['/workshops']">Workshops</a>
     </div>
 </div>
@@ -13,8 +13,8 @@
     </div>
 
     <div *ngFor="let meetup of meetups">
-        <div *ngFor="let event of meetup.events" class="event card flex" flex-direction="row">
-            <div class="short-date card-body flex" flex-direction="column" justify-content="center">
+        <div *ngFor="let event of meetup.events" class="event card flex flex-direction-row">
+            <div class="short-date card-body flex flex-direction-column justify-content-center">
                 <div class="day">
                     {{event.local_time |date: 'dd'}}
                 </div>
@@ -26,7 +26,7 @@
                 <div class="date">{{event.local_time |date: 'medium'}}</div>
 
                 <div class="title">
-                    <a [href]="event.event_url">{{event.title}}</a>
+                    <a [href]="event.event_url" target="_blank">{{event.title}}</a>
                 </div>
                 <div class="meetup-name">
                     {{meetup.label}}
