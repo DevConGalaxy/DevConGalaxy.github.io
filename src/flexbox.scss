@@ -1,0 +1,29 @@
+.flex {
+    display: flex;
+}
+
+.flex-grow {
+    flex-grow: 1;
+}
+
+// $flexDirections: row, column;
+$justifyContent: space-between, space-around, center, flex-start, flex-end, space-evenly;
+$alignItems: flex-start, flex-end, center, stretch, baseline;
+$alignContent: flex-start, flex-end, center, stretch, space-between, space-around;
+$flexWrap: wrap, nowrap, wrap-reverse;
+
+$properties: (
+    "flex-direction": (row, column),
+    "justify-content": $justifyContent,
+    "align-items": $alignItems,
+    "align-content": $alignContent,
+    "flex-wrap": $flexWrap
+);
+
+@each $name, $property in $properties {
+    @each $value in $property {
+        .flex[#{$name}="#{$value}"] {
+            #{$name}: $value;
+        }
+    }
+}

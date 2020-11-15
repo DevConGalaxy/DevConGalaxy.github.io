@@ -1,0 +1,100 @@
+{
+    "meetups": [
+        {
+            "id": "Meetup-Mug-Tours",
+            "label": "MUG Tours",
+            "url": "https://www.meetup.com/fr-FR/Meetup-Mug-Tours",
+            "location": "Tours, France"
+        },
+        {
+            "id": "Meetup-Mug-Net-Nantes",
+            "label": "MUG .Net - Nantes",
+            "url": "https://www.meetup.com/fr-FR/Meetup-Mug-Net-Nantes",
+            "location": "Nantes, France"
+        },
+        {
+            "id": "AZUG-FR",
+            "label": "AZUG FR - Azure User Group France",
+            "url": "https://www.meetup.com/AZUG-FR",
+            "location": "Paris, France"
+        },
+        {
+            "id": "Microsoft-User-Group-Rennes",
+            "label": "Microsoft-User-Group-Rennes",
+            "url": "https://www.meetup.com/fr-FR/Microsoft-User-Group-Rennes",
+            "location": "Paris, France"
+        },
+        {
+            "id": "Paris-TypeScript",
+            "label": "Paris Typescript",
+            "url": "https://www.meetup.com/fr-FR/Paris-TypeScript",
+            "location": "Paris, France"
+        },
+        {
+            "id": "Meetup-NET-Toulouse",
+            "label": "Meetup .NET Toulouse",
+            "url": "https://www.meetup.com/fr-FR/Meetup-NET-Toulouse",
+            "location": "Paris, France"
+        },
+        {
+            "id": "Meetup-NET-Lille",
+            "label": "Microsoft User Group - Lille",
+            "url": "https://www.meetup.com/fr-FR/Meetup-NET-Lille",
+            "location": "Paris, France"
+        },
+        {
+            "id": "DevTalks-Net",
+            "label": "DevTalks-Net",
+            "url": "https://www.meetup.com/fr-FR/DevTalks-Net",
+            "location": "Paris, France"
+        },
+        {
+            "id": "dotTech",
+            "label": "dotTech",
+            "url": "https://www.meetup.com/fr-FR/dotTech",
+            "location": "Paris, France"
+        },
+        {
+            "id": "mugorleans",
+            "label": "Microsoft User Group (MUG) Orléans Centre Loire",
+            "url": "https://www.meetup.com/fr-FR/mugorleans",
+            "location": "Paris, France"
+        },
+        {
+            "id": "altnetfr",
+            "label": "Alt.Net France",
+            "url": "https://www.meetup.com/fr-FR/altnetfr",
+            "location": "Paris, France"
+        },
+        {
+            "id": "MUGLyon",
+            "label": "MUG Lyon",
+            "url": "https://www.meetup.com/fr-FR/MUGLyon",
+            "location": "Paris, France"
+        },
+        {
+            "id": "MugStrasbourg",
+            "label": "MugStrasbourg",
+            "url": "https://www.meetup.com/fr-FR/MugStrasbourg",
+            "location": "Paris, France"
+        },
+        {
+            "id": "MugInClermont",
+            "label": "MugInClermont",
+            "url": "https://www.meetup.com/fr-FR/MugInClermont",
+            "location": "Paris, France"
+        },
+        {
+            "id": "micbelgique",
+            "label": "MIC - Meet Innovate Create",
+            "url": "https://www.meetup.com/fr-FR/micbelgique",
+            "location": "Paris, France"
+        },
+        {
+            "id": "Meetup-Azure-Devops-Aix-en-Provence",
+            "label": "Meetup Azure & Devops Aix-en-Provence",
+            "url": "https://www.meetup.com/Meetup-Azure-Devops-Aix-en-Provence",
+            "location": "Paris, France"
+        }
+    ]
+}

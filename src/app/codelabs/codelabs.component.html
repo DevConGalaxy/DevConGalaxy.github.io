@@ -22,12 +22,12 @@
     </header>
     <main class="container flex" flex-wrap="wrap">
         <div class="cards">
-            <div class="card" *ngFor="let tutorial of tutorials |status: 'published'" routerLink="/{{tutorial.id}}">
+            <div class="card" *ngFor="let tutorial of tutorials |status: 'published'" routerLink="/workshops/{{tutorial.id}}">
                 <div class="card-header" [ngStyle]="{backgroundImage:'url(./assets/codelabs/' + tutorial.id + '/cover.png)'}"></div>
                 <div class="card-icon">
                     <img src="./assets/images/logos/{{tutorial.icon}}.png" alt='{{tutorial.icon}}' title='{{tutorial.icon}}' />
                 </div>
-                <div class="card-body flex" flex-align="column" justify-content="space-between">
+                <div class="card-body flex" flex-direction="column" justify-content="space-between">
                     <div class="title">{{tutorial.title}}</div>
                     
                     <div class="tags">

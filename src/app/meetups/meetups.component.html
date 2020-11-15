@@ -1,0 +1,34 @@
+<div style="background-color: #3b3b3b; color: #fff;" class="header">
+    <div class="flex" flex-direction="row" align-items="center">
+        <img class="logo" src="./assets/images/devcongalaxy.jpg" />
+        <div class="title">DevConGalaxy</div>
+    </div>
+</div>
+<div class="container">
+    <!-- <div *ngFor="let meetup of meetups">
+        {{meetup.label}}
+    </div> -->
+
+    <div *ngFor="let meetup of meetups">
+        <div *ngFor="let event of meetup.events" class="event card flex" flex-direction="row">
+            <div class="short-date card-body flex" flex-direction="column" justify-content="center">
+                <div class="day">
+                    {{event.local_time |date: 'dd'}}
+                </div>
+                <div class="month">
+                    {{event.local_time |date: 'MMM'}}
+                </div>
+            </div>
+            <div class="infos card-body">
+                <div class="date">{{event.local_time |date: 'medium'}}</div>
+
+                <div class="title">
+                    <a [href]="event.event_url">{{event.title}}</a>
+                </div>
+                <div class="meetup-name">
+                    {{meetup.label}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
