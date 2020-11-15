@@ -37,6 +37,12 @@ mat-drawer-container {
     }
 }
 
+.step-title {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 #results {
     display: flex;
     flex-direction: column;
