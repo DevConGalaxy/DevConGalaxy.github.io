@@ -6,10 +6,12 @@
                     <div>STEPS</div>
                 </div>
             </div>
-            <button mat-button *ngFor="let step of steps; index as idx" (click)="goToStep(idx + 1)" class="list-item flex"
-                flex-direction="row" [class.complete]="idx + 1 <= currentStep" [class.active]="currentStep === idx + 1">
-                <div>{{idx + 1}}. {{step.title}}</div>
-            </button>
+            <div class="flex" flex-direction="column">
+                <button mat-button *ngFor="let step of steps; index as idx" (click)="goToStep(idx + 1)" class="list-item flex"
+                    flex-direction="row" [class.complete]="idx + 1 <= currentStep" [class.active]="currentStep === idx + 1">
+                    <div>{{idx + 1}}. {{step.title}}</div>
+                </button>
+            </div>
         </div>
         <div class="resources" *ngIf="tutorialResources">
             <div class="title">
