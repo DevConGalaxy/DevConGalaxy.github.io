@@ -25,7 +25,7 @@
                 <div>{{resource.label}}</div>
             </a>
         </div>
-        <div class="footer flex flex-grow flex-direction-column justify-content-flex-end">
+        <div class="flex flex-grow flex-direction-column justify-content-flex-end padding-1">
             <div>See <a href='https://docs.microsoft.com?oicd={{mcid}}' target='_blank'>documentation</a></div>
             <div>Learn more on <a href='https://docs.microsoft.com/learn/?oicd={{mcid}}' target='_blank'>Microsoft
                     Learn</a></div>
@@ -41,9 +41,9 @@
             </div>
         </div>
         <div class="codelab-steps flex-grow">
-            <div *ngFor="let step of tutorialSteps; index as idx" id="step-{{idx + 1}}" class="card"
+            <div *ngFor="let step of tutorialSteps; index as idx" id="step-{{idx + 1}}" class="card margin-2 margin-mobile-0"
                 [class.selected]="idx + 1 == currentStep">
-                <div markdown ngPreserveWhitespaces [data]="step" (error)="onError($event)" class="codelab-step">
+                <div markdown ngPreserveWhitespaces [data]="step" (error)="onError($event)" class="codelab-step padding-1">
                 </div>
                 <div class="controls flex justify-content-space-between">
                     <button [hidden]="currentStep <= 1" mat-raised-button (click)="prev()">

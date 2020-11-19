@@ -19,6 +19,9 @@ import { FilterPipe } from './filter.pipe';
 import { StatusPipe } from './status.pipe';
 import { MeetupsComponent } from './meetups/meetups.component';
 
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+
+
 // export function appInitialiser(appService: ApplicationService) {
 //   return () => appService.initializeApp();
 // }
@@ -55,6 +58,7 @@ import { MeetupsComponent } from './meetups/meetups.component';
       }
     }),
     BrowserAnimationsModule,
+    LeafletModule
   ],
   providers: [
     // ApplicationService,
