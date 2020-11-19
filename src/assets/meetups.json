@@ -159,6 +159,16 @@
                 "lat": 43.5359526,
                 "long": 5.3179075
             }
+        },
+        {
+            "id": "dotnet-luxembourg",
+            "label": ".NET User Group - Luxembourg",
+            "url": "https://www.meetup.com/dotnet-luxembourg/",
+            "location": "Luxembourg, Luxembourg",
+            "coordinates": {
+                "lat": 49.8149618,
+                "long": 5.8531451
+            }
         }
     ]
 }
