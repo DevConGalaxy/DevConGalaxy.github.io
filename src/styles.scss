@@ -2,27 +2,21 @@
 
 $font-color: #4b4b4b;
 
-html,
-body {
-    height: 100%;
-}
-body {
-    margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
-}
 
 * {
     max-width: 100%;
     word-wrap: break-word;
 }
 
+html,
+body {
+    height: 100%;
+}
 body {
     margin: 0;
     padding: 0;
-    // font-family: Open Sans,Helvetica,sans-serif;
-    // font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
     color: $font-color;
-    // height: 100%;
 }
 
 .header {
