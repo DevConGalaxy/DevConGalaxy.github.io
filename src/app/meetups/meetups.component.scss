@@ -31,8 +31,6 @@
         }
     }
     .infos {
-        .date {
-        }
         .title a {
             text-decoration: none;
             font-weight: 500;
@@ -41,13 +39,19 @@
         .meetup-name {
             color: #919191;
         }
-        .location {
-        }
     }
 }
 
 @media screen and (max-width: 600px) {
     .short-date {
         display: none;
+    }
+
+    .container {
+        width: 100%;
+    }
+
+    .map {
+        margin: 0;
     }
 }

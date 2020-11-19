@@ -8,17 +8,20 @@
     </div>
 </div>
 <div class="container">
-    <div class="map"
+    <div class="map margin-2"
         leaflet 
         [leafletOptions]="mapOptions"
         [leafletLayers]="mapLayers">
     </div>
-    <div *ngFor="let meetup of meetups">
+    <!-- <div *ngFor="let meetup of meetups">
         {{meetup.label}}
-    </div>
+    </div> -->
 
+    <h2 class="margin-2 margin-mobile-1">
+        Prochains événements
+    </h2>
     <div *ngFor="let meetup of meetups">
-        <div *ngFor="let event of meetup.events" class="event card flex flex-direction-row">
+        <div *ngFor="let event of meetup.events" class="event card flex flex-direction-row margin-2 margin-mobile-1">
             <div class="short-date card-body flex flex-direction-column justify-content-center">
                 <div class="day">
                     {{event.local_time |date: 'dd'}}

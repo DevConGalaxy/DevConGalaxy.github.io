@@ -21,3 +21,31 @@ $properties: (
         }
     }
 }
+
+$borders: (
+    "padding": (0,1,2,3),
+    "margin": (0,1,2,3)
+);
+
+@each $name, $property in $borders {
+    @each $value in $property {
+        .#{$name}-#{$value} {
+            #{$name}: #{$value}em;
+        }
+        @each $direction in (left, right, top, bottom) {
+            .#{$name}-#{$direction}-#{$value} {
+                #{$name}-#{$direction}: #{$value}em;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    @each $name, $property in $borders {
+        @each $value in $property {
+            .#{$name}-mobile-#{$value} {
+                #{$name}: #{$value}rem;
+            }
+        }
+    }
+}

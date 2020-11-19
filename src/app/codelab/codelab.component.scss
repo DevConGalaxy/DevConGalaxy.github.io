@@ -97,15 +97,11 @@ mat-drawer-container {
     .codelab-step {
         max-width: 800px;
         margin: auto;
-        padding: 1em;
     }
     a {
         // text-decoration: none;
         // color: $font-color;
         color: $link-color;
-    }
-    .padding {
-        padding: 1em;
     }
 
     &.selected {
@@ -123,9 +119,6 @@ code {
     padding: 0.1em 0.3em;
 }
 
-.footer {
-    padding: 1em;
-}
 
 .controls {
     padding: 1em 2em;
