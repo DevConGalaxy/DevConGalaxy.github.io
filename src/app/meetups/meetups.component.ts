@@ -12,7 +12,7 @@ export interface Meetup {
   label: string;
   url: string;
   location: string;
-  events: Array<any>;
+  events: [];
   coordinates: Coordinates;
 };
 
@@ -22,8 +22,8 @@ export interface Meetup {
   styleUrls: ['./meetups.component.scss']
 })
 export class MeetupsComponent implements OnInit {
-  public meetups: Array<Meetup> = new Array<Meetup>();
-  public conferences: Array<Meetup> = new Array<Meetup>();
+  public meetups: Meetup[] = [];
+  public conferences: Meetup[] = [];
 
   public mapOptions = {
     layers: [
