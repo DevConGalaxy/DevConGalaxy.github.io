@@ -17,6 +17,10 @@
     height: 350px;
 }
 
+img {
+    max-width: 100%;
+}
+
 .event {
     .short-date {
         border-right: solid 1px #e6e6e6;
@@ -39,6 +43,19 @@
             color: #919191;
         }
     }
+
+    &.featured {
+        .title {
+            font-weight: 600;
+        }
+        .image {
+            width: 70%;
+        }
+
+        .infos {
+            width: 30%;
+        }
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -52,5 +69,17 @@
 
     .map {
         margin: 0;
+    }
+
+    .event {
+        &.featured {
+            .image, .infos {
+                width: 100%;
+            }
+
+            .price {
+                display: none;
+            }
+        }
     }
 }

@@ -23,6 +23,7 @@ export interface Meetup {
 })
 export class MeetupsComponent implements OnInit {
   public meetups: Array<Meetup> = new Array<Meetup>();
+  public conferences: Array<Meetup> = new Array<Meetup>();
 
   public mapOptions = {
     layers: [
@@ -40,6 +41,7 @@ export class MeetupsComponent implements OnInit {
     this.meetupService.getAllMeetups().subscribe((response: any) => {
       console.log(response);
       this.meetups = response.meetups;
+      this.conferences = response.conferences;
       this.buildCitiesMap();
       for (const meetup of this.meetups) {
         this.getMeetupEvents(meetup);
