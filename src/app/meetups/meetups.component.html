@@ -8,6 +8,11 @@
     </div>
 </div>
 <div class="container">
+    <div class="map"
+        leaflet 
+        [leafletOptions]="mapOptions"
+        [leafletLayers]="mapLayers">
+    </div>
     <div *ngFor="let meetup of meetups">
         {{meetup.label}}
     </div>

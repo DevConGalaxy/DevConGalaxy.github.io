@@ -25,12 +25,18 @@
             "aot": true,
             "assets": [
               "src/favicon.png",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "./node_modules/leaflet/dist/images",
+                "output": "assets/"
+              }
             ],
             "styles": [
               "src/styles.scss",
               "src/flexbox.scss",
-              "node_modules/prismjs/themes/prism-okaidia.css"
+              "node_modules/prismjs/themes/prism-okaidia.css",
+              "node_modules/leaflet/dist/leaflet.css"
             ],
             "scripts": [
               "node_modules/prismjs/prism.js",
