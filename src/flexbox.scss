@@ -6,7 +6,7 @@
     flex-grow: 1;
 }
 
-$flex-direction: (row, column);
+$flex-direction: (row, column, row-reverse, column-reverse);
 
 $properties: (
     "flex-direction": $flex-direction,
@@ -47,6 +47,11 @@ $borders: (
         @each $value in $property {
             .#{$name}-mobile-#{$value} {
                 #{$name}: #{$value}rem;
+            }
+            @each $direction in (left, right, top, bottom) {
+                .#{$name}-#{$direction}-mobile-#{$value} {
+                    #{$name}-#{$direction}: #{$value}em;
+                }
             }
         }
     }

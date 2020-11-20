@@ -2,6 +2,12 @@
     min-height: 100%;
     width: 100%;
     display: block;
+
+    background-image: url('/assets/images/azure-heroes.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: contain;
 }
 .container {
     margin: 0 auto;
@@ -15,6 +21,10 @@
 }
 .map {
     height: 350px;
+    width: 50%;
+}
+.intro {
+    width: 50%;
 }
 
 img {
@@ -81,5 +91,13 @@ img {
                 display: none;
             }
         }
+    }
+
+    .map {
+        height: 350px;
+        width: 100%;
+    }
+    .intro {
+        width: 100%;
     }
 }

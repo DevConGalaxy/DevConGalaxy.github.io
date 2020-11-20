@@ -161,6 +161,16 @@
             }
         },
         {
+            "id": "devday",
+            "label": "DevDay",
+            "url": "https://www.eventbrite.fr/o/devday-4895305939",
+            "location": "Mons, Belgique",
+            "coordinates": {
+                "lat": 50.445754,
+                "long": 3.8996656
+            }
+        },
+        {
             "id": "Meetup-Azure-Devops-Aix-en-Provence",
             "label": "Meetup Azure & Devops Aix-en-Provence",
             "url": "https://www.meetup.com/Meetup-Azure-Devops-Aix-en-Provence",
