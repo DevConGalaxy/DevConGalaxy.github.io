@@ -19,7 +19,7 @@ Il est également possible de réaliser les kata entièrement en ligne (donc san
 
 ## Pré-requis
 
-Afin de réaliser ce workshop, vous aurez besoin:
+Afin de réaliser ce Hackathon, vous aurez besoin:
 
 - D'un ordinateur avec un navigateur internet
 - D'une connexion internet
