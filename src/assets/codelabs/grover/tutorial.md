@@ -63,7 +63,7 @@ python -c "import qsharp"
 
 Bravo ! Vous avez maintenant le kernel IQ# et Jupyter qui vous fournissent les fonctionnalités de base pour compiler et lancer des opérations Q# depuis un Jupyter Notebook Q#.
 
-<a href="/workshops/assets/codelabs/Grover/GroversAlgorithm.zip" target="_blank">Téléchargez le kata GroversAlgorithm</a> (si le lien ne fonctionne pas, cliquez directement à gauche dans la partie RESOURCES)
+<a href="/workshops/assets/codelabs/grover/GroversAlgorithm.zip" target="_blank">Téléchargez le kata GroversAlgorithm</a> (si le lien ne fonctionne pas, cliquez directement à gauche dans la partie RESOURCES)
 
 Décompressez le fichier et naviguez jusqu'au dossier dans votre terminal Conda.
 
@@ -79,7 +79,7 @@ L'output de votre code apparaitra en dessous du champ.
 
 Une fois le kata GroversAlgorithm terminé, vous pouvez attaquer le kata SolveSATWithGrover:
 
-<a href="/workshops/assets/codelabs/Grover/SolveSATWithGrover.zip" target="_blank">Téléchargez le kata SolveSATWithGrover</a> (si le lien ne fonctionne pas, cliquez directement à gauche dans la partie RESOURCES)
+<a href="/workshops/assets/codelabs/grover/SolveSATWithGrover.zip" target="_blank">Téléchargez le kata SolveSATWithGrover</a> (si le lien ne fonctionne pas, cliquez directement à gauche dans la partie RESOURCES)
 
 
 ### Alternative: faire les katas en ligne
