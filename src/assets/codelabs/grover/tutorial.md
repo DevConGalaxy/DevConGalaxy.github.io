@@ -49,7 +49,7 @@ Si vous n'avez pas déjà installé une distribution Anaconda, installez minicon
 
 Ouvrez un prompt miniconda (ou Anaconda).
 
-Créez un nouvel environnement Conda appelé ```qsharp-dev``` avec les packages requis (notamment Jupyter Notebook et IQ#) :
+Créez un nouvel environnement Conda appelé ```qsharp-env``` avec les packages requis (notamment Jupyter Notebook et IQ#) :
 ```bash
 conda create -n qsharp-env -c quantum-engineering qsharp notebook
 
