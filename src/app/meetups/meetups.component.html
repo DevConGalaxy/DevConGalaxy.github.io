@@ -1,0 +1,97 @@
+<div class="header flex flex-direction-row justify-content-space-between">
+    <div class="flex flex-direction-row align-items-center">
+        <img class="logo" src="./assets/images/devcongalaxy.jpg" />
+        <div class="title"><a [routerLink]="['/']">DevConGalaxy</a></div>
+    </div>
+    <div class="flex flex-direction-row align-items-center">
+        <a [routerLink]="['/workshops']">Workshops</a>
+    </div>
+</div>
+<div class="container">
+    <div class="flex flex-direction-row flex-direction-mobile-column-reverse margin-2 margin-mobile-0">
+        <div class="map padding-right-1" leaflet [leafletOptions]="mapOptions" [leafletLayers]="mapLayers">
+        </div>
+        <div class="intro padding-left-1 padding-right-mobile-1 margin-top-mobile-2 margin-bottom-mobile-2">
+            <div class="flex flex-direction-column">
+                <h2>Qui sommes-nous ?</h2>
+                <div class="padding-top-1">
+                    <p>DevConGalaxy est née de l'initiative de plusieurs communautés Microsoft qui se sont regroupées
+                        pour organiser des événements au dela des simples Meetups.</p>
+                    <p>Aujourd'hui, en plus de ses meetups à travers la Farnce, la communauté organise des conférences
+                        et crée des workshops gratuitement !</p>
+                </div>
+            </div>
+            <div class="flex flex-grow">
+                Cliquez sur une ville pour voir les communautés !
+            </div>
+        </div>
+    </div>
+    <!-- <div *ngFor="let meetup of meetups">
+        {{meetup.label}}
+    </div> -->
+
+    <h2 class="margin-2 margin-mobile-1">
+        Prochains événements
+    </h2>
+    <div *ngFor="let conference of conferences"
+        class="event card flex flex-direction flex-direction-row flex-direction-mobile-column margin-2 margin-mobile-1 featured">
+        <!-- {{conference.label}} -->
+        <img class="image" src="./assets/conferences/{{conference.id}}.png" />
+        <div class="infos padding-1 flex flex-direction-column">
+            <div class="flex-grow flex flex-direction-column justify-content-center">
+                <div class="title">{{conference.label}}</div>
+                <div>{{conference.date}}</div>
+                <div class="margin-top-2">
+                    <a mat-stroked-button [href]="conference.url" target="_blank">Plus d'infos</a>
+                </div>
+            </div>
+            <div class="price">{{conference.price}}</div>
+        </div>
+    </div>
+
+    <div id="events">
+        <div *ngFor="let event of events" class="event card flex flex-direction-row margin-2 margin-mobile-1">
+            <div class="short-date padding-1 flex flex-direction-column justify-content-center">
+                <div class="day">
+                    {{event.local_time |date: 'dd'}}
+                </div>
+                <div class="month">
+                    {{event.local_time |date: 'MMM'}}
+                </div>
+            </div>
+            <div class="infos padding-1">
+                <div class="date">{{event.local_time |date: 'medium'}}</div>
+
+                <div class="title">
+                    <a [href]="event.event_url" target="_blank">{{event.title}}</a>
+                </div>
+                <div class="meetup-name">
+                    {{event.meetup.label}}
+                </div>
+            </div>
+        </div>
+
+        <!-- <div *ngFor="let meetup of meetups">
+            <div *ngFor="let event of meetup.events"
+                class="event card flex flex-direction-row margin-2 margin-mobile-1">
+                <div class="short-date padding-1 flex flex-direction-column justify-content-center">
+                    <div class="day">
+                        {{event.local_time |date: 'dd'}}
+                    </div>
+                    <div class="month">
+                        {{event.local_time |date: 'MMM'}}
+                    </div>
+                </div>
+                <div class="infos padding-1">
+                    <div class="date">{{event.local_time |date: 'medium'}}</div>
+
+                    <div class="title">
+                        <a [href]="event.event_url" target="_blank">{{event.title}}</a>
+                    </div>
+                    <div class="meetup-name">
+                        {{meetup.label}}
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>

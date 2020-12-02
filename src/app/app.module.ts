@@ -17,6 +17,10 @@ import { ResumeDialogComponent } from './codelab/resume-dialog.component';
 
 import { FilterPipe } from './filter.pipe';
 import { StatusPipe } from './status.pipe';
+import { MeetupsComponent } from './meetups/meetups.component';
+
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+
 
 // export function appInitialiser(appService: ApplicationService) {
 //   return () => appService.initializeApp();
@@ -29,7 +33,8 @@ import { StatusPipe } from './status.pipe';
     CodelabComponent,
     ResumeDialogComponent,
     FilterPipe,
-    StatusPipe
+    StatusPipe,
+    MeetupsComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +58,7 @@ import { StatusPipe } from './status.pipe';
       }
     }),
     BrowserAnimationsModule,
+    LeafletModule
   ],
   providers: [
     // ApplicationService,

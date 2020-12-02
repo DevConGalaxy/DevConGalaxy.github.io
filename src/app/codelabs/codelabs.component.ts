@@ -27,8 +27,7 @@ export class CodelabsComponent implements OnInit {
   public applicationInfos: any = {};
   constructor(
     private ts: TutorialService
-  ) { 
-  }
+  ) { }
 
   ngOnInit(): void {
     this.ts.getAllTutorials().subscribe((response: any) => {
@@ -37,5 +36,4 @@ export class CodelabsComponent implements OnInit {
       this.applicationInfos = response;
     });
   }
-
 }

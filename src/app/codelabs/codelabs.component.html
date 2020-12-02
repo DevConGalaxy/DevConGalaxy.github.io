@@ -2,52 +2,46 @@
     <div [style.background-color]="applicationInfos.theme?.primary?.background"
         [style.color]="applicationInfos?.theme?.primary?.text" class="header">
         <div>
-            <!-- <img src="./assets/images/botfuel-logo.png" /> -->
+            <!-- <img src="./assets/images/devcongalaxy.jpg" /> -->
             <div class="title">{{applicationInfos.title}}</div>
             <!-- <input class="searchbox" type="text" placeholder="Search..." [(ngModel)]="searchText" /> -->
         </div>
     </div>
-    <header class="banner">
+    <header class="banner flex flex-direction-row justify-content-center">
         <div>
             <div class="headline">{{applicationInfos.headline}}</div>
-            <div class="content">
+            <div class="content flex flex-direction-row">
                 <div>
                     {{applicationInfos.tagline}}
-                </div>
-                <div class="logo">
-                    <img src="./assets/images/orion_chemistry.png" />
                 </div>
             </div>
         </div>
     </header>
-    <main class="container flex" flex-wrap="wrap">
-        <div class="cards">
-            <div class="card" *ngFor="let tutorial of tutorials |status: 'published'" routerLink="/{{tutorial.id}}">
+    <main class="container flex flex-wrap-wrap">
+        <div class="flex flex-wrap-wrap justify-content-space-between">
+            <div class="card" *ngFor="let tutorial of tutorials |status: 'published'" routerLink="/workshops/{{tutorial.id}}">
                 <div class="card-header" [ngStyle]="{backgroundImage:'url(./assets/codelabs/' + tutorial.id + '/cover.png)'}"></div>
                 <div class="card-icon">
                     <img src="./assets/images/logos/{{tutorial.icon}}.png" alt='{{tutorial.icon}}' title='{{tutorial.icon}}' />
                 </div>
-                <div class="card-body flex" flex-align="column" justify-content="space-between">
-                    <div class="title">{{tutorial.title}}</div>
+                <div class="card-body padding-1 flex flex-direction-column justify-content-space-between">
+                    <div class="title margin-bottom-2">{{tutorial.title}}</div>
                     
                     <div class="tags">
                         {{tutorial.tags.join(', ')}}
-                        <!-- <span *ngFor="let tag of tutorial.tags">
-                            {{tag}},
-                        </span> -->
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    <footer class="footer" [style.background-color]="applicationInfos.theme?.primary?.background"
+    <footer class="footer flex flex-direction-row justify-content-space-around" [style.background-color]="applicationInfos.theme?.primary?.background"
         [style.color]="applicationInfos.theme?.primary?.text">
         <div *ngFor="let col of applicationInfos.footer">
             <h3 class="footer-title">
                 {{col.title}}
             </h3>
-            <div class="footer-links">
-                <ul>
+            <div class="footer-links padding-top-1">
+                <ul class="margin-0 padding-0">
                     <li *ngFor="let link of col.links">
                         <a [href]="link.link" [attr.alt]="link.title" target="_blank">{{link.title}}</a>
                     </li>
@@ -56,50 +50,3 @@
         </div>
     </footer>
 </div>
-<!-- 
-<div>
-    <div class="header">
-        <div>
-            <img src="./assets/images/botfuel-logo.png" />
-            <div class="title">MS Dev Fr workshops</div>
-            <input class="searchbox" type="text" placeholder="Search..." />
-        </div>
-    </div>
-    <header class="banner">
-        <div>
-            <div class="headline">MS Dev Fr workshops</div>
-            <div class="content">
-                <div>
-                    Vous trouverez ici des workshops créés par l'équipe DevRel de Microsoft France
-                </div>
-                <div class="logo">
-                    <img src="./assets/images/orion_chemistry.png" />
-                </div>
-            </div>
-        </div>
-    </header>
-    <main class="container">
-
-        <div class="cards">
-            <div class="card" *ngFor="let tutorial of tutorials">
-                <div class="card-header">
-                    <div>
-                        <div class="duration">
-                            <i class="far fa-clock"></i>
-                            <span>{{tutorial.duration}} min</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    {{tutorial.title}}
-                </div>
-                <div class="card-footer">
-                    <button routerLink="/codelab/{{tutorial.id}}">START</button>
-                    <div class="language">{{tutorial.language}}</div>
-                </div>
-            </div>
-        </div>
-    </main>
-    <footer class="footer">
-    </footer>
-</div> -->
