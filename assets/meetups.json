@@ -1,0 +1,195 @@
+{
+    "conferences": [
+        {
+            "id": "accessibilityconf",
+            "label": "Accessibility Con",
+            "date": "03 Février 2021",
+            "url": "http://accessibilitycon.devcongalaxy.io/",
+            "location": "Online",
+            "price": "Gratuit",
+            "display": false
+        }
+    ],
+    "meetups": [
+        {
+            "id": "Meetup-Mug-Tours",
+            "label": "MUG Tours",
+            "url": "https://www.meetup.com/fr-FR/Meetup-Mug-Tours",
+            "location": "Tours, France",
+            "coordinates": {
+                "lat": 47.3942622,
+                "long": 0.6599206
+            }
+        },
+        {
+            "id": "Meetup-Mug-Net-Nantes",
+            "label": "MUG .Net - Nantes",
+            "url": "https://www.meetup.com/fr-FR/Meetup-Mug-Net-Nantes",
+            "location": "Nantes, France",
+            "coordinates": {
+                "lat": 47.2382007,
+                "long": -1.6300955
+            }
+        },
+        {
+            "id": "AZUG-FR",
+            "label": "AZUG FR - Azure User Group France",
+            "url": "https://www.meetup.com/AZUG-FR",
+            "location": "Paris, France",
+            "coordinates": {
+                "lat": 48.8588377,
+                "long": 2.2770205
+            }
+        },
+        {
+            "id": "Microsoft-User-Group-Rennes",
+            "label": "Microsoft-User-Group-Rennes",
+            "url": "https://www.meetup.com/fr-FR/Microsoft-User-Group-Rennes",
+            "location": "Rennes, France",
+            "coordinates": {
+                "lat": 48.1159102,
+                "long": -1.7234738
+            }
+        },
+        {
+            "id": "Paris-TypeScript",
+            "label": "Paris Typescript",
+            "url": "https://www.meetup.com/fr-FR/Paris-TypeScript",
+            "location": "Paris, France",
+            "coordinates": {
+                "lat": 48.8588377,
+                "long": 2.2770205
+            }
+        },
+        {
+            "id": "Meetup-NET-Toulouse",
+            "label": "Meetup .NET Toulouse",
+            "url": "https://www.meetup.com/fr-FR/Meetup-NET-Toulouse",
+            "location": "Toulouse, France",
+            "coordinates": {
+                "lat": 43.6006786,
+                "long": 1.3628015
+            }
+        },
+        {
+            "id": "Meetup-NET-Lille",
+            "label": "Microsoft User Group - Lille",
+            "url": "https://www.meetup.com/fr-FR/Meetup-NET-Lille",
+            "location": "Lille, France",
+            "coordinates": {
+                "lat": 50.6310623,
+                "long": 3.0121412
+            }
+        },
+        {
+            "id": "DevTalks-Net",
+            "label": "DevTalks-Net",
+            "url": "https://www.meetup.com/fr-FR/DevTalks-Net",
+            "location": "Paris, France",
+            "coordinates": {
+                "lat": 48.8588377,
+                "long": 2.2770205
+            }
+        },
+        {
+            "id": "dotTech",
+            "label": "dotTech",
+            "url": "https://www.meetup.com/fr-FR/dotTech",
+            "location": "Paris, France",
+            "coordinates": {
+                "lat": 48.8588377,
+                "long": 2.2770205
+            }
+        },
+        {
+            "id": "mugorleans",
+            "label": "Microsoft User Group (MUG) Orléans Centre Loire",
+            "url": "https://www.meetup.com/fr-FR/mugorleans",
+            "location": "Orléans, France",
+            "coordinates": {
+                "lat": 47.8733947,
+                "long": 1.8421691
+            }
+        },
+        {
+            "id": "altnetfr",
+            "label": "Alt.Net France",
+            "url": "https://www.meetup.com/fr-FR/altnetfr",
+            "location": "Paris, France",
+            "coordinates": {
+                "lat": 48.8588377,
+                "long": 2.2770205
+            }
+        },
+        {
+            "id": "MUGLyon",
+            "label": "MUG Lyon",
+            "url": "https://www.meetup.com/fr-FR/MUGLyon",
+            "location": "Lyon, France",
+            "coordinates": {
+                "lat": 45.7579502,
+                "long": 4.8001016
+            }
+        },
+        {
+            "id": "MugStrasbourg",
+            "label": "MugStrasbourg",
+            "url": "https://www.meetup.com/fr-FR/MugStrasbourg",
+            "location": "Strasbourg, France",
+            "coordinates": {
+                "lat": 48.5690923,
+                "long": 7.6920546
+            }
+        },
+        {
+            "id": "MugInClermont",
+            "label": "MugInClermont",
+            "url": "https://www.meetup.com/fr-FR/MugInClermont",
+            "location": "Clermont Ferrand, France",
+            "coordinates": {
+                "lat": 45.7870591,
+                "long": 3.0777067
+            }
+        },
+        {
+            "id": "micbelgique",
+            "label": "MIC - Meet Innovate Create",
+            "url": "https://www.meetup.com/fr-FR/micbelgique",
+            "location": "Mons, Belgique",
+            "coordinates": {
+                "lat": 50.445754,
+                "long": 3.8996656
+            }
+        },
+        {
+            "id": "devday",
+            "label": "DevDay",
+            "url": "https://www.eventbrite.fr/o/devday-4895305939",
+            "location": "Mons, Belgique",
+            "coordinates": {
+                "lat": 50.445754,
+                "long": 3.8996656
+            }
+        },
+        {
+            "id": "Meetup-Azure-Devops-Aix-en-Provence",
+            "label": "Meetup Azure & Devops Aix-en-Provence",
+            "url": "https://www.meetup.com/Meetup-Azure-Devops-Aix-en-Provence",
+            "location": "Aix en Provence, France",
+            "coordinates": {
+                "lat": 43.5359526,
+                "long": 5.3179075
+            }
+        },
+        {
+            "id": "dotnet-luxembourg",
+            "label": ".NET User Group - Luxembourg",
+            "url": "https://www.meetup.com/dotnet-luxembourg/",
+            "location": "Luxembourg, Luxembourg",
+            "coordinates": {
+                "lat": 49.8149618,
+                "long": 5.8531451
+            }
+        }
+    ]
+}
