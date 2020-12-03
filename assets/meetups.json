@@ -6,7 +6,8 @@
             "date": "03 Février 2021",
             "url": "http://accessibilitycon.devcongalaxy.io/",
             "location": "Online",
-            "price": "Gratuit"
+            "price": "Gratuit",
+            "display": false
         }
     ],
     "meetups": [
