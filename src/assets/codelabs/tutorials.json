@@ -57,7 +57,8 @@
       "date": "Mon Aug 9 2018 00:00:00 GMT+0100",
       "icon": "iot",
       "tags": ["iot", "mxchip", "C#", "javascript"],
-      "status": "published"
+      "status": "published",
+      "link": "https://raw.githubusercontent.com/tagazok/workshops/main/mxchip-azure/"
     },
     {
       "id": "deutsch-jozsa",

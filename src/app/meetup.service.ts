@@ -16,10 +16,10 @@ export class MeetupService {
   }
 
   getMeetupsEvents() {
-    return this.http.get('https://raw.githubusercontent.com/tagazok/workshops/master/src/assets/meetupsdata.json');
+    return this.http.get('./assets/meetupsdata.json');
   }
-  
-  getMeetupEvents(meetupUrl: string) {
-    return this.http.get(`https://cors-anywhere.herokuapp.com/${meetupUrl}/events/json/`);
-  }
+
+  // getMeetupEvents(meetupUrl: string) {
+  //   return this.http.get(`https://cors-anywhere.herokuapp.com/${meetupUrl}/events/json/`);
+  // }
 }
