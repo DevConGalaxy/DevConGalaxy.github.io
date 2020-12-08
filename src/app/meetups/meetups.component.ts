@@ -85,12 +85,14 @@ export class MeetupsComponent implements OnInit {
     this.meetupService.getMeetupsEvents().subscribe((response: any) => {
 
       for (const meetup of response) {
-        for(const event of meetup.Events) {
-          event.meetup = {
-            label: meetup.label
-          };
-          event.local_time = event.local_time.replace(' EST', '');
-          this.events.push(event);
+        if (meetup.Events) {
+          for(const event of meetup.Events) {
+            event.meetup = {
+              label: meetup.label
+            };
+            event.local_time = event.local_time.replace(' EST', '');
+            this.events.push(event);
+          }
         }
       }
       this.events.sort(function(a,b){
