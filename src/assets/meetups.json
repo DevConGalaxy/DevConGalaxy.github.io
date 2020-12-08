@@ -1,13 +1,13 @@
 {
     "conferences": [
         {
-            "id": "greenconf",
+            "id": "accessibilitycon",
             "label": "Accessibility Con",
             "date": "03 Février 2021",
             "url": "http://accessibilitycon.devcongalaxy.io/",
             "location": "Online",
             "price": "Gratuit",
-            "display": false
+            "display": true
         }
     ],
     "meetups": [
