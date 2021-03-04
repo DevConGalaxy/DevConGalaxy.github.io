@@ -11,7 +11,7 @@ title: Introduction
 
 ## Introduction
 
-test : Vous allez réaliser les katas [GroversAlgorithm](https://github.com/microsoft/QuantumKatas/tree/main/GroversAlgorithm) et [SolveSATWithGrover](https://github.com/microsoft/QuantumKatas/tree/main/SolveSATWithGrover).
+Vous allez réaliser les katas [GroversAlgorithm](https://github.com/microsoft/QuantumKatas/tree/main/GroversAlgorithm) et [SolveSATWithGrover](https://github.com/microsoft/QuantumKatas/tree/main/SolveSATWithGrover).
 
 Ces katas peuvent être réalisés localement en utilisant un jupyter notebook. Cela nécessite d'installer miniconda (ou Anaconda). L'installation de l'environnement est détaillée sur la page Préparation.
 
