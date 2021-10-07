@@ -25,7 +25,7 @@ tutorial-name
   images\
 ```
 
-`cover.png` is the image that will be diaplayed as a header on the homepage of the platform.
+`cover.png` is the image that will be displayed as a header on the homepage of the platform.
 
 `solution.html` The correction of the workshop can be put in this file. It is accessible when typing the konami code in a tutorial
 
@@ -97,4 +97,4 @@ Add a new entry in the `tutorials` array in the tutorials.json file
 
 `icon` can be `iot` or `quantum`
 
-`status` can be `draft` or `published`. Tutorials in draft won't appear on the main page but will still be accessible via direct link  
+`status` can be `draft` or `published`. Tutorials in draft won't appear on the main page but will still be accessible via direct link.
