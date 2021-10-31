@@ -14,7 +14,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 ### Add workshop folder
 
-Create a new folder in `assets/codelabs` with a name in lowercase letters.
+Create a new folder in `src/assets/codelabs` with a name in lowercase letters.
 The folder must look like this :
 ```bash
 tutorial-name
